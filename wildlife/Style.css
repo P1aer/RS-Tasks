@@ -388,24 +388,29 @@ body{
  }
 h1{
     font-weight: 600;
-    font-size: 48pt;
+    font-size: 48px;
+    font-style: normal;
+    line-height: 72px;
+    letter-spacing: 1px;
     color: #CD6326;
 }
 h2{
-    font-weight: 400;
-    font-size: 24pt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 72px;
     color: #333333;
 }
 h3{
     font-weight: 400;
-    font-size: 18pt;
+    font-size: 18px;
     color: #333333;
 }
 .wrapper{
      max-width: 1200px;
      margin: 0 auto;
  }
-/*Header styles*/
+/*Header*/
 
 .header-box{
     position: absolute;
@@ -417,7 +422,7 @@ h3{
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    padding-top: 18px;
+    padding-top: 20px;
 }
 
 .head-logo{
@@ -438,7 +443,7 @@ h3{
     flex-wrap: wrap;
 }
 .nav-item{
-    margin-right: 63px;
+    margin-right: 62px;
 }
 .nav-item:last-child{
     margin-right: 0px;
@@ -451,16 +456,17 @@ h3{
     color: #F7F7F7;
     text-decoration: none;
 }
+.nav-link:hover,.nav-link:active,.search-logo:hover{
+    opacity: .75;
+}
 .search-logo{
-    padding-top:14px ;
+    padding-top:15px ;
 }
 .sign-in{
     width: 120px;
     height: 50px;
     margin-top: 5px;
-    padding-left:23px;
-    padding-right:23px;
-    padding-top:10px ;
+    padding: 10px 23px ;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -472,11 +478,65 @@ h3{
     border-radius: 5px;
     background: none;
 }
-/* Main*/
+.sign-in:hover{
+    background-color: #CD6326;
+}
+.sign-in:active{
+    border-color:#8F5613;
+    background-color: #8F5613;
+}
+/* Survival*/
+.survival{
+    height: 779px;
+    padding-top:200px;
+    background: url("assets/Fox.jpg") center no-repeat;
+}
+.h1-survival{
+    margin-bottom: 51px;
+}
+.survival-sub{
+    max-width: 274px;
+    margin-bottom: 48px;
+}
+.donation{
+    padding: 16px 44px;
+    background: #CD6326;
+    border: #CD6326;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 27px;
+    color: #F7F7F7;
+}
+.donation:hover{
+    border: #E39128;
+    background: #E39128;
+}
+.donation:active{
+    border-color:#8F5613;
+    background-color: #8F5613;
+}
+/* Latest article*/
 
-.welcome{
+.latest-article{
     width: 1440px;
-    height: 780px;
-    background: url("assets/Fox.jpg") no-repeat center;
-    background-size: cover;
+    height: 1368px;
+    margin: 0 auto;
+    border-radius: 0px;
+    background-color: #cccccc;
+}
+.h2-articles{
+    text-align: center;
+    padding-top: 120px;
+    margin-bottom: 20px;
+}
+.sub-h2-articles{
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+    color: #666666;
 }
