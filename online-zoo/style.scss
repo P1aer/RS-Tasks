@@ -1,0 +1,148 @@
+$resolution: 1920px;
+$white:white;
+$dark-blue:#080029;
+$aqua:#D9E8FF;
+$grey:#F0F0F0;
+$dark-grey:#626262;
+
+.wrapper{
+  padding-top: 25px;
+  max-width: $resolution -(2*60);
+  margin: 0 auto;
+}
+
+.visual-hidden{
+  display: none;
+}
+
+.header-box{
+  background: $white;
+  margin-bottom: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 2px solid $grey;
+}
+
+.header-logo{
+  border-right:2px solid $grey;
+  padding: 24px 18px 23px 18px;
+}
+.header-nav{
+  padding-left: 94px;
+  padding-right: 672px;
+}
+.nav-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-item{
+  padding-right: 130px;
+}
+
+.nav-item:last-child{
+  padding-right: 0;
+}
+
+.nav-link {
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
+  color: $dark-blue;
+}
+.nav-link:hover {
+  color: $aqua;
+}
+
+.nav-link:active {
+  opacity: .75;
+}
+
+
+.nav-about{
+  font-weight: 500;
+}
+
+.wrapper-main{
+  max-width:$resolution -(2*242);
+  margin: 0 auto;
+}
+
+.watch{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.watch-article{
+  padding-top:80px;
+}
+
+.watch-h2{
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  margin-bottom: 10px;
+  color: $dark-grey;
+}
+
+.watch-text{
+  font-family: 'Merriweather', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 84px;
+  line-height: 106px;
+  width: 697px;
+  color: $dark-blue;
+  margin-bottom: 54px;
+}
+
+.watch-article-dot{
+  position: relative;
+  width: 18px;
+  height: 18px;
+  left: 144.5px;
+  top: 241.5px;
+}
+
+.watch-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 580px;
+}
+
+.watch-btn-watch{
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: $dark-blue;
+  padding: 20px 75px;
+  border: 2px solid $dark-blue;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: none;
+}
+
+.watch-btn-zoo{
+  padding: 20px 75px;
+  background: $dark-blue;
+  border-color: $dark-blue;
+  border-radius: 5px;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: $white;
+}
