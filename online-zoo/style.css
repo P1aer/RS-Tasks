@@ -1,6 +1,6 @@
 .wrapper {
   padding-top: 25px;
-  max-width: 1800px;
+  max-width: 1781px;
   margin: 0 auto;
 }
 
@@ -67,10 +67,47 @@
   margin: 0 auto;
 }
 
+/* side-bar section*/
+.side-bar {
+  position: fixed;
+  left: 60px;
+  top: 25px;
+}
+
+.aside-section {
+  width: 90px;
+  height: 760px;
+  border: 2px solid #F0F0F0;
+}
+
+.aside-link:hover {
+  opacity: 0.5;
+}
+
+.aside-list {
+  padding-left: 33px;
+  padding-top: 340px;
+  padding-bottom: 100px;
+}
+
+.aside-item {
+  padding-bottom: 50px;
+}
+
+.aside-item:last-child {
+  padding-bottom: 0;
+}
+
+.aside-arrow {
+  padding-left: 21px;
+}
+
+/* watch section*/
 .watch {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 137px;
 }
 
 .watch-article {
@@ -140,6 +177,78 @@
   font-size: 18px;
   line-height: 21px;
   color: white;
+}
+
+.watch-btn-zoo:active,
+.watch-btn-watch:active {
+  color: #D9E8FF;
+}
+
+/*   Famous pet   */
+.fam-pet-article {
+  padding-top: 140px;
+}
+
+.fam-pet-text1 {
+  width: 696px;
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 52px;
+  color: #080029;
+  margin-bottom: 40px;
+}
+
+.fam-pet-text2 {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  width: 693px;
+  color: #747474;
+  margin-bottom: 60px;
+}
+
+.fam-pet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fam-pet-h2 {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #0B0B0B;
+  letter-spacing: 0.115em;
+  margin-bottom: 50px;
+}
+
+.fam-pet-button {
+  padding: 20px 75px;
+  background: #0F0049;
+  border-radius: 5px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: white;
+  border-color: #080029;
+}
+
+.fam-pet-button:active {
+  color: #D9E8FF;
+}
+
+.aside-logo {
+  border-bottom: 2px solid #F0F0F0;
+  padding: 24px 18px 23px 18px;
 }
 
 /*# sourceMappingURL=style.css.map */
