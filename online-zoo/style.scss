@@ -1,6 +1,6 @@
 $resolution: 1920px;
 $white:white;
-$dark-blue:#080029;
+$dark-blue: #080029;
 $aqua:#D9E8FF;
 $grey:#F0F0F0;
 $dark-grey:#626262;
@@ -78,8 +78,9 @@ $black:#0B0B0B;
 /* side-bar section*/
 .side-bar{
   position: fixed;
-  left: 60px;
+  left: 68.5px;
   top: 25px;
+  background: $white;
 }
 .aside-section{
   width: 90px;
@@ -106,12 +107,13 @@ $black:#0B0B0B;
 /* watch section*/
 
 .watch{
+  margin-bottom: 137px;
+}
+.watch-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 137px;
 }
-
 .watch-article{
   padding-top:80px;
 }
@@ -160,9 +162,9 @@ $black:#0B0B0B;
   font-size: 18px;
   line-height: 21px;
   text-align: center;
-  color: $dark-blue;
+  color: #0F0049;
   padding: 20px 75px;
-  border: 2px solid $dark-blue;
+  border: 2px solid #0F0049;
   box-sizing: border-box;
   border-radius: 5px;
   background: none;
@@ -170,8 +172,8 @@ $black:#0B0B0B;
 
 .watch-btn-zoo{
   padding: 20px 75px;
-  background: $dark-blue;
-  border-color: $dark-blue;
+  background: #0F0049;
+  border-color:#0F0049;
   border-radius: 5px;
   font-family: 'Rubik', sans-serif;
   font-style: normal;
@@ -180,15 +182,25 @@ $black:#0B0B0B;
   line-height: 21px;
   color: $white;
 }
-.watch-btn-zoo:active,
-.watch-btn-watch:active{
-  color:$aqua;
+.watch-btn-zoo:active{
+   background:#150068;
+  border-color:#150068;
 }
-/*   Famous pet   */
-.fam-pet-article{
+.watch-btn-zoo:hover{
+  background:$dark-blue;
+  border-color:$dark-blue;
+}
+.watch-btn-watch:active{
+  border-color: #3888FF;
+}
+.watch-btn-watch:hover{
+  border-color: $dark-blue;
+}
+/*  How Zoo works    */
+.zoo-works-article{
   padding-top: 140px;
 }
-.fam-pet-text1{
+.zoo-works-text1{
   @include text(696px);
   font-family: 'Merriweather', serif;
   font-style: normal;
@@ -198,7 +210,7 @@ $black:#0B0B0B;
   color:$dark-blue;
   margin-bottom:40px;
 }
-.fam-pet-text2{
+.zoo-works-text2{
   font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -209,12 +221,15 @@ $black:#0B0B0B;
   margin-bottom: 60px;
 
 }
-.fam-pet{
+.zoo-works{
+  margin-bottom: 110px;
+}
+.zoo-works-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.fam-pet-h2{
+.zoo-works-h2{
   font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -224,7 +239,7 @@ $black:#0B0B0B;
   letter-spacing: 0.115em;
   margin-bottom: 50px;
 }
-.fam-pet-button{
+.zoo-works-button{
   padding: 20px 75px;
   background: #0F0049;
   border-radius: 5px;
@@ -235,12 +250,127 @@ $black:#0B0B0B;
   line-height: 21px;
   text-align: center;
   color: $white;
-  border-color: $dark-blue;
+  border-color: #0F0049;
 }
-.fam-pet-button:active{
-  color:$aqua;
+.zoo-works-button:active{
+  background:#150068;
+  border-color:#150068;
+}
+.zoo-works-button:hover{
+  background:$dark-blue;
+  border-color:$dark-blue;
 }
 .aside-logo{
   border-bottom:2px solid $grey;
   padding: 24px 18px 23px 18px;
+}
+/*   Famous pet   */
+.fam-pet{
+  background: #D9E8FF ;
+  max-height: 896px;
+}
+.fam-pet-container{
+  padding-top:100px ;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.fam-pet-section{
+  padding-top: 217px;
+}
+.fam-pet-h2{
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: $black;
+  margin-bottom: 50px;
+}
+
+.fam-pet-h3{
+  font-family: 'Merriweather', serif;
+  font-style: normal;
+  width: 325px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 52px;
+  color: $dark-blue;
+  margin-bottom: 55px;
+}
+.fam-pet-arrows{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 155px;
+}
+.fam-pet-grid{
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr) ;
+}
+.fam-pet-card{
+  position: relative;
+  width: 328px;
+  height: 328px;
+}
+.fam-pet-card:after{
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.card-image{
+  object-fit: cover;
+}
+.circle{
+  /* White */
+  align-self: center;
+  height: 76px;
+  width: 76px;
+  border-radius:100% ;
+  border: 2px solid #FCFCFC;
+  box-sizing: border-box;
+  margin-left: 17px;
+  margin-bottom: 43px;
+}
+.fam-pet-circle-text{
+  /* White */
+  height: 76px;
+  width: 76px;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 64px;
+  text-align: center;
+  color: #FCFCFC;
+  opacity: 0.8;
+}
+.fam-pet-title{
+ position: absolute;
+  bottom: 25px;
+  left:118px
+}
+.fam-pet-grid-button{
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  border: none;
+  background: none;
+  /* White */
+
+  color: #FCFCFC;
+
+  opacity: 0.8;
 }
