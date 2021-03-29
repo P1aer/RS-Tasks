@@ -388,7 +388,7 @@ $black:#0B0B0B;
   line-height: 26px;
   letter-spacing: 0.115em;
   color: #0B0B0B;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }
 
 .pay-h3{
@@ -400,6 +400,10 @@ $black:#0B0B0B;
   line-height: 52px;
   color: #0F0049;
 }
+.safe-img{
+  width: 278px;
+  height: 214px;
+}
 .pay-section{
   display: flex;
   flex-wrap: wrap;
@@ -407,7 +411,7 @@ $black:#0B0B0B;
   max-width: 824px;
 }
 .pay-visa-article{
-  padding-top: 55px;
+  padding-top: 15px;
 }
 .pay-article-text{
   font-family: 'Rubik', sans-serif;
@@ -417,10 +421,9 @@ $black:#0B0B0B;
   line-height: 28px;
   max-width: 456px;
   color: #747474;
-
 }
 .pay-arrow1{
-  padding-top: 80px;
+  padding-top: 25px;
   padding-left: 100px;
 }
 .big-section{
@@ -428,7 +431,7 @@ $black:#0B0B0B;
   justify-content: flex-end;
 }
 .pay-delivery-article{
-  padding-top: 104px;
+  padding-top: 124px;
   padding-left: 56px;
 }
 .pay-arrow2{
@@ -440,6 +443,12 @@ $black:#0B0B0B;
 }
 .pay-dinner-article{
   padding-top: 41px;
+  margin-bottom: 155px;
+}
+.diner-image{
+  padding-left: 20px;
+  width: 312px;
+  height: 312px;
 }
 
 /*     Testimonials     */
@@ -696,8 +705,10 @@ $black:#0B0B0B;
   display: flex;
   flex-wrap: wrap;
   padding-top: 100px;
-  justify-content: space-between;
   border-bottom:1px solid #747474;
+}
+.footer-icons{
+  padding-right: 250px;
 }
 .footer-logo{
   margin-bottom: 192px;
@@ -708,6 +719,9 @@ $black:#0B0B0B;
   align-items: center;
   justify-content: space-between;
  width: 303px;
+}
+.footer-nav{
+  padding-right: 409px;
 }
 .footer-x{
   width: 9px;
@@ -780,7 +794,16 @@ $black:#0B0B0B;
   text-align: center;
   background: none;
   color: #FCFCFC;
-  margin-bottom: 85px;
+  margin-bottom: 80px;
+}
+.footer-socials{
+  color: #BCBCBC;
+  font-family: 'Rubik', sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
 }
 .footer-copyrights{
   padding-top: 50px;
