@@ -1,7 +1,6 @@
-
 .wrapper {
   padding-top: 25px;
-  max-width: 1781px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -11,6 +10,8 @@
 
 .header-box {
   background: white;
+  margin-left: 10px;
+  height: 87px;
   margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
@@ -19,12 +20,15 @@
 }
 
 .header-logo {
+  position: fixed;
+  left: 60px;
+  top: 25px;
   border-right: 2px solid #F0F0F0;
   padding: 24px 18px 23px 18px;
 }
 
 .header-nav {
-  padding-left: 94px;
+  padding-left: 184px;
   padding-right: 672px;
 }
 
@@ -66,7 +70,11 @@
   font-size: 18px;
   line-height: 28px;
   color: #080029;
-  font-weight: 500;
+}
+
+.active {
+  text-shadow: 1px 0 0 currentColor;
+  pointer-events: none;
 }
 
 .wrapper-main {
@@ -87,7 +95,7 @@
 /* side-bar section*/
 .side-bar {
   position: fixed;
-  left: 68.5px;
+  left: 60px;
   top: 25px;
   background: white;
 }

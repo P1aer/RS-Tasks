@@ -6,12 +6,13 @@ $grey:#F0F0F0;
 $dark-grey:#626262;
 $black:#0B0B0B;
 
+
 @mixin text($property) {
   width: $property;
 }
 .wrapper{
   padding-top: 25px;
-  max-width: $resolution -(2*69.5);
+  max-width: $resolution -(2*60);
   margin: 0 auto;
 }
 
@@ -21,6 +22,8 @@ $black:#0B0B0B;
 
 .header-box{
   background: $white;
+  margin-left: 10px;
+  height: 87px;
   margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
@@ -29,11 +32,15 @@ $black:#0B0B0B;
 }
 
 .header-logo{
+  position: fixed;
+  left: 60px;
+  top: 25px;
   border-right:2px solid $grey;
   padding: 24px 18px 23px 18px;
+
 }
 .header-nav{
-  padding-left: 94px;
+  padding-left: 184px;
   padding-right: 672px;
 }
 .nav-list{
@@ -73,9 +80,11 @@ $black:#0B0B0B;
   font-size: 18px;
   line-height: 28px;
   color: $dark-blue;
-  font-weight: 500;
 }
-
+.active {
+  text-shadow: 1px 0 0 currentColor;
+  pointer-events: none;
+}
 .wrapper-main{
   max-width:$resolution -(2*242);
   margin: 0 auto;
@@ -92,7 +101,7 @@ $black:#0B0B0B;
 /* side-bar section*/
 .side-bar{
   position: fixed;
-  left: 68.5px;
+  left: 60px;
   top: 25px;
   background: $white;
 }

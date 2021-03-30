@@ -65,7 +65,8 @@
   font-size: 18px;
   line-height: 28px;
   color: #080029;
-  font-weight: 500;
+  text-shadow: 1px 0 0 currentColor;
+  pointer-events: none;
 }
 
 .wrapper-main {
