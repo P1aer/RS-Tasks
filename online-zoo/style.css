@@ -1,3 +1,4 @@
+
 .wrapper {
   padding-top: 25px;
   max-width: 1781px;
@@ -50,21 +51,37 @@
   color: #080029;
 }
 
-.nav-link:hover {
+.nav-link:active {
   color: #D9E8FF;
 }
 
-.nav-link:active {
+.nav-link:hover {
   opacity: 0.75;
 }
 
 .nav-about {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
+  color: #080029;
   font-weight: 500;
 }
 
 .wrapper-main {
   max-width: 1436px;
   margin: 0 auto;
+}
+
+.map {
+  color: #D9E8FF;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
 }
 
 /* side-bar section*/

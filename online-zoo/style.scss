@@ -58,22 +58,36 @@ $black:#0B0B0B;
   line-height: 28px;
   color: $dark-blue;
 }
-.nav-link:hover {
+.nav-link:active {
   color: $aqua;
 }
 
-.nav-link:active {
+.nav-link:hover {
   opacity: .75;
 }
 
-
 .nav-about{
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
+  color: $dark-blue;
   font-weight: 500;
 }
 
 .wrapper-main{
   max-width:$resolution -(2*242);
   margin: 0 auto;
+}
+.map{
+  color: $aqua;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
 }
 /* side-bar section*/
 .side-bar{
