@@ -178,13 +178,13 @@ $black:#0B0B0B;
   max-width: 580px;
 }
 
+
 .watch-btn-watch{
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
   color: #0F0049;
   padding: 20px 75px;
   border: 2px solid #0F0049;
@@ -192,7 +192,6 @@ $black:#0B0B0B;
   border-radius: 5px;
   background: none;
 }
-
 .watch-btn-zoo{
   padding: 20px 75px;
   background: #0F0049;
@@ -209,15 +208,17 @@ $black:#0B0B0B;
    background:#150068;
   border-color:#150068;
 }
+.watch-btn-watch:active{
+   color:$dark-blue;
+   border-color:$dark-blue;
+}
 .watch-btn-zoo:hover{
   background:$dark-blue;
   border-color:$dark-blue;
 }
-.watch-btn-watch:active{
-  border-color: #3888FF;
-}
 .watch-btn-watch:hover{
-  border-color: $dark-blue;
+  color: #3888FF;
+  border-color: #3888FF;
 }
 /*  How Zoo works    */
 .zoo-works-article{

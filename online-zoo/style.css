@@ -186,7 +186,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
   color: #0F0049;
   padding: 20px 75px;
   border: 2px solid #0F0049;
@@ -213,17 +212,19 @@
   border-color: #150068;
 }
 
+.watch-btn-watch:active {
+  color: #080029;
+  border-color: #080029;
+}
+
 .watch-btn-zoo:hover {
   background: #080029;
   border-color: #080029;
 }
 
-.watch-btn-watch:active {
-  border-color: #3888FF;
-}
-
 .watch-btn-watch:hover {
-  border-color: #080029;
+  color: #3888FF;
+  border-color: #3888FF;
 }
 
 /*  How Zoo works    */
