@@ -204,6 +204,66 @@ $black:#0B0B0B;
   line-height: 21px;
   text-align: center;
   color: #FCFCFC;
+  border: none;
+}
+/*     Intresting facts*/
+.intr-facts-h3{
+  font-family: "Merriweather",sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 52px;
+  color: #080029;
+  margin-bottom: 30px;
+}
+.title-facts-text{
+  max-width: 512px;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #747474;
+}
+.intr-facts-title{
+  padding-top: 60px;
+  margin-bottom: 46px;
+}
+.intr-facts-card{
+  margin-bottom: 20px;
+  max-width: 1432px;
+  border-bottom: 1px solid #609FFF;
+}
+.card-big-text{
+  max-width:1381px;
+}
+
+.facts-card-btn{
+  padding-left: 0;
+  font-family: 'Rubik', sans-serif;
+  background: none;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height:38px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 1432px;
+  color: #609FFF;
+  margin-bottom: 30px;
+}
+.card-big-text{
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 30px;
+  color: #747474;
+
 }
 /*         Other cam*/
 .other-cam-title{
