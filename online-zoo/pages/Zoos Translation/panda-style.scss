@@ -99,6 +99,9 @@ $black:#0B0B0B;
   line-height: 28px;
 }
 /* side-bar section*/
+.aside-btn:hover{
+  opacity: .50;
+}
 .side-bar{
   position: fixed;
   left: 60px;
@@ -180,8 +183,11 @@ $black:#0B0B0B;
   display: flex;
   flex-wrap: wrap;
 }
-.cam-main{
+.donate-title-avatar{
   padding-right: 20px;
+}
+.cam-main{
+  padding-right: 25px;
 }
 .donate-main-text{
   font-family: 'Rubik', sans-serif;
@@ -205,6 +211,14 @@ $black:#0B0B0B;
   text-align: center;
   color: #FCFCFC;
   border: none;
+}
+.donate-main-btn:active{
+  background:#150068;
+  border-color:#150068;
+}
+.donate-main-btn:hover{
+  background:$dark-blue;
+  border-color:$dark-blue;
 }
 /*     Intresting facts*/
 .intr-facts-h3{
@@ -301,6 +315,12 @@ $black:#0B0B0B;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 155px;
+}
+.other-cam-btn circle:hover{
+  fill: $dark-blue;
+ }
+.other-cam-btn circle:active{
+  fill: #150068;
 }
 /*    Pay and Feed*/
 .wrapper-pay{

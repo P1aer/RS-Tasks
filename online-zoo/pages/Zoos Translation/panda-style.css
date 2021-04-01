@@ -93,6 +93,10 @@
 }
 
 /* side-bar section*/
+.aside-btn:hover {
+  opacity: 0.5;
+}
+
 .side-bar {
   position: fixed;
   left: 60px;
@@ -190,8 +194,12 @@
   flex-wrap: wrap;
 }
 
-.cam-main {
+.donate-title-avatar {
   padding-right: 20px;
+}
+
+.cam-main {
+  padding-right: 25px;
 }
 
 .donate-main-text {
@@ -217,6 +225,16 @@
   text-align: center;
   color: #FCFCFC;
   border: none;
+}
+
+.donate-main-btn:active {
+  background: #150068;
+  border-color: #150068;
+}
+
+.donate-main-btn:hover {
+  background: #080029;
+  border-color: #080029;
 }
 
 /*     Intresting facts*/
@@ -324,6 +342,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 155px;
+}
+
+.other-cam-btn circle:hover {
+  fill: #080029;
+}
+
+.other-cam-btn circle:active {
+  fill: #150068;
 }
 
 /*    Pay and Feed*/
