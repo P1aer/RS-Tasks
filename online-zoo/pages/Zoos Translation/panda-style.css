@@ -1,3 +1,7 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .wrapper {
   padding-top: 25px;
   max-width: 1800px;
@@ -138,8 +142,8 @@
 
 /* main cam*/
 .wrapper-cams {
-  margin-right: 3.125%;
-  margin-left: 12.7083333333%;
+  margin: 0 auto;
+  max-width: 1790px;
 }
 
 .cam-donate-h3 {
@@ -192,6 +196,7 @@
 .main-cam-section {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 179px;
 }
 
 .donate-title-avatar {
@@ -238,6 +243,10 @@
 }
 
 /*     Intresting facts*/
+.intr-facts {
+  padding-left: 179px;
+}
+
 .intr-facts-h3 {
   font-family: "Merriweather", sans-serif;
   font-style: normal;
@@ -302,6 +311,10 @@
 }
 
 /*         Other cam*/
+.other-cam-section {
+  padding-left: 179px;
+}
+
 .other-cam-title {
   display: flex;
   flex-wrap: wrap;
@@ -355,9 +368,12 @@
 /*    Pay and Feed*/
 .wrapper-pay {
   padding-top: 100px;
-  max-width: 1376px;
-  margin-left: 428px;
-  margin-right: 116px;
+  max-width: 1688px;
+  margin: 0 auto 0 auto;
+}
+
+.pay-container {
+  padding-left: 312px;
 }
 
 .pay-h2 {
@@ -448,19 +464,17 @@
 }
 
 .wrapper-footer {
-  max-width: 1440px;
+  max-width: 1454px;
   margin: 0 auto;
 }
 
 .footer-container {
+  padding-left: 11px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding-top: 100px;
   border-bottom: 1px solid #747474;
-}
-
-.footer-icons {
-  padding-right: 250px;
 }
 
 .footer-logo {
@@ -473,10 +487,6 @@
   align-items: center;
   justify-content: space-between;
   width: 303px;
-}
-
-.footer-nav {
-  padding-right: 409px;
 }
 
 .footer-x {

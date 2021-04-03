@@ -6,6 +6,9 @@ $grey:#F0F0F0;
 $dark-grey:#626262;
 $black:#0B0B0B;
 
+body::-webkit-scrollbar{
+  display: none;
+}
 
 @mixin text($property) {
   width: $property;
@@ -135,8 +138,8 @@ $black:#0B0B0B;
 }
 /* main cam*/
 .wrapper-cams{
-  margin-right: percentage((60) / 1920) ;
-  margin-left: percentage((244) / 1920) ;
+  margin: 0 auto;
+  max-width: $resolution -(65 * 2);
 }
 .cam-donate-h3{
   padding-top: 10px;
@@ -182,6 +185,7 @@ $black:#0B0B0B;
 .main-cam-section{
   display: flex;
   flex-wrap: wrap;
+  padding-left: 179px;
 }
 .donate-title-avatar{
   padding-right: 20px;
@@ -221,6 +225,9 @@ $black:#0B0B0B;
   border-color:$dark-blue;
 }
 /*     Intresting facts*/
+.intr-facts{
+  padding-left: 179px;
+}
 .intr-facts-h3{
   font-family: "Merriweather",sans-serif;
   font-style: normal;
@@ -280,6 +287,9 @@ $black:#0B0B0B;
 
 }
 /*         Other cam*/
+.other-cam-section{
+  padding-left: 179px;
+}
 .other-cam-title{
   display: flex;
   flex-wrap: wrap;
@@ -325,9 +335,11 @@ $black:#0B0B0B;
 /*    Pay and Feed*/
 .wrapper-pay{
   padding-top: 100px;
-  max-width: $resolution - (428 + 116);
-  margin-left: 428px;
-  margin-right: 116px;
+  max-width: $resolution - (116*2);
+  margin: 0 auto 0 auto;
+}
+.pay-container{
+  padding-left: 312px;
 }
 .pay-h2{
   font-family: 'Rubik', sans-serif;
@@ -405,17 +417,16 @@ $black:#0B0B0B;
   background-color: black;
 }
 .wrapper-footer{
-  max-width: $resolution -(240*2);
+  max-width: $resolution -(233*2);
   margin: 0 auto;
 }
 .footer-container{
+  padding-left: 11px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding-top: 100px;
   border-bottom:1px solid #747474;
-}
-.footer-icons{
-  padding-right: 250px;
 }
 .footer-logo{
   margin-bottom: 192px;
@@ -426,9 +437,6 @@ $black:#0B0B0B;
   align-items: center;
   justify-content: space-between;
   width: 303px;
-}
-.footer-nav{
-  padding-right: 409px;
 }
 .footer-x{
   width: 9px;

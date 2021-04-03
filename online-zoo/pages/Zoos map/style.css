@@ -1,7 +1,11 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .wrapper {
   padding-top: 25px;
-  max-width: 1781px;
-  margin: 0 auto;
+  max-width: 1800px;
+  margin: 0 auto 0 auto;
 }
 
 .visual-hidden {
@@ -9,7 +13,9 @@
 }
 
 .header-box {
-  background: #FCFCFC;
+  background: white;
+  margin-left: 10px;
+  height: 87px;
   margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
@@ -18,12 +24,15 @@
 }
 
 .header-logo {
+  position: fixed;
+  left: 60px;
+  top: 25px;
   border-right: 2px solid #F0F0F0;
   padding: 24px 18px 23px 18px;
 }
 
 .header-nav {
-  padding-left: 94px;
+  padding-left: 184px;
   padding-right: 672px;
 }
 
@@ -65,13 +74,16 @@
   font-size: 18px;
   line-height: 28px;
   color: #080029;
+}
+
+.active {
   text-shadow: 1px 0 0 currentColor;
   pointer-events: none;
 }
 
 .wrapper-main {
-  max-width: 1436px;
-  margin: 0 auto;
+  max-width: 1434px;
+  margin: 0 auto 0 auto;
 }
 
 .map {
@@ -85,20 +97,15 @@
 }
 
 /*  side bar*/
+.aside-btn:hover {
+  opacity: 0.5;
+}
+
 .side-bar {
   position: fixed;
-  left: 68.5px;
+  left: 60px;
   top: 25px;
-  background: #FCFCFC;
-}
-
-.aside-logo {
-  border-bottom: 2px solid #F0F0F0;
-  padding: 24px 18px 23px 18px;
-}
-
-.arrows {
-  padding-left: 2px;
+  background: white;
 }
 
 .aside-section {
@@ -112,16 +119,21 @@
 
 .aside-list {
   padding-left: 17px;
-  padding-top: 30px;
+  padding-top: 29px;
   padding-bottom: 30px;
 }
 
 .aside-item {
-  padding-bottom: 70px;
+  padding-bottom: 40px;
 }
 
 .aside-item:last-child {
   padding-bottom: 0;
+}
+
+.aside-logo {
+  border-bottom: 2px solid #F0F0F0;
+  padding: 24px 18px 23px 18px;
 }
 
 .aside-arrow {

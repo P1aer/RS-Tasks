@@ -6,10 +6,13 @@ $grey:#F0F0F0;
 $dark-grey:#626262;
 $black:#0B0B0B;
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 @mixin text($property) {
   width: $property;
 }
-/*Header*/
 .wrapper{
   padding-top: 25px;
   max-width: $resolution -(2*60);
@@ -24,7 +27,7 @@ $black:#0B0B0B;
   background: $white;
   margin-left: 10px;
   height: 87px;
-  margin-bottom: 20px;
+  margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -35,8 +38,8 @@ $black:#0B0B0B;
 
 }
 .header-nav{
-  padding-left: 93px;
-  padding-right: 758px;
+  padding-left: 114px;
+  padding-right: 739px;
 }
 .nav-list{
   display: flex;
@@ -60,14 +63,13 @@ $black:#0B0B0B;
   line-height: 28px;
   color: $dark-blue;
 }
-.nav-link:active,.fake-link:active  {
+.nav-link:active {
   color: $aqua;
 }
 
-.nav-link:hover,.fake-link:hover {
+.nav-link:hover {
   opacity: .75;
 }
-
 .nav-about{
   font-family: 'Rubik', sans-serif;
   font-style: normal;
@@ -80,7 +82,6 @@ $black:#0B0B0B;
   text-shadow: 1px 0 0 currentColor;
   pointer-events: none;
 }
-
 .wrapper-main{
   max-width:$resolution -(2*242);
   margin: 0 auto;
@@ -179,17 +180,16 @@ $black:#0B0B0B;
   background-color: black;
 }
 .wrapper-footer{
-  max-width: $resolution -(240*2);
+  max-width: $resolution -(233*2);
   margin: 0 auto;
 }
 .footer-container{
+  padding-left: 11px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding-top: 100px;
   border-bottom:1px solid #747474;
-}
-.footer-icons{
-  padding-right: 250px;
 }
 .footer-logo{
   margin-bottom: 192px;
@@ -200,9 +200,6 @@ $black:#0B0B0B;
   align-items: center;
   justify-content: space-between;
   width: 303px;
-}
-.footer-nav{
-  padding-right: 409px;
 }
 .footer-x{
   width: 9px;

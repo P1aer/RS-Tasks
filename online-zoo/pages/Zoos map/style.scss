@@ -6,17 +6,17 @@ $grey:#F0F0F0;
 $dark-grey:#626262;
 $black:#0B0B0B;
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 @mixin text($property) {
   width: $property;
 }
-.body{
- // background: url("../../assets/images/map.png") no-repeat;
-}
-
 .wrapper{
   padding-top: 25px;
-  max-width: $resolution -(2*69.5);
-  margin: 0 auto;
+  max-width: $resolution -(2*60);
+  margin:0 auto 0 auto;
 }
 
 .visual-hidden{
@@ -24,7 +24,9 @@ $black:#0B0B0B;
 }
 
 .header-box{
-  background: #FCFCFC;
+  background: $white;
+  margin-left: 10px;
+  height: 87px;
   margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
@@ -33,11 +35,15 @@ $black:#0B0B0B;
 }
 
 .header-logo{
+  position: fixed;
+  left: 60px;
+  top: 25px;
   border-right:2px solid $grey;
   padding: 24px 18px 23px 18px;
+
 }
 .header-nav{
-  padding-left: 94px;
+  padding-left: 184px;
   padding-right: 672px;
 }
 .nav-list{
@@ -69,7 +75,6 @@ $black:#0B0B0B;
 .nav-link:hover {
   opacity: .75;
 }
-
 .nav-about{
   font-family: 'Rubik', sans-serif;
   font-style: normal;
@@ -77,13 +82,14 @@ $black:#0B0B0B;
   font-size: 18px;
   line-height: 28px;
   color: $dark-blue;
+}
+.active {
   text-shadow: 1px 0 0 currentColor;
   pointer-events: none;
 }
-
 .wrapper-main{
-  max-width:$resolution -(2*242);
-  margin: 0 auto;
+  max-width:$resolution -(2*243);
+  margin: 0 auto 0 auto;
 }
 .map{
   color: $aqua;
@@ -94,19 +100,16 @@ $black:#0B0B0B;
   font-size: 18px;
   line-height: 28px;
 }
+
 /*  side bar*/
+.aside-btn:hover{
+  opacity: .50;
+}
 .side-bar{
   position: fixed;
-  left: 68.5px;
+  left: 60px;
   top: 25px;
-  background: #FCFCFC;
-}
-.aside-logo{
-  border-bottom:2px solid $grey;
-  padding: 24px 18px 23px 18px;
-}
-.arrows{
-  padding-left: 2px;
+  background: $white;
 }
 .aside-section{
   max-width: 90px;
@@ -117,14 +120,18 @@ $black:#0B0B0B;
 }
 .aside-list{
   padding-left: 17px;
-  padding-top: 30px;
+  padding-top: 29px;
   padding-bottom: 30px;
 }
 .aside-item{
-  padding-bottom: 70px;
+  padding-bottom: 40px;
 }
 .aside-item:last-child{
   padding-bottom: 0;
+}
+.aside-logo{
+  border-bottom:2px solid $grey;
+  padding: 24px 18px 23px 18px;
 }
 .aside-arrow{
   padding-left: 21px;
