@@ -345,9 +345,75 @@ body::-webkit-scrollbar {
   margin-bottom: 40px;
 }
 
+.invisible-class {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
 .grid-cam {
   width: 328px;
   height: 184px;
+  position: relative;
+}
+.grid-cam:hover .grid-img {
+  filter: blur(2px);
+}
+.grid-cam:hover .invisible-class {
+  opacity: 1;
+}
+.grid-cam:hover .wrapper-invisible {
+  opacity: 0.4;
+}
+
+.wrapper-invisible {
+  transition: all 0.1s ease-in-out;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0B0B0B;
+  opacity: 0;
+}
+
+.grid-cam-title {
+  transition: all 0.1s ease-in-out;
+  font-family: "Merriweather", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 38px;
+  text-align: center;
+  color: #FFFF;
+  opacity: 99;
+  margin-bottom: 10px;
+  margin-top: 55px;
+}
+
+.grid-cam-btn {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 99;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FCFCFC;
+  background: none;
+  border: none;
+  border-top: 1px solid #FFFF;
+  width: 130px;
+  margin-left: 96px;
+  padding-top: 20px;
+  padding-left: 25px;
+}
+
+.grid-bnt-arrow {
+  padding-left: 10px;
 }
 
 .other-cam-btns {
@@ -357,11 +423,11 @@ body::-webkit-scrollbar {
   max-width: 155px;
 }
 
-.other-cam-btn circle:hover {
+.other-cam-btn:hover .other-cam-btn-stroke {
   fill: #080029;
 }
 
-.other-cam-btn circle:active {
+.other-cam-btn circle:active .other-cam-btn-stroke {
   fill: #150068;
 }
 

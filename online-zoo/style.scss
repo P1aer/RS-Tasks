@@ -332,6 +332,12 @@ body::-webkit-scrollbar{
   justify-content: space-between;
   max-width: 155px;
 }
+.fam-pet-btn:hover{
+  .fam-pet-btn-stroke{
+    fill:$dark-blue;
+  }
+
+}
 .fam-pet-grid{
   display: grid;
   grid-gap: 50px;
@@ -677,6 +683,11 @@ body::-webkit-scrollbar{
   display: flex;
   justify-content: space-between;
   width: 150px;
+}
+.testim-btn-arrow:hover{
+  .testim-btn-arrow-stroke{
+    fill: #609FFF;
+  }
 }
 /* zoo geo section*/
 

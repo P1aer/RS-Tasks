@@ -316,9 +316,73 @@ body::-webkit-scrollbar{
   grid-gap: 40px;
   margin-bottom: 40px;
 }
+.invisible-class{
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
 .grid-cam{
   width: 328px;
   height: 184px;
+  position: relative;
+  &:hover{
+    .grid-img{
+      filter: blur(2px);
+    }
+    .invisible-class{
+      opacity: 1;
+    }
+    .wrapper-invisible{
+      opacity: 0.4;
+    }
+  }
+}
+.wrapper-invisible{
+  transition: all 0.1s ease-in-out;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0B0B0B;
+  opacity: 0;
+}
+
+.grid-cam-title{
+  transition: all 0.1s ease-in-out;
+  font-family: 'Merriweather',sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 38px;
+  text-align: center;
+  color:$white;
+  opacity: 99;
+  margin-bottom: 10px;
+  margin-top: 55px;
+}
+.grid-cam-btn{
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 99;
+  font-family: 'Rubik',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FCFCFC;
+  background: none;
+  border: none;
+  border-top: 1px solid $white;
+  width: 130px;
+  margin-left: 96px;
+  padding-top: 20px;
+  padding-left:25px;
+}
+.grid-bnt-arrow{
+  padding-left: 10px;
 }
 .other-cam-btns{
   display: flex;
@@ -326,11 +390,15 @@ body::-webkit-scrollbar{
   justify-content: space-between;
   max-width: 155px;
 }
-.other-cam-btn circle:hover{
-  fill: $dark-blue;
+.other-cam-btn:hover{
+  .other-cam-btn-stroke{
+     fill: $dark-blue;
+  }
  }
 .other-cam-btn circle:active{
-  fill: #150068;
+  .other-cam-btn-stroke {
+    fill: #150068;
+  }
 }
 /*    Pay and Feed*/
 .wrapper-pay{
