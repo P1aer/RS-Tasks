@@ -102,7 +102,6 @@ body::-webkit-scrollbar {
 
 .side-bar {
   position: fixed;
-  left: 60px;
   top: 25px;
   background: #FFFF;
 }

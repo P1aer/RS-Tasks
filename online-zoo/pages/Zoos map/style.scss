@@ -10,8 +10,9 @@ body::-webkit-scrollbar{
   display: none;
 }
 .body{
-  background: url("../../assets/images/big map.jpg") no-repeat;
-  background-position-x: -295px;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: url("../../assets/images/big map.jpg") no-repeat center top;
   background-position-y: -904px;
 }
 
@@ -157,32 +158,32 @@ body::-webkit-scrollbar{
 }
 .alligator-icon{
   top:212px;
-  left: 238px;
+  left: 208px;
   &:hover{
     top:192px;
-    left: 225px;
+    left: 195px;
   }
 }
 .gorilla-icon{
   top:455px;
-  left: 938px;
+  left: 908px;
   &:hover{
     top: 435px;
-    left: 925px;
+    left: 895px;
   }
 }
 .panda-icon{
   top:249px;
- left: 1618px;
+ left: 1588px;
   &:hover{
     top: 229px;
-    left:1605px;
+    left:1575px;
   }
 }
 .geo-card{
   position: absolute;
   top:232px;
-  left: 583px;
+  left: 553px;
   height: 512px;
   max-width:344px;
   background: #FCFCFC;
