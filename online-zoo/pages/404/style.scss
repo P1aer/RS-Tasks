@@ -14,7 +14,6 @@ body::-webkit-scrollbar{
   width: $property;
 }
 .wrapper{
-  padding-top: 25px;
   max-width: $resolution -(2*60);
   margin: 0 auto;
 }
@@ -24,10 +23,10 @@ body::-webkit-scrollbar{
 }
 
 .header-box{
+  padding-top: 28px;
   background: $white;
-  margin-left: 10px;
   height: 87px;
-  margin-bottom: 52px;
+  margin-bottom: 42px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -38,8 +37,8 @@ body::-webkit-scrollbar{
 
 }
 .header-nav{
-  padding-left: 114px;
-  padding-right: 739px;
+  padding-left: 97px;
+  padding-right: 760px;
 }
 .nav-list{
   display: flex;

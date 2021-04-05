@@ -14,9 +14,9 @@ body::-webkit-scrollbar{
   width: $property;
 }
 .wrapper{
-  padding-top: 25px;
   max-width: $resolution -(2*60);
   margin: 0 auto;
+  padding-top: 25px;
 }
 
 .visual-hidden{
@@ -24,10 +24,10 @@ body::-webkit-scrollbar{
 }
 
 .header-box{
+
   background: $white;
-  margin-left: 10px;
   height: 87px;
-  margin-bottom: 52px;
+  margin-bottom: 68px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -124,7 +124,7 @@ body::-webkit-scrollbar{
   padding-bottom: 30px;
 }
 .aside-item{
-  padding-bottom: 40px;
+  padding-bottom: 36px;
 }
 .aside-item:last-child{
   padding-bottom: 0;
@@ -151,7 +151,7 @@ body::-webkit-scrollbar{
   color: #0B0B0B;
 }
 .donate-main-h3{
-  padding-top: 30px;
+  padding-top: 55px;
   font-family: "Merriweather",sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -191,7 +191,7 @@ body::-webkit-scrollbar{
   padding-right: 20px;
 }
 .cam-main{
-  padding-right: 25px;
+  padding-right: 40px;
 }
 .donate-main-text{
   font-family: 'Rubik', sans-serif;
@@ -201,7 +201,7 @@ body::-webkit-scrollbar{
   line-height: 28px;
   color: #747474;
   max-width: 336px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .donate-main-btn{
   background: #0F0049;
@@ -248,7 +248,7 @@ body::-webkit-scrollbar{
 }
 .intr-facts-title{
   padding-top: 60px;
-  margin-bottom: 46px;
+  margin-bottom: 56px;
 }
 .intr-facts-card{
   margin-bottom: 20px;
@@ -293,7 +293,7 @@ body::-webkit-scrollbar{
 .other-cam-title{
   display: flex;
   flex-wrap: wrap;
-  padding-top: 50px;
+  padding-top: 60px;
   align-items: center;
   justify-content: space-between;
   max-width: 230px;

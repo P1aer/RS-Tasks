@@ -101,13 +101,12 @@ body::-webkit-scrollbar{
 /* side-bar section*/
 .side-bar{
   position: fixed;
-  left:60px;
   top: 25px;
   width: 90px;
   background: transparent;
 }
 .aside-section{
-  max-width: 90px;
+  width: 90px;
   height: 760px;
   border: 2px solid $grey;
   background: $white;
