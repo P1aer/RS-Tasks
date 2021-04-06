@@ -115,7 +115,7 @@ body::-webkit-scrollbar {
 
 .aside-list {
   padding-left: 33px;
-  padding-top: 340px;
+  padding-top: 250px;
   padding-bottom: 100px;
 }
 
@@ -129,6 +129,11 @@ body::-webkit-scrollbar {
 
 .aside-arrow {
   padding-left: 21px;
+}
+
+.aside-arrow:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 /* watch section*/
