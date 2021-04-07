@@ -100,6 +100,10 @@ body::-webkit-scrollbar {
   opacity: 0.5;
 }
 
+.aside-icon:hover .icon-stroke {
+  stroke: #150068;
+}
+
 .side-bar {
   position: fixed;
   top: 25px;

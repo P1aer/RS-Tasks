@@ -118,6 +118,11 @@ body::-webkit-scrollbar{
   background: $white;
   width: 90px;
 }
+.aside-icon:hover{
+  .icon-stroke{
+    stroke: #609FFF;
+  }
+}
 .aside-section{
   max-width: 90px;
   border: 2px solid $grey;
