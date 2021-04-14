@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body::-webkit-scrollbar {
   display: none;
 }
@@ -12,7 +13,13 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+@media (max-width: 1200px) {
+  .header-box {
+    max-width: 1120px;
+  }
+}
 .header-box {
+  max-width: 1800px;
   background: #FFFF;
   height: 87px;
   margin-bottom: 68px;
@@ -87,7 +94,7 @@ body::-webkit-scrollbar {
 
 .map {
   color: #D9E8FF;
-  font-family: "Rubik", sans-serif;
+  font-family: „Rubik“, sans-serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online zoo</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
@@ -37,7 +38,7 @@
                     </li>
                 </ul>
             </nav>
-            <img src="assets/logos/profile.svg" alt="profile">
+            <img  class="header-profile" src="assets/logos/profile.svg" alt="profile">
         </div>
 
 </header>
@@ -67,15 +68,14 @@
         <img class="aside-arrow" src="assets/logos/go_up.svg" alt="arrow">
     </div>
 </aside>
-</div>
 <main>
     <div class="watch" id="watch-online">
         <div class="wrapper-main">
             <div class="watch-container">
                 <article class="watch-article">
                     <h2 class="watch-h2">Wild park</h2>
-                    <img class="watch-article-dot" src="assets/logos/point.svg" alt="dot">
                     <p class="watch-text">Watch your favorite animal online</p>
+                    <img class="watch-article-dot" src="assets/logos/point.svg" alt="dot">
                     <div class="watch-buttons">
                         <a href="pages/Zoos%20map/Zoos%20map.html">
                             <button type="submit" class="watch-btn-zoo">Choose zoo</button>
@@ -85,7 +85,10 @@
                         </a>
                     </div>
                 </article>
-                <img src="assets/images/panda.jpg" alt="Panda" class="watch-img-panda">
+                 <div class="watch-img-panda">
+                     <img src="assets/images/panda.jpg" alt="Panda">
+                 </div>
+
             </div>
 
         </div>
@@ -93,7 +96,9 @@
     <div class="zoo-works" id="zoo-works">
         <div class="wrapper-main">
             <div class="zoo-works-container">
-                <img src="assets/images/lion.jpg" alt="Lion" class="pet-lion">
+                <div class="zoo-works-img">
+                    <img src="assets/images/lion.jpg" alt="Lion">
+                </div>
                 <article class="zoo-works-article">
                     <h2 class="zoo-works-h2">How Zoo online works</h2>
                     <p class="zoo-works-text1">
@@ -133,7 +138,7 @@
                     </div>
                 </section>
                 <div class="fam-pet-grid">
-                    <figure class="fam-pet-card">
+                    <figure class="fam-pet-card red-panda-card">
                         <div class="img-container">
                         <img src="assets/images/tanuki.jpg" alt="Tanuki card" class="card-image">
                         </div>
@@ -145,7 +150,7 @@
                             <button type="button" class="fam-pet-grid-button"><span>Little panda</span></button>
                         </figcaption>
                     </figure>
-                    <figure class="fam-pet-card">
+                    <figure class="fam-pet-card penguin-card">
                         <div class="img-container">
                         <img src="assets/images/penguin.jpg" alt="Penguin card" class="card-image">
                         </div>
@@ -157,7 +162,7 @@
                             <button type="button" class="fam-pet-grid-button"><span>Penguin</span></button>
                         </figcaption>
                     </figure>
-                    <figure class="fam-pet-card">
+                    <figure class="fam-pet-card squirrel-card">
                         <div class="img-container">
                         <img src="assets/images/squirrel.jpg" alt="squirrel card" class="card-image">
                         </div>
@@ -169,7 +174,7 @@
                             <button type="button" class="fam-pet-grid-button"><span>Squirrel</span></button>
                         </figcaption>
                     </figure>
-                    <figure class="fam-pet-card">
+                    <figure class="fam-pet-card panda-card">
                         <div class="img-container">
                         <img src="assets/images/panda-card.jpg" alt="Panda card" class="card-image">
                         </div>
@@ -181,7 +186,7 @@
                             <button type="button" class="fam-pet-grid-button"><span>Panda</span></button>
                         </figcaption>
                     </figure>
-                    <figure class="fam-pet-card">
+                    <figure class="fam-pet-card eagle-card">
                         <div class="img-container">
                             <img src="assets/images/eagle.jpg" alt="Eagle card" class="card-image">
                         </div>
@@ -193,7 +198,7 @@
                             <button type="button" class="fam-pet-grid-button"><span>Eagle</span></button>
                         </figcaption>
                     </figure>
-                    <figure class="fam-pet-card">
+                    <figure class="fam-pet-card gorilla-card">
                         <div class="img-container">
                             <img src="assets/images/gorilla.jpg" alt="Gorilla card" class="card-image">
                         </div>
@@ -239,9 +244,9 @@
                 </section>
             </div>
             </div>
-
         <div class="wrapper-main">
-            <section class="pay-section">
+            <div class="pay-dinner">
+            <section class="pay-section last-section">
                 <img src="assets/images/dinner.svg" class="diner-image" alt="diner image">
                 <article class="pay-dinner-article">
                     <h3 class="pay-h3 dinner-h3">The selected animal receives a treat</h3>
@@ -253,10 +258,7 @@
                 </article>
             </section>
         </div>
-
-
-
-
+    </div>
     </div>
     <div class="testimonials" id="testimonials">
         <div class="wrapper-testim">
@@ -289,7 +291,7 @@
                                 more than once, thanks!”
                             </p>
                         </div>
-                            <div class="testim-comment">
+                            <div class="testim-comment comment-hidden">
                                 <div class="comment-title">
                                     <img src="assets/images/avatar2.png" alt="Avatar" class="comment-avatar">
                                     <h2 class="comment-name">Joe Brown</h2>
@@ -330,8 +332,7 @@
                         </p>
                         <a href="pages/Zoos%20Translation/Eagel.html" class="zoo-geo-link">
                             <button type="submit" class="zoo-geo-btn">
-                            Watch now
-                            <img src="assets/images/Arrow%201.svg" alt="btn arrow">
+                            Watch now →
                         </button>
                         </a>
                     </div>
@@ -499,5 +500,6 @@
         </div>
     </footer>
 </main>
+</div>
 </body>
 </html>

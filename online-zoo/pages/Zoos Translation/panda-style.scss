@@ -23,8 +23,20 @@ body::-webkit-scrollbar{
   display: none;
 }
 
-.header-box{
+@media (max-width: 1200px) {
+ .header-box{
+   max-width: 1120px;
+ }
+}
+@media (max-width: 640px) {
 
+}
+@media (max-width: 320px) {
+
+}
+
+.header-box{
+  max-width: 1800px;
   background: $white;
   height: 87px;
   margin-bottom: 68px;
@@ -94,7 +106,7 @@ body::-webkit-scrollbar{
 }
 .map{
   color: $aqua;
-  font-family: 'Rubik', sans-serif;
+  font-family: „Rubik“, sans-serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;

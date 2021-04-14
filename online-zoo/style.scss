@@ -15,19 +15,23 @@ body::-webkit-scrollbar{
 }
 
 .wrapper{
-  padding-top: 25px;
-  max-width: $resolution -(2*60);
-  margin:0 auto 0 auto;
+  min-height: 100%;
 }
 
 .visual-hidden{
   display: none;
 }
 
+
+.header{
+  padding: 25px 60px 0;
+
+}
 .header-box{
+  margin: 0 auto 55px;
+  max-width: 1800px;
   background: $white;
   height: 87px;
-  margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -42,7 +46,7 @@ body::-webkit-scrollbar{
 }
 .header-nav{
   padding-left: 184px;
-  padding-right: 672px;
+  padding-right: calc(160px + (672 - 160) * ((100vw - 900px) / (1920 - 900)));
 }
 .nav-list{
   display: flex;
@@ -86,8 +90,7 @@ body::-webkit-scrollbar{
   pointer-events: none;
 }
 .wrapper-main{
-  max-width:$resolution -(2*243);
-  margin: 0 auto 0 auto;
+  padding: 0 60px 0;
 }
 .map{
   color: $aqua;
@@ -100,6 +103,7 @@ body::-webkit-scrollbar{
 }
 /* side-bar section*/
 .side-bar{
+  padding-left: 60px;
   position: fixed;
   top: 25px;
   width: 90px;
@@ -138,12 +142,15 @@ body::-webkit-scrollbar{
   margin-bottom: 137px;
 }
 .watch-container{
+  max-width: 1800px - (183 * 2);
+  margin: 0  auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 .watch-article{
   padding-top:80px;
+  max-width: 700px;
 }
 
 .watch-h2{
@@ -158,14 +165,23 @@ body::-webkit-scrollbar{
 }
 
 .watch-text{
+  position: relative;
   font-family: 'Merriweather', serif;
   font-style: normal;
   font-weight: bold;
   font-size: 84px;
   line-height: 106px;
-  max-width: 697px;
   color: $dark-blue;
   margin-bottom: 54px;
+}
+.watch-img-panda{
+  height: 673px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .watch-article-dot{
@@ -173,7 +189,7 @@ body::-webkit-scrollbar{
   max-width: 18px;
   height: 18px;
   left: 144.5px;
-  top: 241.5px;
+  top: -147px;
 }
 
 .watch-buttons{
@@ -228,9 +244,9 @@ body::-webkit-scrollbar{
 /*  How Zoo works    */
 .zoo-works-article{
   padding-top: 140px;
+  max-width: 696px;
 }
 .zoo-works-text1{
-  @include text(696px);
   font-family: 'Merriweather', serif;
   font-style: normal;
   font-weight: bold;
@@ -245,7 +261,6 @@ body::-webkit-scrollbar{
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
-  @include text(693px);
   color: #747474;
   margin-bottom: 60px;
 
@@ -254,9 +269,21 @@ body::-webkit-scrollbar{
   margin-bottom: 110px;
 }
 .zoo-works-container{
+  max-width: 1800px - (183 * 2);
+  margin: 0  auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.zoo-works-img{
+  width: 512px;
+  height: 760px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .zoo-works-h2{
   font-family: 'Rubik', sans-serif;
@@ -299,7 +326,8 @@ body::-webkit-scrollbar{
   max-height: 896px;
 }
 .fam-pet-container{
-  padding-top:100px ;
+  max-width: 1800px - (183 * 2);
+  margin: 0  auto;
   padding-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -342,6 +370,7 @@ body::-webkit-scrollbar{
 
 }
 .fam-pet-grid{
+  padding-top: 100px;
   display: grid;
   grid-gap: 50px;
   grid-template-columns: repeat(3,1fr);
@@ -361,6 +390,7 @@ body::-webkit-scrollbar{
       left:0;
       height: 238px;
       width: 238px;
+      border-radius: 100%;
       margin-bottom: 14px;
       background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
     }
@@ -461,6 +491,7 @@ body::-webkit-scrollbar{
   opacity: 0;
 }
 .fam-pet-title{
+  width: 100%;
  position: absolute;
   bottom: 25px;
 }
@@ -474,7 +505,7 @@ body::-webkit-scrollbar{
   background: none;
   color: $white;
   opacity: 0.8;
-  width: 328px;
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
@@ -513,6 +544,7 @@ body::-webkit-scrollbar{
   height: 214px;
 }
 .pay-section{
+  padding-left: 144px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -747,9 +779,11 @@ body::-webkit-scrollbar{
   margin-bottom: 52px;
 }
 .zoo-geo-card-img {
+  width: 100%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 .zoo-geo-btn{
   display: flex;
@@ -782,6 +816,7 @@ body::-webkit-scrollbar{
   width: 1223px;
   height: 700px;
   background: url(assets/images/world-map-small.svg);
+  background-size: cover;
   margin-bottom: 113px;
 }
 .zoo-geo-map-icons{
@@ -955,4 +990,343 @@ body::-webkit-scrollbar{
 .footer-btn:hover{
   color: #3888FF;
   border-color: #3888FF;
+}
+
+/*         MEDIA              */
+@media (max-width: 1200px) {
+
+  /*         HEADER         */
+  .header{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .header-box{
+    height: 70px;
+    margin: 0 auto 60px;
+    max-width: 1120px;
+  }
+  .nav-item{
+    padding-right: 100px;
+  }
+  .header-nav{
+    padding-left: 144px;
+    padding-right: 182px;
+  }
+  .header-profile{
+    height: 42px;
+    width: 42px;
+  }
+
+
+  /*        SIDE BAR       */
+  .side-bar{
+    padding-left: 40px;
+  }
+  .aside-section{
+    width: 70px;
+    height: 586px;
+  }
+  .aside-list{
+    padding-top: 188px;
+    padding-left: 23px;
+    padding-bottom: 60px;
+  }
+  .aside-arrow{
+    padding-left: 14px;
+  }
+  .aside-logo{
+    width: 41.5px;
+    height: 32px;
+    padding: 19px 14px 19px 14px;
+  }
+
+
+  /*         WATCH SECTION        */
+  .watch{
+    margin-bottom: 200px;
+  }
+  .watch-article{
+       padding-top:40px;
+       max-width: 500px;
+     }
+  .watch-article-dot{
+    height: 12px;
+    left: 96px;
+    top: -119px;
+  }
+  .watch-h2{
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .watch-btn-watch,.watch-btn-zoo{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 16px 60px;
+  }
+  .watch-buttons{
+    max-width: 470px;
+  }
+  .watch-text{
+    font-size: 56px;
+    line-height: 70px;
+  }
+  .watch-img-panda{
+    height: 456px;
+    width: 400px;
+  }
+  .wrapper-main{
+    padding: 0 40px;
+  }
+  .watch-container,
+  .zoo-works-container,
+  .fam-pet-container,
+  .pay-container
+  {
+    margin: 0 0 0 144px;
+  }
+  /*         HOW ZOO WORKS SECTION         */
+  .zoo-works{
+    margin-bottom: 100px;
+  }
+  .zoo-works-img{
+    width: 401px;
+    height: 585px;
+  }
+  .zoo-works-article{
+     max-width:551px;
+    padding-top: 57px;
+  }
+  .zoo-works-h2{
+    margin-bottom: 45px;
+  }
+  .zoo-works-text1{
+    font-size: 28px;
+    line-height: 145%;
+    margin-bottom: 35px;
+  }
+  .zoo-works-text2{
+    font-size: 16px;
+    line-height: 154%;
+    margin-bottom: 50px;
+  }
+  .zoo-works-button{
+    font-size: 16px;
+    line-height: 19px;
+  }
+  /*         FAM PET SECTION               */
+  .squirrel-card,.gorilla-card{
+    display: none;
+  }
+  .img-container{
+    width: 258px;
+    height: 258px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .fam-pet-grid{
+    padding-top: 94px;
+    grid-gap:30px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:repeat(2,1fr) ;
+  }
+  .fam-pet-arrows{
+    max-width: 132px;
+  }
+  .fam-pet-btn{
+    width: 56px;
+    height: 56px;
+  }
+  .fam-pet-card{
+    width: 258px;
+    height: 258px;
+  }
+  .fam-pet-section{
+    padding-top: 220px;
+    max-width: 215px;
+  }
+  .fam-pet-h3{
+    font-size: 28px;
+    line-height: 145%;
+  }
+  .fam-pet-circle-cross{
+    width: 59px;
+    height: 59px;
+    padding-top: 0;
+  }
+  .circle{
+    width: 59px;
+    height: 59px;
+  }
+  /*          PAY        */
+  .wrapper-pay{
+
+      padding: 0 40px;
+  }
+  .pay-container{
+    padding: 0;
+  }
+  .pay-arrow1,.pay-arrow2{
+    display: none;
+  }
+  .big-section{
+    justify-content: space-between;
+  }
+  .pay-section{
+    padding-left: 144px;
+    margin: 0 0 80px 0;
+    max-width: 753px;
+  }
+  .safe-img,.delivery-img,.diner-image {
+    width:242px;
+    height: 243px;
+    padding: 0;
+  }
+  .pay-delivery-article{
+    padding-left: 0;
+  }
+  .pay-h2{
+    margin-top:100px;
+    margin-bottom: 80px;
+  }
+  .pay-h3,.dinner-h3{
+    font-size: 28px;
+    line-height: 145%;
+    margin-right: 0;
+  }
+  .pay-article-text{
+    font-size: 16px;
+    line-height: 154%;
+  }
+  .pay-dinner{
+    padding-left: 144px;
+    margin: 0;
+  }
+  .pay-visa-article,.pay-delivery-article{
+    padding-top: 53px;
+  }
+  .pay-dinner-article{
+    padding-top: 32px;
+  }
+  .last-section{
+    margin-bottom: 128px;
+  }
+  /*           TESTIMONIALS     */
+  .wrapper-testim{
+    margin:0 131px ;
+  }
+  .testim-container,{
+    padding:108px 0 0 54px ;
+  }
+  .testim-h2{
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .testim-h3{
+    font-size: 28px;
+    line-height: 145%;
+    margin-bottom: 40px;
+  }
+  .testim-article{
+    max-width: 392px  ;
+  }
+  .testim-article-text{
+    font-size: 16px;
+    line-height: 154%;
+    margin-bottom: 62px;
+  }
+  .testim-article-btn{
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .comment-hidden{
+    display: none;
+  }
+  .testim-section-grid{
+    grid-template-columns: repeat(1,1fr);
+    margin-bottom: 30px;
+  }
+  .testim-comment{
+    width: 454px;
+    height: 235px;
+  }
+  .comment-title{
+    padding: 30px 0 25px 30px;
+    margin: 0;
+  }
+  .comment-name{
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .comment-text{
+    font-size: 16px;
+    line-height: 154%;
+    padding: 0 30px;
+  }
+  .testim-btns{
+    max-width: 132px;
+    margin-bottom: 80px;
+  }
+  .testim-btn-arrow{
+    width: 56px;
+    height: 56px;
+  }
+  /*        ZOO GEO SECTION                  */
+  .wrapper-zoo-geo{
+    margin: 0 40px;
+  }
+  .zoo-geo-container{
+    padding: 0 0 0 144px;
+  }
+  .zoo-geo-card{
+    width: 292px;
+    height: 448px;
+  }
+  .zoo-geo-h2{
+    margin: 94px 0 60px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .zoo-geo-h3{
+     font-size: 28px;
+     line-height: 145%;
+    margin-bottom: 15px;
+   }
+  .zoo-geo-card-text{
+    font-size: 16px;
+    line-height: 154%;
+    padding-left: 14px;
+    margin-bottom: 44px;
+  }
+  .zoo-geo-btn{
+    width: 125px;
+    margin-left: 93px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .zoo-geo-map{
+    margin: 177px 0 159px;
+    width: 675px;
+    height: 389px;
+  }
+  .zoo-geo-map-icons {
+      width: 50px;
+      height: 60px;
+  }
+/*        footer          */
+  .wrapper-footer{
+    margin: 0 40px;
+  }
+  .footer-container{
+    padding:100px 65px 0 0;
+  }
+}
+@media (max-width: 640px) {
+
+}
+@media (max-width: 320px) {
+
 }
