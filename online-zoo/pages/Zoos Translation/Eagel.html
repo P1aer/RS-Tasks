@@ -12,10 +12,9 @@
 </head>
 <body>
 <div class="wrapper">
-<header class="header">
+    <header class="header">
         <div class="header-box">
             <h1 class="visual-hidden">Online zoo</h1>
-            <a href="../../index.html"><img src="../../assets/logos/logo.svg" alt="Logo" class="header-logo"></a>
             <nav class="header-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -38,9 +37,10 @@
                     </li>
                 </ul>
             </nav>
-            <img src="../../assets/logos/profile.svg" alt="profile">
+            <img class="header-profile" src="../../assets/logos/profile.svg" alt="profile">
         </div>
-</header>
+
+    </header>
     <aside class="side-bar">
         <div class="aside-section">
             <a href="../../index.html"><img src="../../assets/logos/logo.svg" alt="Logo" class="aside-logo"></a>
@@ -136,7 +136,7 @@
                         <div class="title-text">
                             <h3 class="cam-donate-h3">Raptor resourse project</h3>
                             <div class="title-watch">
-                                <img src="../../assets/images/eye.svg" alt="Eye">
+                                <img  class="eye" src="../../assets/images/eye.svg" alt="Eye">
                                 <p class="title-watch-text">235 watching now</p>
                             </div>
                         </div>
@@ -150,19 +150,20 @@
                             Eagles will receive a piece of meat
                             or fresh fish. Animals will receive your gift in about 5-15 minutes
                         </p>
-                        <a><button class="donate-main-btn">Feed the eagle</button></a>
+                        <a><button type="submit"  class="donate-main-btn">Feed the panda</button></a>
+                        <a><button type="submit"  class="donate-main-btn-alt">Try now</button></a>
                     </div>
                 </div>
             </section>
             <section class="other-cam-section">
                 <div class="other-cam-title">
                     <h3 class="other-cam-h3">Other cams</h3>
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="triangle" width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.70192 8.94293C6.10202 9.47287 6.89798 9.47287 7.29808 8.94293L12.6513 1.85255C13.1487 1.19372 12.6787 0.25 11.8532 0.25H1.14678C0.321267 0.25 -0.148711 1.19372 0.348703 1.85255L5.70192 8.94293Z" fill="#080029"/>
                     </svg>
                 </div>
                 <div class="other-cam-grid">
-                    <figure class="grid-cam">
+                    <figure class="grid-cam cam1">
                         <img src="../../assets/images/eagle-cam_2.png" alt="cam 2" class="grid-img">
                         <div class="wrapper-invisible">
                         </div>
@@ -174,7 +175,7 @@
                             </button>
                         </figcaption>
                     </figure>
-                    <figure class="grid-cam">
+                    <figure class="grid-cam cam2">
                         <img src="../../assets/images/eagle-cam_3.png" alt="cam 3" class="grid-img">
                         <div class="wrapper-invisible">
                         </div>
@@ -186,7 +187,7 @@
                             </button>
                         </figcaption>
                     </figure>
-                    <figure class="grid-cam">
+                    <figure class="grid-cam cam3">
                         <img src="../../assets/images/eagle-cam_4.png" alt="cam 4" class="grid-img">
                         <div class="wrapper-invisible">
                         </div>
@@ -198,7 +199,7 @@
                             </button>
                         </figcaption>
                     </figure>
-                    <figure class="grid-cam">
+                    <figure class="grid-cam cam4">
                         <img src="../../assets/images/eagle-cam_5.png" alt="cam 5" class="grid-img">
                         <div class="wrapper-invisible">
                         </div>
@@ -253,12 +254,12 @@
                             The distribution area of ​​eagles is quite wide,
                             and the habitat depends on the species of bird.
                             Nevertheless, all representatives of the representatives
-                            prefer to settle<br> away from civilization and humans, choosing
+                            prefer to settle<br class="panda-br1"> away from civilization and humans, choosing
                             mountainous or semi-open landscapes.<br>
                             <br>
                             For example, the golden eagle inhabiting the territory of Russia
                             (in the north of the Caucasus and the south of Primorye) nests
-                            in a hard-to-reach forest zone, and its<br> Australian relative, the
+                            in a hard-to-reach forest zone, and its<br class="panda-br1"> Australian relative, the
                             wedge-tailed golden eagle, feels comfortable in the forests of New Guinea.<br>
                             Steppe eagles live in steppes and semi-desert zones, inhabiting them from
                             Transbaikalia to the Black Sea coast.<br>
@@ -289,7 +290,7 @@
                             Greater spotted eagle (A. clanga).<br>
                             The endangered species is represented by the
                             Steppe eagle (A. niralensis), and the close to vulnerable
-                            position is the Moluccan eagle (Аquila gurneyi). The dwarf<br>
+                            position is the Moluccan eagle (Аquila gurneyi). The dwarf<br class="panda-br1">
                             eagle (A. renata or H. renata) and the burial ground in a number of
                             countries are included in the pages of the national Red Book.
                         </p>
@@ -298,7 +299,7 @@
             </section>
         </div>
     </div>
-    <div class="pay">
+    <div class="pay" id="pay">
         <div class="wrapper-pay">
             <div class="pay-container">
                 <h2 class="pay-h2">Pay & feed</h2>
@@ -329,22 +330,20 @@
             </div>
         </div>
         <div class="wrapper-main">
-            <section class="pay-section">
-                <img src="../../assets/images/dinner.svg" class="diner-image" alt="diner image">
-                <article class="pay-dinner-article">
-                    <h3 class="pay-h3 dinner-h3">The selected animal receives a treat</h3>
-                    <p class="pay-article-text">
-                        The staff takes the food you need for your
-                        chosen animal and delivers it to the animal.
-                        With your help, the animal is happy!
-                    </p>
-                </article>
-            </section>
+            <div class="pay-dinner">
+                <section class="pay-section last-section">
+                    <img src="../../assets/images/dinner.svg" class="diner-image" alt="diner image">
+                    <article class="pay-dinner-article">
+                        <h3 class="pay-h3 dinner-h3">The selected animal receives a treat</h3>
+                        <p class="pay-article-text">
+                            The staff takes the food you need for your
+                            chosen animal and delivers it to the animal.
+                            With your help, the animal is happy!
+                        </p>
+                    </article>
+                </section>
+            </div>
         </div>
-
-
-
-
     </div>
 </main>
 <footer class="footer">

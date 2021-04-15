@@ -10,21 +10,20 @@ body::-webkit-scrollbar {
 }
 
 .wrapper {
-  padding-top: 25px;
-  max-width: 1800px;
-  margin: 0 auto 0 auto;
+  min-height: 100%;
 }
 
 .visual-hidden {
   display: none;
 }
 
-.main {
-  position: absolute;
-}
-
 .header {
   position: fixed;
+  padding: 25px 60px 0;
+}
+
+.main {
+  position: absolute;
 }
 
 .header-box {
@@ -113,6 +112,7 @@ body::-webkit-scrollbar {
 }
 
 .side-bar {
+  margin-left: 60px;
   position: fixed;
   top: 25px;
   background: white;
@@ -262,6 +262,131 @@ body::-webkit-scrollbar {
 
 .geo-btn:active {
   opacity: 0.5;
+}
+
+@media (max-width: 1200px) {
+  /*         HEADER         */
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .header-box {
+    height: 70px;
+    margin: 0 auto 60px;
+    max-width: 1120px;
+  }
+
+  .nav-item {
+    padding-right: 100px;
+  }
+
+  .header-nav {
+    padding-left: 144px;
+    padding-right: 182px;
+  }
+
+  .header-profile {
+    height: 42px;
+    width: 42px;
+  }
+
+  /*        SIDE BAR       */
+  .side-bar {
+    width: 70px;
+    margin-left: 40px;
+  }
+
+  .aside-section {
+    max-width: 70px;
+    height: 620px;
+  }
+
+  .aside-list {
+    padding-top: 0;
+    padding-left: 10px;
+    padding-bottom: 0;
+  }
+
+  .aside-item {
+    width: 45px;
+    height: 45px;
+    padding-bottom: 78px;
+  }
+  .aside-item svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .aside-btn {
+    width: 66px;
+    height: 66px;
+  }
+
+  .aside-logo {
+    width: 41.5px;
+    height: 32px;
+    padding: 19px 14px 19px 14px;
+  }
+
+  /*                map       */
+  .body {
+    background-size: 1650px;
+    background-position-x: -120px;
+    background-position-y: -450px;
+  }
+
+  .map-icon {
+    width: 83px;
+    height: 97px;
+  }
+
+  .panda-icon {
+    top: 280px;
+    left: 1100px;
+  }
+
+  .alligator-icon {
+    left: 214px;
+    top: 254px;
+  }
+
+  .eagle-icon {
+    top: 90px;
+    left: 0;
+  }
+
+  .gorilla-icon {
+    top: 402px;
+    left: 665px;
+  }
+
+  .geo-card {
+    top: 212px;
+    left: 368px;
+    width: 292px;
+    height: 448px;
+  }
+  .geo-card img {
+    width: 292px;
+  }
+  .geo-card .geo-h3 {
+    font-size: 28px;
+    line-height: 145%;
+    margin-bottom: 15px;
+  }
+  .geo-card .geo-card-text {
+    padding-left: 14px;
+    font-size: 16px;
+    line-height: 154%;
+    margin-bottom: 20px;
+  }
+  .geo-card .geo-btn {
+    margin-left: 93px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

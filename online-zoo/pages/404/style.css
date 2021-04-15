@@ -324,4 +324,120 @@ body::-webkit-scrollbar {
   border-color: #3888FF;
 }
 
+@media (max-width: 1200px) {
+  /*         HEADER         */
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .header-logo {
+    padding: 22px 0 16px 3px;
+  }
+
+  .header-box {
+    height: 70px;
+    margin: 0 auto 60px;
+    max-width: 1120px;
+  }
+
+  .nav-item {
+    padding-right: 100px;
+  }
+
+  .header-nav {
+    padding-left: 88px;
+    padding-right: 254px;
+  }
+
+  .header-profile {
+    height: 42px;
+    width: 42px;
+  }
+
+  /*        OOPS BLOCK                  */
+  .h3-oops {
+    font-size: 28px;
+    line-height: 145%;
+  }
+
+  .oops-section {
+    max-width: 651px;
+  }
+
+  .oops-section-text {
+    font-size: 18px;
+    line-height: 154%;
+  }
+
+  .txt-404 {
+    width: 238px;
+    height: 151px;
+    left: 206px;
+    top: -20px;
+  }
+
+  .oops-btn {
+    margin-left: 195px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .video {
+    width: 832px;
+    height: 469px;
+  }
+
+  .oops-video {
+    padding: 80px 184px;
+    margin: 0;
+  }
+
+  .oops-sup-text {
+    font-size: 16px;
+    line-height: 154%;
+    padding-left: 387px;
+  }
+
+  /*        footer          */
+  .wrapper-footer {
+    margin: 0 40px;
+  }
+
+  .footer-container {
+    padding: 100px 65px 0 0;
+  }
+
+  .footer-logo {
+    width: 119px;
+    height: 91px;
+    margin-bottom: 103px;
+  }
+
+  .footer-school {
+    flex-direction: column;
+    width: 128px;
+    height: 176px;
+  }
+
+  .footer-h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer-volunteers-socials {
+    margin-bottom: 141px;
+  }
+
+  .footer-socials {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer-link {
+    font-size: 18px;
+    line-height: 154%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -4,20 +4,17 @@ body::-webkit-scrollbar {
 }
 
 .wrapper {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding-top: 25px;
+  min-height: 100%;
 }
 
 .visual-hidden {
   display: none;
 }
 
-@media (max-width: 1200px) {
-  .header-box {
-    max-width: 1120px;
-  }
+.header {
+  padding: 25px 60px 0;
 }
+
 .header-box {
   max-width: 1800px;
   background: #FFFF;
@@ -88,8 +85,7 @@ body::-webkit-scrollbar {
 }
 
 .wrapper-main {
-  max-width: 1436px;
-  margin: 0 auto;
+  padding: 0 60px 0;
 }
 
 .map {
@@ -227,7 +223,7 @@ body::-webkit-scrollbar {
   margin-bottom: 40px;
 }
 
-.donate-main-btn {
+.donate-main-btn, .donate-main-btn-alt {
   background: #0F0049;
   border-radius: 5px;
   padding: 20px 75px;
@@ -241,12 +237,16 @@ body::-webkit-scrollbar {
   border: none;
 }
 
-.donate-main-btn:active {
+.donate-main-btn-alt {
+  visibility: hidden;
+}
+
+.donate-main-btn, .donate-main-btn-alt:active {
   background: #150068;
   border-color: #150068;
 }
 
-.donate-main-btn:hover {
+.donate-main-btn, .donate-main-btn-alt:hover {
   background: #080029;
   border-color: #080029;
 }
@@ -254,6 +254,10 @@ body::-webkit-scrollbar {
 /*     Intresting facts*/
 .intr-facts {
   padding-left: 179px;
+}
+
+.br-invisible1 {
+  display: none;
 }
 
 .intr-facts-h3 {
@@ -478,6 +482,7 @@ body::-webkit-scrollbar {
 }
 
 .pay-section {
+  padding-left: 144px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -677,6 +682,337 @@ body::-webkit-scrollbar {
 .footer-btn:hover {
   color: #3888FF;
   border-color: #3888FF;
+}
+
+@media (max-width: 1200px) {
+  /*         HEADER         */
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .header-logo {
+    padding: 22px 0 16px 3px;
+  }
+
+  .header-box {
+    height: 70px;
+    margin: 0 auto 60px;
+    max-width: 1120px;
+  }
+
+  .nav-item {
+    padding-right: 100px;
+  }
+
+  .header-nav {
+    padding-left: 144px;
+    padding-right: 182px;
+  }
+
+  .header-profile {
+    height: 42px;
+    width: 42px;
+  }
+
+  /*        SIDE BAR       */
+  .side-bar {
+    margin-left: 40px;
+  }
+
+  .aside-section {
+    width: 70px;
+    height: 620px;
+  }
+
+  .aside-btn {
+    width: 66px;
+    height: 66px;
+    padding-left: 2px;
+  }
+
+  .aside-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .aside-list {
+    padding-top: 0;
+    padding-left: 10px;
+    padding-bottom: 0;
+  }
+
+  .aside-arrow {
+    padding-left: 14px;
+  }
+
+  .aside-item {
+    width: 45px;
+    height: 45px;
+    padding-bottom: 47px;
+  }
+
+  .aside-logo {
+    width: 41.5px;
+    height: 32px;
+    padding: 19px 14px 19px 14px;
+  }
+
+  /*           MAIN CAM SECTION                */
+  .cam-main {
+    width: 545px;
+    height: 307px;
+  }
+
+  .cam-donate-h3 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .title-watch-text {
+    font-size: 16px;
+    line-height: 154%;
+  }
+
+  .donate-title-avatar {
+    width: 54px;
+    height: 54px;
+  }
+
+  .donate-title {
+    padding: 0;
+    border: none;
+  }
+
+  .donate-main-h3 {
+    font-size: 22px;
+    line-height: 145%;
+    padding-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .eye {
+    width: 16px;
+    height: 16px;
+    align-self: center;
+  }
+
+  .donate-main-text {
+    font-size: 16px;
+    line-height: 154%;
+    margin-bottom: 15px;
+  }
+
+  .donate-main-btn {
+    font-size: 16px;
+    line-height: 19px;
+    display: none;
+  }
+
+  .donate-main-btn-alt {
+    font-size: 16px;
+    line-height: 19px;
+    visibility: visible;
+  }
+
+  .other-cam-title {
+    padding-top: 50px;
+    max-width: 155px;
+    margin-bottom: 30px;
+  }
+
+  .other-cam-h3 {
+    font-size: 22px;
+    line-height: 145%;
+  }
+
+  .triangle {
+    width: 13px;
+    height: 9px;
+  }
+
+  .other-cam-grid {
+    grid-template-columns: 257px 257px 257px;
+    grid-gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .cam4 {
+    display: none;
+  }
+
+  .grid-cam, .wrapper-invisible {
+    width: 257px;
+    height: 144px;
+  }
+  .grid-cam img, .wrapper-invisible img {
+    width: 257px;
+    height: 144px;
+  }
+
+  .other-cam-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .other-cam-btns {
+    max-width: 132px;
+  }
+
+  /*                INTERESTING FACTS                                 */
+  .intr-facts-title {
+    padding-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  .intr-facts-h3 {
+    font-size: 36px;
+    line-height: 145%;
+  }
+
+  .title-facts-text {
+    font-size: 16px;
+    line-height: 154%;
+  }
+
+  .facts-card-btn {
+    font-size: 24px;
+    line-height: 145%;
+    max-width: 976px;
+    font-weight: normal;
+    padding: 0 0 0 0;
+  }
+
+  .card-big-text {
+    max-width: 976px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 154%;
+  }
+
+  .intr-facts-card {
+    max-width: 976px;
+    margin-bottom: 30px;
+  }
+
+  .panda-br1 {
+    display: none;
+  }
+
+  .br-invisible1 {
+    display: block;
+  }
+
+  /*         PAY SECTION                     */
+  .wrapper-pay {
+    padding: 0 40px;
+  }
+
+  .wrapper-main {
+    padding: 0 40px;
+  }
+
+  .pay-container {
+    padding: 0;
+    margin: 0 0 0 144px;
+  }
+
+  .pay-arrow1, .pay-arrow2 {
+    display: none;
+  }
+
+  .big-section {
+    justify-content: space-between;
+  }
+
+  .pay-section {
+    padding-left: 144px;
+    margin: 0 0 80px 0;
+    max-width: 753px;
+  }
+
+  .safe-img, .delivery-img, .diner-image {
+    width: 242px;
+    height: 243px;
+    padding: 0;
+  }
+
+  .pay-delivery-article {
+    padding-left: 0;
+  }
+
+  .pay-h2 {
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
+
+  .pay-h3, .dinner-h3 {
+    font-size: 28px;
+    line-height: 145%;
+    margin-right: 0;
+  }
+
+  .pay-article-text {
+    font-size: 16px;
+    line-height: 154%;
+  }
+
+  .pay-dinner {
+    padding-left: 144px;
+    margin: 0;
+  }
+
+  .pay-visa-article, .pay-delivery-article {
+    padding-top: 53px;
+  }
+
+  .pay-dinner-article {
+    padding-top: 32px;
+  }
+
+  .last-section {
+    margin-bottom: 128px;
+  }
+
+  /*        footer          */
+  .wrapper-footer {
+    margin: 0 40px;
+  }
+
+  .footer-container {
+    padding: 100px 65px 0 0;
+  }
+
+  .footer-logo {
+    width: 119px;
+    height: 91px;
+    margin-bottom: 103px;
+  }
+
+  .footer-school {
+    flex-direction: column;
+    width: 128px;
+    height: 176px;
+  }
+
+  .footer-h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer-volunteers-socials {
+    margin-bottom: 141px;
+  }
+
+  .footer-socials {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer-link {
+    font-size: 18px;
+    line-height: 154%;
+  }
 }
 
 /*# sourceMappingURL=panda-style.css.map */

@@ -1475,6 +1475,37 @@ body::-webkit-scrollbar {
   .footer-container {
     padding: 100px 65px 0 0;
   }
+
+  .footer-logo {
+    width: 119px;
+    height: 91px;
+    margin-bottom: 103px;
+  }
+
+  .footer-school {
+    flex-direction: column;
+    width: 128px;
+    height: 176px;
+  }
+
+  .footer-h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer-volunteers-socials {
+    margin-bottom: 141px;
+  }
+
+  .footer-socials {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .footer-link {
+    font-size: 18px;
+    line-height: 154%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
