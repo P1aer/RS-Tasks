@@ -1,13 +1,9 @@
 @charset "UTF-8";
-body::-webkit-scrollbar {
-  display: none;
-}
-
 .wrapper {
   min-height: 100%;
 }
 
-.visual-hidden {
+body::-webkit-scrollbar, .visual-hidden, .br-640, .br-320, .zoo-geo-320menu {
   display: none;
 }
 
@@ -27,8 +23,9 @@ body::-webkit-scrollbar {
 }
 
 .header-logo {
+  width: 41.5px;
+  height: 32px;
   position: fixed;
-  border-right: 2px solid #F0F0F0;
   padding: 24px 18px 23px 18px;
 }
 
@@ -1463,8 +1460,28 @@ body::-webkit-scrollbar {
   }
 
   .zoo-geo-map-icons {
-    width: 50px;
-    height: 60px;
+    width: 55px;
+    height: 65px;
+  }
+
+  .eagle-icon {
+    left: 70px;
+    top: 105px;
+  }
+
+  .alligator-icon {
+    left: 144px;
+    top: 120px;
+  }
+
+  .gorilla-icon {
+    left: 299px;
+    top: 172px;
+  }
+
+  .panda-icon {
+    left: 492px;
+    top: 109px;
   }
 
   /*        footer          */
@@ -1505,6 +1522,1275 @@ body::-webkit-scrollbar {
   .footer-link {
     font-size: 18px;
     line-height: 154%;
+  }
+
+  .footer-btn {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+@media (max-width: 640px) {
+  /*         HEADER         */
+  .header {
+    padding: 0 0 0 0;
+  }
+
+  .header-box {
+    position: fixed;
+    z-index: 2;
+    justify-content: space-between;
+    height: 88px;
+    margin: 0 0 0 0;
+    width: 600px;
+    background: #FCFCFC;
+    border: none;
+    padding: 0 20px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .nav-item {
+    padding-right: 100px;
+  }
+
+  .header-nav {
+    display: none;
+    padding-left: 144px;
+    padding-right: 182px;
+  }
+
+  .header-logo {
+    width: 49.28px;
+    height: 38px;
+    position: static;
+    padding: 0 0 0 0;
+  }
+
+  .header-profile {
+    content: url("assets/images/burger_menu.svg");
+    width: 55px;
+    height: 35px;
+  }
+
+  /*        SIDE BAR       */
+  .side-bar {
+    display: none;
+    padding-left: 40px;
+  }
+
+  .aside-section {
+    width: 70px;
+    height: 586px;
+  }
+
+  .aside-list {
+    padding-top: 188px;
+    padding-left: 23px;
+    padding-bottom: 60px;
+  }
+
+  .aside-arrow {
+    padding-left: 14px;
+  }
+
+  .aside-logo {
+    width: 41.5px;
+    height: 32px;
+    padding: 19px 14px 19px 14px;
+  }
+
+  /*         WATCH SECTION        */
+  .watch {
+    padding-top: 148px;
+    margin-bottom: 60px;
+  }
+
+  .watch-article {
+    padding-top: 0;
+    max-width: 315px;
+  }
+
+  .watch-article-dot {
+    width: 10px;
+    height: 10px;
+    left: 230px;
+    top: -80px;
+  }
+
+  .watch-h2 {
+    padding-top: 8px;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 35px;
+  }
+
+  .watch-btn-zoo {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 16px 60px;
+  }
+
+  .watch-btn-watch {
+    display: none;
+  }
+
+  .watch-buttons {
+    max-width: 470px;
+  }
+
+  .watch-text {
+    font-size: 42px;
+    line-height: 53px;
+    margin-bottom: 27px;
+  }
+
+  .watch-img-panda {
+    width: 263px;
+    height: 326px;
+    border-radius: 5px;
+  }
+
+  .wrapper-main {
+    padding: 0 20px;
+  }
+
+  .watch-container,
+.zoo-works-container,
+.fam-pet-container,
+.pay-container {
+    margin: 0 0 0 0;
+  }
+
+  /*         HOW ZOO WORKS SECTION         */
+  .zoo-works {
+    margin-bottom: 80px;
+  }
+
+  .zoo-works-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zoo-works-img {
+    order: 2;
+    width: 390px;
+    height: 386px;
+    border-radius: 5px;
+  }
+
+  .zoo-works-article {
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    max-width: 551px;
+    padding-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .zoo-works-h2 {
+    margin-bottom: 45px;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .zoo-works-text1 {
+    font-size: 26px;
+    line-height: 145%;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 550px;
+  }
+
+  .zoo-works-text2 {
+    font-size: 16px;
+    line-height: 154%;
+    /* or 25px */
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .zoo-works-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  /*         FAM PET SECTION               */
+  .squirrel-card, .gorilla-card {
+    display: block;
+  }
+
+  .img-container {
+    width: 180px;
+    height: 180px;
+  }
+  .img-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fam-pet-container {
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+
+  .fam-pet-grid {
+    padding-top: 70px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .fam-pet-arrows {
+    width: 132px;
+  }
+
+  .fam-pet-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .fam-pet-card {
+    width: 180px;
+    height: 180px;
+  }
+
+  .fam-pet-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+    max-width: 215px;
+  }
+
+  .fam-pet-h2 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 35px;
+  }
+
+  .fam-pet-h3 {
+    font-size: 24px;
+    line-height: 145%;
+    text-align: center;
+    max-width: 189px;
+    margin-bottom: 35px;
+  }
+
+  .fam-pet-circle-cross {
+    width: 59px;
+    height: 59px;
+    padding-top: 0;
+  }
+
+  .circle {
+    width: 59px;
+    height: 59px;
+  }
+
+  /*          PAY        */
+  .wrapper-pay {
+    padding: 0 40px;
+  }
+
+  .pay-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .pay-arrow1, .pay-arrow2 {
+    display: none;
+  }
+
+  .big-section {
+    justify-content: space-between;
+  }
+
+  .pay-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0 0 60px 0;
+    max-width: 753px;
+  }
+
+  .safe-img, .delivery-img, .diner-image {
+    width: 180px;
+    height: 180px;
+    padding: 0;
+  }
+
+  .pay-delivery-article {
+    padding-left: 0;
+  }
+
+  .pay-h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  .pay-h3, .dinner-h3 {
+    font-size: 28px;
+    line-height: 145%;
+    margin-right: 0;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .dinner-h3 {
+    max-width: 363px;
+  }
+
+  .pay-article-text {
+    max-width: 456px;
+    font-size: 16px;
+    line-height: 154%;
+    text-align: center;
+  }
+
+  .br-640 {
+    display: block;
+  }
+
+  .pay-dinner {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .pay-dinner-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+  }
+
+  .pay-visa-article, .pay-delivery-article, .pay-dinner-article {
+    padding-top: 30px;
+    max-width: 456px;
+  }
+
+  .last-section {
+    margin-bottom: 0;
+  }
+
+  /*           TESTIMONIALS     */
+  .wrapper-testim {
+    margin: 0 93px;
+  }
+
+  .testim-container {
+    padding: 80px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testim-h2 {
+    margin-bottom: 35px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .testim-h3 {
+    font-size: 28px;
+    line-height: 145%;
+    margin-bottom: 35px;
+  }
+
+  .testim-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 392px;
+  }
+
+  .testim-article-text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 154%;
+    margin-bottom: 50px;
+  }
+
+  .testim-reviews {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testim-section-btn {
+    width: 167px;
+    padding-right: 0;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 30px;
+  }
+
+  .testim-article-btn {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+  }
+
+  .testim-btns {
+    max-width: 132px;
+    margin-bottom: 103px;
+  }
+
+  /*        ZOO GEO SECTION                  */
+  .wrapper-zoo-geo {
+    margin: 0 20px;
+  }
+
+  .zoo-geo-container {
+    padding: 10px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zoo-geo-card {
+    position: relative;
+    top: 70px;
+    width: 250px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zoo-geo-h2 {
+    display: none;
+    margin: 94px 0 60px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .zoo-geo-h3 {
+    font-size: 24px;
+    line-height: 145%;
+    margin-bottom: 15px;
+  }
+
+  .zoo-geo-card-text {
+    font-size: 14px;
+    line-height: 154%;
+    max-width: 212px;
+    padding-left: 0;
+    margin-bottom: 44px;
+  }
+
+  .zoo-geo-btn {
+    width: 116px;
+    margin-left: 0;
+    padding: 0 0 0 0;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .zoo-geo-map {
+    z-index: -1;
+    margin: 0 0 80px;
+    width: 600px;
+    height: 346px;
+  }
+
+  .zoo-geo-map-icons {
+    width: 50px;
+    height: 60px;
+  }
+
+  .eagle-icon {
+    left: 70px;
+    top: 105px;
+  }
+
+  .alligator-icon {
+    left: 130px;
+    top: 110px;
+  }
+
+  .gorilla-icon {
+    left: 271px;
+    top: 155px;
+  }
+
+  .panda-icon {
+    left: 442px;
+    top: 98px;
+  }
+
+  /*        footer          */
+  .wrapper-footer {
+    margin: 0 20px;
+  }
+
+  .footer-container {
+    padding: 80px 0 0 0;
+  }
+
+  .footer-logo {
+    width: 95px;
+    height: 74px;
+    margin-right: 115px;
+    margin-bottom: 60px;
+  }
+
+  .footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .footer-yem {
+    width: 93px;
+    height: 49px;
+  }
+
+  .footer-rs {
+    width: 102px;
+    height: 38px;
+  }
+
+  .footer-school {
+    flex-direction: row;
+    width: 264px;
+    height: 49px;
+  }
+
+  .footer-h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .sup-h2 {
+    margin-bottom: 30px;
+  }
+
+  .footer-sup-text {
+    font-size: 16px;
+    line-height: 154%;
+  }
+
+  .footer-volunteers-socials {
+    margin-bottom: 120px;
+  }
+
+  .footer-socials {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .footer-link {
+    font-size: 16px;
+    line-height: 154%;
+  }
+
+  .footer-btn {
+    margin-bottom: 50px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .h3-sub {
+    font-size: 14px;
+    line-height: 145%;
+  }
+
+  .footer-copyrights {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 320px) {
+  /*         HEADER         */
+  .header {
+    padding: 0 0 0 0;
+  }
+
+  .header-box {
+    position: fixed;
+    z-index: 2;
+    justify-content: space-between;
+    height: 59px;
+    margin: 0 0 0 0;
+    width: 300px;
+    background: #FCFCFC;
+    border: none;
+    padding: 0 10px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .nav-item {
+    padding-right: 100px;
+  }
+
+  .header-nav {
+    display: none;
+    padding-left: 144px;
+    padding-right: 182px;
+  }
+
+  .header-logo {
+    position: static;
+    padding: 0 0 0 0;
+    width: 38px;
+    height: 29px;
+  }
+
+  .header-profile {
+    content: url("assets/images/burger_menu.svg");
+    width: 35px;
+    height: 21px;
+  }
+
+  /*        SIDE BAR       */
+  .side-bar {
+    display: none;
+    padding-left: 40px;
+  }
+
+  .aside-section {
+    width: 70px;
+    height: 586px;
+  }
+
+  .aside-list {
+    padding-top: 188px;
+    padding-left: 23px;
+    padding-bottom: 60px;
+  }
+
+  .aside-arrow {
+    padding-left: 14px;
+  }
+
+  .aside-logo {
+    width: 41.5px;
+    height: 32px;
+    padding: 19px 14px 19px 14px;
+  }
+
+  /*         WATCH SECTION        */
+  .watch {
+    padding-top: 128px;
+    margin-bottom: 62px;
+  }
+
+  .watch-article {
+    padding-top: 0;
+    max-width: 315px;
+  }
+
+  .watch-article-dot {
+    width: 10px;
+    height: 10px;
+    left: 233px;
+    top: -80px;
+  }
+
+  .watch-h2 {
+    text-align: center;
+    padding-top: 0;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 35px;
+  }
+
+  .watch-btn-zoo {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 16px 60px;
+  }
+
+  .watch-btn-watch {
+    display: none;
+  }
+
+  .watch-buttons {
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+  }
+
+  .watch-text {
+    font-size: 42px;
+    line-height: 53px;
+    text-align: center;
+    margin-bottom: 27px;
+  }
+
+  .watch-img-panda {
+    display: none;
+    width: 263px;
+    height: 326px;
+    border-radius: 5px;
+  }
+
+  .wrapper-main {
+    padding: 0 10px;
+  }
+
+  .watch-container,
+.zoo-works-container,
+.fam-pet-container,
+.pay-container {
+    margin: 0 0 0 0;
+  }
+
+  .watch-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*         HOW ZOO WORKS SECTION         */
+  .zoo-works {
+    margin-bottom: 0;
+  }
+
+  .zoo-works-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zoo-works-img {
+    order: 1;
+    width: 297px;
+    height: 293px;
+    border-radius: 5px;
+  }
+
+  .zoo-works-article {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    max-width: 551px;
+    padding-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .br-320 {
+    display: block;
+  }
+
+  .zoo-works-h2 {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .zoo-works-text1 {
+    font-size: 20px;
+    line-height: 145%;
+    margin-bottom: 30px;
+    max-width: 294px;
+    text-align: center;
+  }
+
+  .zoo-works-text2 {
+    height: 110px;
+    width: 300px;
+    font-size: 14px;
+    line-height: 154%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .zoo-works-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  /*         FAM PET SECTION               */
+  .squirrel-card, .gorilla-card {
+    display: none;
+  }
+
+  .img-container {
+    width: 140px;
+    height: 140px;
+  }
+  .img-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fam-pet-container {
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
+
+  .fam-pet-grid {
+    padding-top: 50px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .fam-pet-arrows {
+    width: 132px;
+  }
+
+  .fam-pet-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .fam-pet-card {
+    width: 140px;
+    height: 140px;
+  }
+
+  .fam-pet-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+    max-width: 215px;
+  }
+
+  .fam-pet-h2 {
+    text-align: center;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 30px;
+  }
+
+  .fam-pet-h3 {
+    font-size: 20px;
+    line-height: 145%;
+    text-align: center;
+    max-width: 189px;
+    margin-bottom: 30px;
+  }
+
+  .fam-pet-circle-cross {
+    width: 59px;
+    height: 59px;
+    padding-top: 0;
+  }
+
+  .circle {
+    width: 59px;
+    height: 59px;
+  }
+
+  /*          PAY        */
+  .wrapper-pay {
+    padding: 0 10px;
+  }
+
+  .pay-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .pay-arrow1, .pay-arrow2 {
+    display: none;
+  }
+
+  .big-section {
+    justify-content: space-between;
+  }
+
+  .pay-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0 0 28px 0;
+    max-width: 300px;
+  }
+
+  .safe-img, .delivery-img, .diner-image {
+    width: 180px;
+    height: 180px;
+    padding: 0;
+  }
+
+  .pay-delivery-article {
+    padding-left: 0;
+  }
+
+  .pay-h2 {
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .pay-h3, .dinner-h3 {
+    font-size: 20px;
+    line-height: 145%;
+    margin-right: 0;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .dinner-h3 {
+    max-width: 363px;
+  }
+
+  .pay-article-text {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 154%;
+    text-align: center;
+  }
+
+  .br-640 {
+    display: none;
+  }
+
+  .br-320 {
+    display: block;
+  }
+
+  .pay-dinner {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .pay-dinner-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .pay-visa-article, .pay-delivery-article, .pay-dinner-article {
+    padding-top: 30px;
+    max-width: 300px;
+  }
+
+  .last-section {
+    margin-bottom: 0;
+  }
+
+  /*           TESTIMONIALS     */
+  .wrapper-testim {
+    margin: 0 10px;
+  }
+
+  .testim-container {
+    padding: 60px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testim-h2 {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .testim-h3 {
+    font-size: 20px;
+    line-height: 145%;
+    margin-bottom: 20px;
+  }
+
+  .testim-comment {
+    width: 300px;
+    height: 300px;
+  }
+
+  .testim-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 392px;
+  }
+
+  .testim-article-text {
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 154%;
+    margin-bottom: 40px;
+    color: #D3D3D3;
+  }
+
+  .testim-reviews {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testim-section-btn {
+    width: 140px;
+    padding: 0 0 0 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 22px;
+  }
+
+  .comment-title {
+    padding-bottom: 20px;
+  }
+
+  .comment-name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .comment-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .comment-text {
+    font-size: 18px;
+    line-height: 154%;
+    color: black;
+  }
+
+  .testim-article-btn {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .testim-btns {
+    max-width: 132px;
+    margin-bottom: 60px;
+  }
+
+  /*        ZOO GEO SECTION                  */
+  .wrapper-zoo-geo {
+    margin: 0 10px;
+  }
+
+  .zoo-geo-container {
+    padding: 60px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .zoo-geo-card {
+    position: static;
+    padding-left: 25px;
+    width: 250px;
+    height: 374px;
+    background: #FCFCFC;
+    box-shadow: 3px 12px 24px rgba(0, 0, 0, 0.07);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .zoo-geo-h2 {
+    display: none;
+    margin: 94px 0 60px;
+    font-size: 20px;
+    line-height: 145%;
+  }
+
+  .zoo-geo-h3 {
+    font-size: 20px;
+    line-height: 145%;
+    margin-bottom: 15px;
+  }
+
+  .zoo-geo-card-text {
+    font-size: 14px;
+    line-height: 154%;
+    max-width: 212px;
+    padding-left: 0;
+    margin-bottom: 35px;
+  }
+
+  .zoo-geo-btn {
+    width: 116px;
+    margin-left: 0;
+    padding: 0 0 0 0;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .zoo-geo-map {
+    display: none;
+    z-index: -1;
+    margin: 0 0 80px;
+    width: 600px;
+    height: 346px;
+  }
+
+  .zoo-geo-320menu {
+    display: flex;
+    margin-bottom: 60px;
+  }
+
+  .zoo-geo-320menu-list {
+    display: flex;
+  }
+
+  .zoo-geo-320menu-item {
+    padding-right: 19.5px;
+  }
+
+  .zoo-geo-320menu-item:last-child {
+    padding-right: 0;
+  }
+
+  .zoo-geo-map-icons {
+    width: 50px;
+    height: 60px;
+  }
+
+  .eagle-icon {
+    left: 70px;
+    top: 105px;
+  }
+
+  .alligator-icon {
+    left: 130px;
+    top: 110px;
+  }
+
+  .gorilla-icon {
+    left: 271px;
+    top: 155px;
+  }
+
+  .panda-icon {
+    left: 442px;
+    top: 98px;
+  }
+
+  /*        footer          */
+  .wrapper-footer {
+    margin: 0 10px;
+  }
+
+  .footer-container {
+    padding: 60px 0 0 0;
+  }
+
+  .footer-logo {
+    width: 60px;
+    height: 47px;
+    margin-right: 100px;
+    margin-bottom: 98px;
+  }
+
+  .footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 66px;
+  }
+
+  .footer-yem {
+    width: 80px;
+    height: 42px;
+  }
+
+  .footer-rs {
+    width: 84px;
+    height: 31px;
+  }
+
+  .footer-school {
+    flex-direction: column-reverse;
+    width: 84px;
+    height: 132px;
+  }
+
+  .footer-h2 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .sup-h2 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 30px;
+  }
+
+  .footer-sup-text {
+    font-size: 14px;
+    line-height: 154%;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+
+  .footer-volunteers-socials {
+    max-width: 300px;
+    margin-bottom: 36px;
+  }
+
+  .footer-socials {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+    line-height: 154%;
+  }
+
+  .footer-nav-item:first-child {
+    padding-bottom: 25px;
+  }
+
+  .footer-nav-item {
+    padding-bottom: 21px;
+  }
+
+  .footer-nav-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .footer-volunteers-sup {
+    max-width: 300px;
+  }
+
+  .footer-btn {
+    padding: 22px 77px;
+    margin-bottom: 37px;
+    font-size: 13.5px;
+    line-height: 17px;
+    font-weight: 500;
+  }
+
+  .h3-sub {
+    font-size: 11px;
+    line-height: 145%;
+  }
+
+  .footer-copyrights {
+    flex-direction: column-reverse;
+    align-items: normal;
+    padding: 20px 0;
+  }
+
+  .ds-h3 {
+    margin-bottom: 8px;
   }
 }
 
