@@ -551,6 +551,11 @@ body::-webkit-scrollbar {
 
   .footer-container {
     padding: 80px 0 0 0;
+    justify-content: normal;
+  }
+
+  .footer-nav {
+    padding-right: 77px;
   }
 
   .footer-logo {
@@ -747,6 +752,10 @@ body::-webkit-scrollbar {
     height: 47px;
     margin-right: 100px;
     margin-bottom: 98px;
+  }
+
+  .footer-nav {
+    padding-right: 0;
   }
 
   .footer-icons {

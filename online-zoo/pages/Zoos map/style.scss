@@ -23,7 +23,7 @@ body::-webkit-scrollbar{
   min-height: 100%;
 }
 
-.visual-hidden{
+.visual-hidden, .eagle-icon{
   display: none;
 }
 
@@ -325,6 +325,7 @@ body::-webkit-scrollbar{
     top: 254px;
   }
   .eagle-icon{
+    display: block;
     top:90px;
     left:0;
   }

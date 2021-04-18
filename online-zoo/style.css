@@ -2036,6 +2036,11 @@ body::-webkit-scrollbar, .visual-hidden, .br-640, .br-320, .zoo-geo-320menu {
 
   .footer-container {
     padding: 80px 0 0 0;
+    justify-content: normal;
+  }
+
+  .footer-nav {
+    padding-right: 77px;
   }
 
   .footer-logo {
@@ -2694,6 +2699,10 @@ body::-webkit-scrollbar, .visual-hidden, .br-640, .br-320, .zoo-geo-320menu {
     height: 47px;
     margin-right: 100px;
     margin-bottom: 98px;
+  }
+
+  .footer-nav {
+    padding-right: 0;
   }
 
   .footer-icons {
