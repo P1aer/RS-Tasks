@@ -898,7 +898,44 @@ body::-webkit-scrollbar{
 
 }
 @media (max-width: 640px) {
-
+  /*         HEADER         */
+  .header{
+    padding: 0 0 0 0;
+  }
+  .header-box{
+    position: fixed;
+    z-index: 2;
+    justify-content: space-between;
+    height: 88px;
+    margin: 0 0 0 0;
+    width: 600px;
+    background: #FCFCFC;
+    border: none;
+    padding: 0 20px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.04);
+  }
+  .nav-item{
+    padding-right: 100px;
+  }
+  .header-nav{
+    display: none;
+    padding-left: 144px;
+    padding-right: 182px;
+  }
+  .header-logo{
+    width: 49.28px;
+    height: 38px;
+    position: static;
+    padding: 0 0 0 0;
+  }
+  .header-profile{
+    content: url("../../assets/images/burger_menu.svg");
+    width: 55px;
+    height: 35px;
+  }
+  .other-cam-grid{
+    display: none;
+  }
 }
 @media (max-width: 320px) {
 
