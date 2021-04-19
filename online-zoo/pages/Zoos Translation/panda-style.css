@@ -7,7 +7,7 @@ body::-webkit-scrollbar {
   min-height: 100%;
 }
 
-.visual-hidden, .br-640, .br-320, .zoo-geo-320menu {
+.visual-hidden, .br-640, .br-320, .zoo-geo-320menu, .donate-main-alter {
   display: none;
 }
 
@@ -159,6 +159,10 @@ body::-webkit-scrollbar {
   font-size: 24px;
   line-height: 28px;
   color: #0B0B0B;
+}
+
+.donate-main {
+  max-width: 480px;
 }
 
 .donate-main-h3 {
@@ -1226,8 +1230,8 @@ body::-webkit-scrollbar {
 
   .other-cam-grid {
     max-width: 180px;
-    grid-template-columns: repeat(1, 180px);
-    grid-template-rows: repeat(2, 102px);
+    grid-template-columns: unset;
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: 14px;
   }
   .other-cam-grid img {
@@ -1656,6 +1660,7 @@ body::-webkit-scrollbar {
     font-size: 20px;
     line-height: 145%;
     margin-bottom: 20px;
+    max-width: 192px;
   }
 
   .donate-main-text {
@@ -1663,6 +1668,10 @@ body::-webkit-scrollbar {
     line-height: 154%;
     max-width: 300px;
     margin-bottom: 30px;
+  }
+
+  .br-invisible2 {
+    display: none;
   }
 
   .donate-main-btn-alt {
