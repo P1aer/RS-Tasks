@@ -335,7 +335,7 @@ body::-webkit-scrollbar {
 .other-cam-title {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 60px;
+  padding-top: 70px;
   align-items: center;
   justify-content: space-between;
   max-width: 230px;
@@ -820,7 +820,7 @@ body::-webkit-scrollbar {
   }
 
   .other-cam-title {
-    padding-top: 50px;
+    padding-top: 60px;
     max-width: 155px;
     margin-bottom: 30px;
   }
@@ -864,8 +864,12 @@ body::-webkit-scrollbar {
   }
 
   /*                INTERESTING FACTS                                 */
+  .intr-facts {
+    padding-left: 204px;
+  }
+
   .intr-facts-title {
-    padding-top: 80px;
+    padding-top: 65px;
     margin-bottom: 60px;
   }
 
@@ -984,13 +988,19 @@ body::-webkit-scrollbar {
   }
 
   .footer-container {
+    justify-content: normal;
     padding: 100px 65px 0 0;
   }
 
   .footer-logo {
     width: 119px;
     height: 91px;
+    padding-right: 178px;
     margin-bottom: 103px;
+  }
+
+  .footer-nav {
+    padding-right: 280px;
   }
 
   .footer-school {
@@ -1161,7 +1171,7 @@ body::-webkit-scrollbar {
   .main-cam-section {
     flex-direction: column;
     padding-left: 0;
-    padding-top: 60px;
+    padding-top: 55px;
   }
 
   .cam-main {
@@ -1189,6 +1199,7 @@ body::-webkit-scrollbar {
   }
 
   .cam-donate-h3 {
+    padding-top: 0;
     font-size: 16px;
     line-height: 19px;
   }
@@ -1199,7 +1210,7 @@ body::-webkit-scrollbar {
   }
 
   .other-cam-section {
-    padding-top: 60px;
+    padding-top: 55px;
     padding-left: 30px;
   }
 
@@ -1223,6 +1234,7 @@ body::-webkit-scrollbar {
   }
 
   .donate-main-btn-alt {
+    padding: 16px 60px;
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 50px;
@@ -1414,6 +1426,7 @@ body::-webkit-scrollbar {
   }
 
   .footer-logo {
+    padding-right: 0;
     width: 95px;
     height: 74px;
     margin-right: 115px;
@@ -1437,6 +1450,7 @@ body::-webkit-scrollbar {
   }
 
   .footer-school {
+    padding-top: 20px;
     flex-direction: row;
     width: 264px;
     height: 49px;
@@ -1445,6 +1459,10 @@ body::-webkit-scrollbar {
   .footer-h2 {
     font-size: 22px;
     line-height: 26px;
+  }
+
+  .footer-nav {
+    padding-right: 70px;
   }
 
   .sup-h2 {
@@ -1458,6 +1476,7 @@ body::-webkit-scrollbar {
 
   .footer-volunteers-socials {
     margin-bottom: 120px;
+    width: 370px;
   }
 
   .footer-socials {
@@ -1592,7 +1611,7 @@ body::-webkit-scrollbar {
   }
 
   .other-cam-btns {
-    display: block;
+    display: flex;
     height: 56px;
   }
 
@@ -1656,8 +1675,14 @@ body::-webkit-scrollbar {
   }
 
   .other-cam-title {
-    padding-top: 23px;
+    max-width: 130px;
+    padding-top: 0;
     margin-bottom: 20px;
+  }
+
+  .triangle {
+    width: 14px;
+    height: 6px;
   }
 
   .donate-main-h3 {
@@ -1672,7 +1697,7 @@ body::-webkit-scrollbar {
     font-size: 14px;
     line-height: 154%;
     max-width: 300px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   .br-invisible2 {
@@ -1721,7 +1746,7 @@ body::-webkit-scrollbar {
   }
 
   .intr-facts-title {
-    padding-top: 30px;
+    padding-top: 35px;
     margin-bottom: 46px;
   }
 
@@ -1873,7 +1898,7 @@ body::-webkit-scrollbar {
     width: 60px;
     height: 47px;
     margin-right: 100px;
-    margin-bottom: 98px;
+    margin-bottom: 80px;
   }
 
   .footer-nav {
@@ -1955,7 +1980,7 @@ body::-webkit-scrollbar {
   }
 
   .footer-btn {
-    padding: 22px 77px;
+    padding: 20px 77px;
     margin-bottom: 37px;
     font-size: 13.5px;
     line-height: 17px;

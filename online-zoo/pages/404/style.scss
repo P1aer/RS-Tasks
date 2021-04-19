@@ -338,6 +338,7 @@ body::-webkit-scrollbar{
   .oops-section-text{
     font-size: 18px;
     line-height: 154%;
+    margin-bottom: 40px;
   }
   .txt-404{
     width: 238px;
@@ -345,10 +346,12 @@ body::-webkit-scrollbar{
     font-size: 120px;
     line-height: 151px;
     left: 206px;
-    top: 0px;
+    top: 0;
   }
   .oops-btn{
+    padding: 16px 60px;
     margin-left: 195px;
+    font-weight: 500;
     font-size: 16px;
     line-height: 19px;
   }
@@ -357,7 +360,7 @@ body::-webkit-scrollbar{
     height: 469px;
   }
   .oops-video{
-    padding: 80px 184px;
+    padding: 80px 184px 60px 184px;
     margin: 0;
   }
   .oops-sup-text{
@@ -370,12 +373,17 @@ body::-webkit-scrollbar{
     margin: 0 40px;
   }
   .footer-container{
+    justify-content: normal;
     padding:100px 65px 0 0;
   }
   .footer-logo{
     width: 119px;
     height: 91px;
+    padding-right: 178px;
     margin-bottom: 103px;
+  }
+  .footer-nav{
+    padding-right: 280px;
   }
   .footer-school{
     flex-direction: column;
@@ -499,6 +507,7 @@ body::-webkit-scrollbar{
     padding-right: 77px;
   }
   .footer-logo{
+    padding-right: 0;
     width: 95px;
     height: 74px;
     margin-right: 115px;
@@ -518,6 +527,7 @@ body::-webkit-scrollbar{
     height: 38px;
   }
   .footer-school{
+    padding-top: 20px;
     flex-direction: row;
     width: 264px;
     height: 49px;
@@ -525,6 +535,9 @@ body::-webkit-scrollbar{
   .footer-h2{
     font-size: 22px;
     line-height: 26px;
+  }
+  .footer-nav{
+    padding-right: 70px;
   }
   .sup-h2{
     margin-bottom: 30px;
@@ -535,6 +548,7 @@ body::-webkit-scrollbar{
   }
   .footer-volunteers-socials{
     margin-bottom: 120px;
+    width: 370px;
   }
   .footer-socials{
     font-size: 18px;
@@ -661,7 +675,7 @@ body::-webkit-scrollbar{
     width: 60px;
     height: 47px;
     margin-right: 100px;
-    margin-bottom: 98px;
+    margin-bottom: 80px;
   }
   .footer-nav{
     padding-right: 0;
@@ -727,7 +741,7 @@ body::-webkit-scrollbar{
     max-width: 300px;
   }
   .footer-btn{
-    padding: 22px 77px;
+    padding: 20px 77px;
     margin-bottom: 37px;
     font-size: 13.5px;
     line-height: 17px;

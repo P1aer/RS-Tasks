@@ -232,6 +232,11 @@ body::-webkit-scrollbar {
   margin-bottom: 52px;
 }
 
+.watch-arrow {
+  font-size: 26px;
+  padding-bottom: 4px;
+}
+
 .geo-card-img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -268,6 +273,7 @@ body::-webkit-scrollbar {
 @media (max-width: 1200px) {
   /*         HEADER         */
   .header {
+    padding-top: 13px;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -300,6 +306,7 @@ body::-webkit-scrollbar {
 
   /*        SIDE BAR       */
   .side-bar {
+    top: 13px;
     width: 70px;
     margin-left: 40px;
   }
@@ -389,7 +396,12 @@ body::-webkit-scrollbar {
     line-height: 154%;
     margin-bottom: 20px;
   }
+  .geo-card .watch-arrow {
+    font-size: 26px;
+    padding-bottom: 4px;
+  }
   .geo-card .geo-btn {
+    width: 126px;
     margin-left: 93px;
     font-weight: 500;
     font-size: 16px;
@@ -520,6 +532,10 @@ body::-webkit-scrollbar {
     font-size: 24px;
     line-height: 145%;
     margin-bottom: 20px;
+  }
+  .geo-card .watch-arrow {
+    font-size: 24px;
+    padding-bottom: 4px;
   }
   .geo-card .geo-card-text {
     width: 212px;
