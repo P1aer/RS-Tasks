@@ -1116,6 +1116,11 @@ body::-webkit-scrollbar {
     height: 80px;
   }
 
+  .zoo-geo-menu-icon {
+    width: 45px;
+    height: 45px;
+  }
+
   .zoo-geo-320menu-list {
     align-items: center;
     display: flex;
