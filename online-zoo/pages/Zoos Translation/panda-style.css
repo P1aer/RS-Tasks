@@ -448,7 +448,7 @@ body::-webkit-scrollbar {
   fill: #150068;
 }
 
-/*    Pay and Feed*/
+/*     Pay and feed     */
 .wrapper-pay {
   padding-top: 100px;
   max-width: 1688px;
@@ -493,11 +493,19 @@ body::-webkit-scrollbar {
   max-width: 824px;
 }
 
+.pay-section1 {
+  padding-left: 144px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 824px;
+}
+
 .pay-visa-article {
   padding-top: 15px;
 }
 
-.pay-article-text {
+.pay-article-text, .pay-article-text1 {
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -911,18 +919,21 @@ body::-webkit-scrollbar {
     display: block;
   }
 
-  /*         PAY SECTION                     */
-  .wrapper-pay {
+  /*          PAY        */
+  .wrapper-main {
     padding: 0 40px;
   }
 
-  .wrapper-main {
+  .wrapper-pay {
     padding: 0 40px;
   }
 
   .pay-container {
     padding: 0;
-    margin: 0 0 0 144px;
+  }
+
+  .pay-container {
+    margin-left: 144px;
   }
 
   .pay-arrow1, .pay-arrow2 {
@@ -935,7 +946,13 @@ body::-webkit-scrollbar {
 
   .pay-section {
     padding-left: 144px;
-    margin: 0 0 80px 0;
+    margin: 0 90px 80px 0;
+    max-width: 753px;
+  }
+
+  .pay-section1 {
+    padding-left: 144px;
+    margin: 0 120px 80px 0;
     max-width: 753px;
   }
 
@@ -950,17 +967,27 @@ body::-webkit-scrollbar {
   }
 
   .pay-h2 {
-    margin-top: 100px;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 95px;
     margin-bottom: 80px;
   }
 
   .pay-h3, .dinner-h3 {
+    margin-bottom: 25px;
     font-size: 28px;
     line-height: 145%;
     margin-right: 0;
   }
 
   .pay-article-text {
+    max-width: 428px;
+    font-size: 16px;
+    line-height: 154%;
+  }
+
+  .pay-article-text1 {
+    max-width: 458px;
     font-size: 16px;
     line-height: 154%;
   }
@@ -970,16 +997,20 @@ body::-webkit-scrollbar {
     margin: 0;
   }
 
-  .pay-visa-article, .pay-delivery-article {
+  .pay-delivery-article {
+    padding-top: 60px;
+  }
+
+  .pay-visa-article {
     padding-top: 53px;
   }
 
   .pay-dinner-article {
-    padding-top: 32px;
+    padding-top: 48px;
   }
 
   .last-section {
-    margin-bottom: 128px;
+    margin-bottom: 47px;
   }
 
   /*        footer          */
@@ -1319,16 +1350,20 @@ body::-webkit-scrollbar {
   }
 
   /*          PAY        */
+  .wrapper-main {
+    padding: 0 40px;
+  }
+
   .wrapper-pay {
     padding: 0 40px;
   }
 
   .pay-container {
+    margin: 0 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin: 0 0;
   }
 
   .pay-arrow1, .pay-arrow2 {
@@ -1349,10 +1384,25 @@ body::-webkit-scrollbar {
     max-width: 753px;
   }
 
-  .safe-img, .delivery-img, .diner-image {
+  .pay-section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0 0 60px 0;
+    max-width: 753px;
+  }
+
+  .safe-img, .delivery-img {
     width: 180px;
     height: 180px;
     padding: 0;
+  }
+
+  .diner-image {
+    width: 242px;
+    height: 242px;
   }
 
   .pay-delivery-article {
@@ -1367,21 +1417,28 @@ body::-webkit-scrollbar {
   }
 
   .pay-h3, .dinner-h3 {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 145%;
-    margin-right: 0;
-    margin-bottom: 25px;
     text-align: center;
   }
 
   .dinner-h3 {
-    max-width: 363px;
+    width: 333px;
   }
 
   .pay-article-text {
     max-width: 456px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 154%;
+    /* or 28px */
+    text-align: center;
+  }
+
+  .pay-article-text1 {
+    width: 456px;
+    font-size: 18px;
+    line-height: 154%;
+    /* or 28px */
     text-align: center;
   }
 
@@ -1403,8 +1460,16 @@ body::-webkit-scrollbar {
   }
 
   .pay-visa-article, .pay-delivery-article, .pay-dinner-article {
-    padding-top: 30px;
+    padding-top: 40px;
     max-width: 456px;
+  }
+
+  .pay-delivery-article {
+    padding-top: 30px;
+  }
+
+  .pay-dinner-article {
+    padding-top: 35px;
   }
 
   .last-section {
@@ -1819,10 +1884,26 @@ body::-webkit-scrollbar {
     max-width: 300px;
   }
 
-  .safe-img, .delivery-img, .diner-image {
+  .pay-section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0 0 28px 0;
+    max-width: 300px;
+  }
+
+  .safe-img, .delivery-img {
     width: 180px;
     height: 180px;
     padding: 0;
+  }
+
+  .diner-image {
+    padding-top: 10px;
+    width: 242px;
+    height: 242px;
   }
 
   .pay-delivery-article {
@@ -1837,18 +1918,19 @@ body::-webkit-scrollbar {
   }
 
   .pay-h3, .dinner-h3 {
+    width: 300px;
     font-size: 20px;
     line-height: 145%;
     margin-right: 0;
-    margin-bottom: 25px;
+    margin-bottom: 23px;
     text-align: center;
   }
 
   .dinner-h3 {
-    max-width: 363px;
+    width: 205px;
   }
 
-  .pay-article-text {
+  .pay-article-text, .pay-article-text1 {
     max-width: 300px;
     font-size: 14px;
     line-height: 154%;
@@ -1877,8 +1959,12 @@ body::-webkit-scrollbar {
   }
 
   .pay-visa-article, .pay-delivery-article, .pay-dinner-article {
-    padding-top: 30px;
+    padding-top: 32px;
     max-width: 300px;
+  }
+
+  .pay-dinner-article {
+    padding-top: 20px;
   }
 
   .last-section {
@@ -1886,6 +1972,10 @@ body::-webkit-scrollbar {
   }
 
   /*        footer          */
+  .wrapper-main {
+    padding: 0 10px;
+  }
+
   .wrapper-footer {
     margin: 0 10px;
   }
