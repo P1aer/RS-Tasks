@@ -41,7 +41,6 @@
             </nav>
             <img  class="header-profile" src="assets/logos/profile.svg" alt="profile">
         </div>
-
 </header>
 <aside class="side-bar">
     <div class="aside-section">
@@ -260,6 +259,26 @@
         </div>
     </div>
     </div>
+    <div class="form-container visual-hidden">
+        <form class="feedback" action="">
+            <div class="feedback-container">
+            <h3 class="feedback-h3">Your feedback</h3>
+            <label  class="subscription" for="name">Your name:</label>
+            <input type="text" id="name" placeholder="Ellie Coward" name="your-name" required>
+            <label class="subscription" for="email">Your e-mail:</label>
+            <input type="text" id="email" placeholder="example@gmail.com" name="email" required>
+            <label class="subscription feedback-review" for="text">Your review:</label>
+            <input type="text" id="text" placeholder="" name="feedback" required maxlength="280" height="400px" width="100px">
+                <button type="button" class="feedback-space-btn">
+                    <img class="exp-the-field" src="assets/images/expand_the_field.svg" alt="expand btn">
+                </button>
+                <input type="checkbox" id="agreement" name="agree" required>
+                <label class="subscription" for="agreement">Give permission to obtain personal data</label>
+
+            <button type="submit" class="feedback-send-btn">Send for moderation</button>
+        </div>
+        </form>
+    </div>
     <div class="testimonials" id="testimonials">
         <div class="wrapper-testim">
             <div class="testim-container">
@@ -324,12 +343,12 @@
                 <section class="zoo-geo-section">
                     <h2 class="zoo-geo-h2">Zoogeography</h2>
                     <div class="zoo-geo-card">
-                        <img src="assets/images/eagle-watch.png" alt="Eagle" class="zoo-geo-card-img">
+                        <img src="assets/images/Eagle-watch.png" alt="Eagle" class="zoo-geo-card-img">
                         <h3 class="zoo-geo-h3">Eagle</h3>
                         <p class="zoo-geo-card-text">
                             The broadcast is from an island near Los Angeles. Watch their real life.
                         </p>
-                        <a href="pages/Zoos%20Translation/Eagel.html" class="zoo-geo-link">
+                        <a href="pages/Zoos%20Translation/Eagle.html" class="zoo-geo-link">
                             <button type="submit" class="zoo-geo-btn">
                             Watch now <span class="watch-arrow">→</span>
                         </button>
@@ -393,7 +412,7 @@
                     </div>
                 </section>
                 <div class="zoo-geo-map">
-                    <svg width="113" height="133"  class="zoo-geo-map-icons eagle-icon" viewBox="0 0 140 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="113" height="133"  class="zoo-geo-map-icons Eagle-icon icon-active" viewBox="0 0 140 168" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g  class="stroke-class" filter="url(#filter0_d)">
                             <path d="M117 58.2222C117 84.8546 69 134 69 134C69 134 21 84.8546 21 58.2222C21 31.5898 42.4903 10 69 10C95.5097 10 117 31.5898 117 58.2222Z" fill="#FCFCFC"/>
                             <path d="M116 58.2222C116 64.6241 113.1 72.5078 108.62 80.8237C104.155 89.1106 98.1902 97.7032 92.2071 105.489C86.2268 113.271 80.244 120.227 75.7551 125.238C73.5112 127.743 71.6417 129.761 70.334 131.151C69.786 131.734 69.3368 132.207 69 132.559C68.6632 132.207 68.214 131.734 67.666 131.151C66.3583 129.761 64.4888 127.743 62.2449 125.238C57.756 120.227 51.7732 113.271 45.7929 105.489C39.8098 97.7032 33.845 89.1106 29.3804 80.8237C24.9001 72.5078 22 64.6241 22 58.2222C22 32.1378 43.047 11 69 11C94.953 11 116 32.1378 116 58.2222Z"/>
@@ -419,7 +438,7 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <svg width="113" height="133" class="zoo-geo-map-icons alligator-icon" viewBox="0 0 113 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="113" height="133" class="zoo-geo-map-icons Alligator-icon" viewBox="0 0 113 133" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g  class="stroke-class" filter="url(#filter0_d)">
                             <path d="M90 44.6111C90 63.7263 55.5 99 55.5 99C55.5 99 21 63.7263 21 44.6111C21 25.4959 36.4462 10 55.5 10C74.5538 10 90 25.4959 90 44.6111Z" fill="#FCFCFC"/>
                         </g>
@@ -444,7 +463,7 @@
                             </filter>
                         </defs>
                     </svg>
-                    <svg width="113" height="133" class="zoo-geo-map-icons gorilla-icon" viewBox="0 0 113 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="113" height="133" class="zoo-geo-map-icons Gorilla-icon " viewBox="0 0 113 133" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g class="stroke-class" filter="url(#filter0_d)">
                             <path d="M90 44.6111C90 63.7263 55.5 99 55.5 99C55.5 99 21 63.7263 21 44.6111C21 25.4959 36.4462 10 55.5 10C74.5538 10 90 25.4959 90 44.6111Z" fill="#FCFCFC"/>
                         </g>
@@ -466,7 +485,7 @@
                             </filter>
                         </defs>
                     </svg>
-                    <svg width="113" height="133" class="zoo-geo-map-icons panda-icon" viewBox="0 0 113 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="113" height="133" class="zoo-geo-map-icons Panda-icon" viewBox="0 0 113 133" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g class="stroke-class" filter="url(#filter0_d)">
                             <path  d="M90 44.6111C90 63.7263 55.5 99 55.5 99C55.5 99 21 63.7263 21 44.6111C21 25.4959 36.4462 10 55.5 10C74.5538 10 90 25.4959 90 44.6111Z" fill="#FCFCFC"/>
                         </g>
@@ -554,6 +573,7 @@
             </div>
         </div>
     </footer>
+    <script src="index.js"></script>
 </main>
 </div>
 </body>

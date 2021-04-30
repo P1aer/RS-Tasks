@@ -6,6 +6,106 @@ $grey:#F0F0F0;
 $dark-grey:#626262;
 $black:#0B0B0B;
 
+/* ФОРМЫ */
+input[name=your-name], input[name=email]{
+  max-width: 390px;
+  width: 100%;
+  padding-bottom: 7px;
+  border: none;
+  border-bottom: 2px solid #D3D3D3;
+  font-family: "Rubik",sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 135%;
+  /* identical to box height, or 27px */
+  color: #0B0B0B;
+  margin-bottom: 34px;
+}
+input[name=feedback]{
+  margin-top: 12px;
+  position: relative;
+  width: 100%;
+  padding: 0 15px;
+  max-width: 365px;
+  height: 66px;
+  margin-bottom: 28px;
+}
+input[name=agree]{
+  margin-bottom: 20px;
+}
+
+.subscription{
+  font-family:" Rubik",sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 145%;
+  /* or 23px */
+
+
+  color: #7B7B7B;
+}
+.feedback-h3{
+  margin-bottom: 40px;
+  font-family: "Merriweather",sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #000000;
+}
+.form-container{
+  background: transparentize($black, 0.5);
+
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.feedback{
+  margin: 5% auto 15% auto;
+  width: 479px;
+  height: 598px;
+}
+.feedback-container{
+  background: white;
+  max-width:  479px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  max-height: 598px;
+  padding: 30px 40px 40px ;
+}
+.feedback-space-btn{
+  position: relative;
+  z-index: 2;
+  left: 380px;
+  top: -46px;
+  background: transparent;
+  border: none;
+}
+.feedback-send-btn{
+  border: none;
+  padding: 22px 110px;
+  font-family: "Rubik",sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  background: #D3D3D3;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+
+
+
+
+////////////////////
 @mixin text($property) {
   width: $property;
 }
@@ -97,6 +197,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
 }
 /* side-bar section*/
 .side-bar{
+
   padding-left: 60px;
   position: fixed;
   top: 25px;
@@ -104,16 +205,22 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   background: transparent;
 }
 .aside-section{
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 90px;
   height: 760px;
   border: 2px solid $grey;
   background: $white;
 }
+.aside-section-hide{
+  height: 190px;
+}
 .aside-link:hover{
   opacity: .50;
 }
 .aside-list{
-  padding-left: 33px;
   padding-top: 250px;
   padding-bottom: 100px;
 }
@@ -124,7 +231,11 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   padding-bottom: 0;
 }
 .aside-arrow{
-  padding-left: 21px;
+  transition: transform 0.1s ease-in-out;
+}
+.aside-arrow-hide{
+  padding-bottom: 30px;
+  transform: rotate(180deg);
 }
 .aside-arrow:hover{
   opacity: .60;
@@ -367,8 +478,29 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   padding-top: 100px;
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows:repeat(2,1fr) ;
+}
+.red-panda-card{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.panda-card{
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.penguin-card{
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+.eagle-card{
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+.gorilla-card{
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 .fam-pet-card{
   position: relative;
@@ -781,6 +913,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
 }
 .zoo-geo-card-img {
   width: 100%;
+  height: 218px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-bottom: 20px;
@@ -820,6 +953,9 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   background-size: cover;
   margin-bottom: 113px;
 }
+.icon-active{
+
+}
 .zoo-geo-map-icons{
   position: absolute;
   &:hover{
@@ -832,35 +968,71 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
     }
   }
 }
-.eagle-icon{
+.Eagle-icon{
   left: 120px;
   top: 180px;
+  &.icon-active{
+    left: 108px;
+    top: 150px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
 }
-.eagle-icon:hover{
+.Eagle-icon:hover{
   left: 108px;
   top: 150px;
 }
-.alligator-icon{
+.Alligator-icon{
   left: 253px;
   top: 206px;
+  &.icon-active{
+    left: 241px;
+    top: 176px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
 }
-.alligator-icon:hover{
+.Alligator-icon:hover{
   left: 241px;
   top: 176px;
 }
-.gorilla-icon{
+.Gorilla-icon{
   left: 571px;
   top: 333px;
+  &.icon-active{
+    left: 559px;
+    top: 303px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
 }
-.gorilla-icon:hover{
+.Gorilla-icon:hover{
   left: 559px;
   top: 303px;
 }
-.panda-icon{
+.Panda-icon{
   left: 889px;
   top: 194px;
+  &.icon-active{
+    left: 877px;
+    top: 164px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
 }
-.panda-icon:hover{
+.Panda-icon:hover{
   left: 877px;
   top: 164px;
 }
@@ -1032,7 +1204,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   }
   .aside-list{
     padding-top: 200px;
-    padding-left: 23px;
+
     padding-bottom: 72px;
     img{
       width: 18px;
@@ -1042,7 +1214,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   .aside-arrow{
     width: 42px;
     height: 42px;
-    padding-left: 14px;
+
   }
   .aside-logo{
     width: 41.5px;
@@ -1383,19 +1555,19 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
       width: 55px;
       height: 65px;
   }
-  .eagle-icon{
+  .Eagle-icon{
     left: 70px;
     top: 105px;
   }
-  .alligator-icon{
+  .Alligator-icon{
     left: 144px;
     top: 120px;
   }
-  .gorilla-icon{
+  .Gorilla-icon{
     left: 309px;
     top: 172px;
   }
-  .panda-icon{
+  .Panda-icon{
     left: 492px;
     top: 109px;
   }
@@ -1908,19 +2080,19 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
     width: 50px;
     height: 60px;
   }
-  .eagle-icon{
+  .Eagle-icon{
     left: 70px;
     top: 105px;
   }
-  .alligator-icon{
+  .Alligator-icon{
     left: 130px;
     top: 100px;
   }
-  .gorilla-icon{
+  .Gorilla-icon{
     left: 268px;
     top: 148px;
   }
-  .panda-icon{
+  .Panda-icon{
     left: 440px;
     top: 98px;
   }
@@ -2525,19 +2697,19 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
     width: 50px;
     height: 60px;
   }
-  .eagle-icon{
+  .Eagle-icon{
     left: 70px;
     top: 105px;
   }
-  .alligator-icon{
+  .Alligator-icon{
     left: 130px;
     top: 110px;
   }
-  .gorilla-icon{
+  .Gorilla-icon{
     left: 271px;
     top: 155px;
   }
-  .panda-icon{
+  .Panda-icon{
     left: 442px;
     top: 98px;
   }

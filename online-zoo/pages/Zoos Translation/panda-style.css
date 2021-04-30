@@ -292,7 +292,14 @@ body::-webkit-scrollbar {
 .intr-facts-card {
   margin-bottom: 20px;
   max-width: 1432px;
-  border-bottom: 1px solid #609FFF;
+  border-bottom: 1px solid #D3D3D3;
+}
+.intr-facts-card img {
+  z-index: -1;
+}
+
+.card-active {
+  border-color: #609FFF;
 }
 
 .card-big-text {
@@ -313,8 +320,12 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: space-between;
   width: 1432px;
-  color: #609FFF;
+  color: #080029;
   margin-bottom: 30px;
+}
+
+.active-btn {
+  color: #609FFF;
 }
 
 .card-big-text {
