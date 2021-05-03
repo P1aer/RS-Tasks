@@ -10,12 +10,24 @@ const geo_card_text = geo_card.querySelector('.zoo-geo-card-text');
 const side_bar = document.querySelector('.aside-section');
 const side_nav = side_bar.querySelector('.aside-socials')
 const side_arrow = side_bar.querySelector('.aside-arrow');
+const inputs = form_container.querySelectorAll('input');
+const send_btn = form_container.querySelector('.feedback-send-btn')
+const fam_pet_next = document.querySelector(".fam-pet-next");
+const fam_pet_prev = document.querySelector(".fam-pet-prev");
+const fam_pet_grid_top = document.querySelector('.fam-pet-grid-top')
+const fam_pet_grid_bottom = document.querySelector('.fam-pet-grid-bottom')
+const slides_top = fam_pet_grid_top.getElementsByClassName("fam-pet-card");
+const slides_bottom = fam_pet_grid_bottom.getElementsByClassName("fam-pet-card");
+
 const GORILLA_TEXT = 'The broadcast comes from the Democratic Republic of the Congo in a forest area. Watch their life and life together';
 const EAGLE_TEXT = 'The broadcast is from an island near Los Angeles. Watch their real life.';
 const ALLIGATOR_TEXT = 'The broadcast is from St. Augustine\'s Alligator Farm in Florida. Watch their real life.'
 const PANDA_TEXT = 'The broadcast is from Shenshuping Gengda Panda Center in China\'s Wolong Valley. Watch their real life.'
+let carousel_caret=[];
+let slide_scroll;
 
-
+console.log(slides_top)
+console.log(slides_bottom)
 const changeCard = (ev) => {
     const current_btn = ev.currentTarget;
     const animal = current_btn.classList[1].split('-')[0];
@@ -40,7 +52,7 @@ const changeCard = (ev) => {
             break
     }
 }
-const hideSidebar = (ev) =>{
+const hideSidebar = (ev) => {
     if(window.getComputedStyle(side_bar).height === '760px'){
         ev.currentTarget.classList.add('aside-arrow-hide');
         side_bar.classList.add('aside-section-hide');
@@ -55,16 +67,88 @@ const hideSidebar = (ev) =>{
 const leaveFeedback = (ev) => {
     form_container.classList.remove('visual-hidden')
 }
+const checkValidate = () => {
+    let flag = true;
+    inputs.forEach(input => {
+        if(!input.validity.valid){
+            flag = false
+        }
+    })
+    if(flag){
+       send_btn.classList.add('feedback-send-btn-active')
+    }
+    else {
+        try {
+        send_btn.classList.remove('feedback-send-btn-active')
+    }
+    catch (e) {
+
+        }
+    }
+}
 window.onclick = function(event) {
     if (event.target === form_container) {
         form_container.classList.add('visual-hidden');
     }
 }
 
+function createCaret() {
+    for (let i=0;i<slide_scroll;i++){
+        carousel_caret[i]=i;
+    }
+}
+function calcScroll() {
+    if(window.innerWidth<=320 || (window.innerWidth>=1200 && window.innerWidth<1920))
+        slide_scroll = 2;
+    else  slide_scroll = 3;
+}
+
+// Next/previous controls
+const  showNextSlides= () => {
+    for (let i = 0; i < slides_top.length; i++) {
+        slides_top[i].style.display = "none";
+        slides_bottom[i].style.display = "none";
+    }
+
+    for(let i =0;i<slide_scroll;i++){
+        carousel_caret[i]= carousel_caret[i]-1 === -1?slides_top.length-1:carousel_caret[i]-1
+        slides_top[carousel_caret[i]].style.display = "block";
+        slides_bottom[carousel_caret[i]].style.display = "block";
+        slides_top[carousel_caret[i]].style.gridColumnStart =`${i+1}`
+        slides_top[carousel_caret[i]].style.gridRowStart =`${1}`
+        slides_bottom[carousel_caret[i]].style.gridColumnStart =`${i+1}`
+        slides_bottom[carousel_caret[i]].style.gridRowStart =`${1}`
+        console.log(slides_top[carousel_caret[i]])
+        console.log(slides_top[carousel_caret[i]].style.gridColumnStart)
+    }
+    console.log(carousel_caret)
+}
+const  showPrevSlides= () => {
+    for (let i = 0; i < slides_top.length; i++) {
+        slides_top[i].style.display = "none";
+        slides_bottom[i].style.display = "none";
+    }
+    for (let i =0;i<slide_scroll;i++){
+        carousel_caret[i]= carousel_caret[i]+1 === slides_top.length ?0: carousel_caret[i]+1
+        slides_top[carousel_caret[i]].style.display = "block";
+        slides_bottom[carousel_caret[i]].style.display = "block";
+        slides_top[carousel_caret[i]].style.gridColumnStart =`${i+1}`
+        slides_top[carousel_caret[i]].style.gridRowStart =`${1}`
+        slides_bottom[carousel_caret[i]].style.gridColumnStart =`${i+1}`
+        slides_bottom[carousel_caret[i]].style.gridRowStart =`${1}`
+    }
+    console.log(carousel_caret)
+}
+
+inputs.forEach(input => input.addEventListener('input',checkValidate))
 icons.forEach(icon => icon.addEventListener('click',changeCard))
 
 feedback_btn.addEventListener('click',leaveFeedback)
 side_arrow.addEventListener('click', hideSidebar)
+fam_pet_next.addEventListener('click',showNextSlides )
+fam_pet_prev.addEventListener('click',showPrevSlides)
+calcScroll()
+createCaret()
 
 /*function Ant(crslId) {
 

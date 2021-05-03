@@ -22,11 +22,11 @@ input[name=your-name], input[name=email]{
   color: #0B0B0B;
   margin-bottom: 34px;
 }
-input[name=feedback]{
+textarea{
   margin-top: 12px;
   position: relative;
   width: 100%;
-  padding: 0 15px;
+  padding: 10px 10px;
   max-width: 365px;
   height: 66px;
   margin-bottom: 28px;
@@ -77,7 +77,6 @@ input[name=agree]{
   max-width:  479px;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.07);
   border-radius: 15px;
-  max-height: 598px;
   padding: 30px 40px 40px ;
 }
 .feedback-space-btn{
@@ -101,7 +100,9 @@ input[name=agree]{
   border-radius: 5px;
   color: #FFFFFF;
 }
-
+.feedback-send-btn-active{
+  background: #171717;
+}
 
 
 
@@ -130,7 +131,10 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   align-items: center;
   border: 2px solid $grey;
 }
-
+.fam-pet-next,.fam-pet-prev{
+  background: none;
+  border: none;
+}
 .header-logo{
   width: 41.5px;
   height: 32px;
@@ -474,34 +478,32 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   }
 
 }
-.fam-pet-grid{
-  padding-top: 100px;
+.fam-pet-grid-top,.fam-pet-grid-bottom{
   display: grid;
-  grid-gap: 50px;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 40px;
 }
-.red-panda-card{
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+.fam-pet-grid-top{
+  padding-top: 100px;
+  padding-bottom: 40px;
+  height: 328px;
 }
-.panda-card{
-  grid-column-start: 1;
-  grid-row-start: 2;
-  grid-row-end: 3;
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2.5s;
+  animation-name: fade;
+  animation-duration: 2.5s;
 }
-.penguin-card{
-  grid-column-start: 2;
-  grid-row-start: 1;
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
-.eagle-card{
-  grid-column-start: 2;
-  grid-row-start: 2;
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
-.gorilla-card{
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
+
 .fam-pet-card{
   position: relative;
   width: 328px;
@@ -526,6 +528,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
       opacity: 0.8;
       width: 189px;
       padding-left: 20px;
+
     }
     .panda {
       padding-top: 30px;
@@ -791,6 +794,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   border-color: cyan;
   color:cyan;
 }
+
 .testim-section-btn{
   font-family: 'Rubik', sans-serif;
   font-style: normal;

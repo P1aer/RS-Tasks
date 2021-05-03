@@ -10,7 +10,6 @@ const btnClick = (ev) => {
         btn.classList.add('active-btn');
         card.classList.add('card-active');
         img.src = '../../assets/images/minus_btn.svg';
-
     }
     else {
         text.classList.add('visual-hidden');

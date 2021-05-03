@@ -16,11 +16,11 @@ input[name=your-name], input[name=email] {
   margin-bottom: 34px;
 }
 
-input[name=feedback] {
+textarea {
   margin-top: 12px;
   position: relative;
   width: 100%;
-  padding: 0 15px;
+  padding: 10px 10px;
   max-width: 365px;
   height: 66px;
   margin-bottom: 28px;
@@ -72,7 +72,6 @@ input[name=agree] {
   max-width: 479px;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.07);
   border-radius: 15px;
-  max-height: 598px;
   padding: 30px 40px 40px;
 }
 
@@ -99,6 +98,10 @@ input[name=agree] {
   color: #FFFFFF;
 }
 
+.feedback-send-btn-active {
+  background: #171717;
+}
+
 .wrapper {
   min-height: 100%;
 }
@@ -120,6 +123,11 @@ body::-webkit-scrollbar, .visual-hidden, .br-640, .br-320, .br-1200, .zoo-geo-32
   flex-wrap: wrap;
   align-items: center;
   border: 2px solid #F0F0F0;
+}
+
+.fam-pet-next, .fam-pet-prev {
+  background: none;
+  border: none;
 }
 
 .header-logo {
@@ -501,40 +509,41 @@ body::-webkit-scrollbar, .visual-hidden, .br-640, .br-320, .br-1200, .zoo-geo-32
   fill: #080029;
 }
 
-.fam-pet-grid {
-  padding-top: 100px;
+.fam-pet-grid-top, .fam-pet-grid-bottom {
   display: grid;
-  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
 }
 
-.red-panda-card {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+.fam-pet-grid-top {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  height: 328px;
 }
 
-.panda-card {
-  grid-column-start: 1;
-  grid-row-start: 2;
-  grid-row-end: 3;
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2.5s;
+  animation-name: fade;
+  animation-duration: 2.5s;
 }
 
-.penguin-card {
-  grid-column-start: 2;
-  grid-row-start: 1;
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.eagle-card {
-  grid-column-start: 2;
-  grid-row-start: 2;
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.gorilla-card {
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-
 .fam-pet-card {
   position: relative;
   width: 328px;
