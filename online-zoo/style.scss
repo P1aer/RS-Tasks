@@ -483,6 +483,7 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   grid-template-columns: repeat(3,1fr);
   grid-gap: 40px;
 }
+
 .fam-pet-grid-top{
   padding-top: 100px;
   padding-bottom: 40px;
@@ -838,8 +839,13 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   align-items: center;
   margin-bottom: 30px;
 }
+.comment-name{
+  padding-left: 20px;
+}
 .comment-avatar{
-  padding-right: 20px;
+  border-radius: 100%;
+  width: 46px;
+  height: 46px;
 }
 .comment-text{
   padding-right: 40px;
@@ -855,6 +861,10 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
   display: flex;
   justify-content: space-between;
   width: 150px;
+}
+.testim-btn-arrow{
+  background: none;
+  border: none;
 }
 .testim-btn-arrow:hover{
   .testim-btn-arrow-stroke{
@@ -1317,11 +1327,14 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
       height: 100%;
     }
   }
-  .fam-pet-grid{
-    padding-top: 90px;
+  .fam-pet-grid-top,.fam-pet-grid-bottom{
     grid-gap:30px;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows:repeat(2,1fr) ;
+  }
+  .fam-pet-grid-top{
+    padding-top: 90px;
+    padding-bottom: 30px;
+    height: 258px;
   }
   .fam-pet-grid-button{
 
@@ -1806,11 +1819,14 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
     padding-bottom: 80px;
 
   }
-  .fam-pet-grid{
-    padding-top: 70px;
+  .fam-pet-grid-top,.fam-pet-grid-bottom{
     grid-gap:30px;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows:repeat(2,1fr) ;
+  }
+  .fam-pet-grid-top{
+    padding-top: 70px;
+    padding-bottom: 30px;
+    height: 180px;
   }
   .fam-pet-arrows{
     width: 132px;
@@ -2408,12 +2424,14 @@ body::-webkit-scrollbar,.visual-hidden,.br-640,.br-320,.br-1200,.zoo-geo-320menu
       padding-left: 20px;
     }
   }
-  .fam-pet-grid{
-    max-width: 300px;
-    padding-top: 50px;
+  .fam-pet-grid-top,.fam-pet-grid-bottom{
     grid-gap:20px;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows:repeat(2,1fr) ;
+  }
+  .fam-pet-grid-top{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: 140px;
   }
   .fam-pet-arrows{
     width: 132px;
