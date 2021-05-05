@@ -12,7 +12,7 @@ const PANDA_TEXT = 'The broadcast is from Shenshuping Gengda Panda Center in Chi
 
 const changeCard = (ev) => {
     const current_btn = ev.currentTarget;
-    const animal = current_btn.classList[1].split('-')[0];
+    const animal = current_btn.classList[1].split('-')[0].toLowerCase();
     current_btn.classList.add('icon-active');
     try {
         active_btn.classList.remove('icon-active');
@@ -21,6 +21,7 @@ const changeCard = (ev) => {
     geo_card.classList.remove('visual-hidden')
     active_btn = ev.currentTarget;
     geo_card_img.src =`../../assets/images/${animal}-watch.png`;
+    animal.split('')[0].toUpperCase().join('');
     geo_card_btn.href = `../../pages/Zoos%20Translation/${animal}.html`
     geo_card_h3.textContent = animal;
     switch (animal) {
