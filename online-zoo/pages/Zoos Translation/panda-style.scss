@@ -336,7 +336,10 @@ body::-webkit-scrollbar{
   color: #080029;
 }
 .grid-img{
+  width: 328px;
+  height: 184px;
   position: absolute;
+  object-fit: cover;
 }
 .other-cam-grid{
   display: grid;
@@ -411,6 +414,10 @@ body::-webkit-scrollbar{
 }
 .grid-bnt-arrow{
   padding-left: 10px;
+}
+.other-cam-btn{
+  background: none;
+  border: none;
 }
 .other-cam-btns{
   display: flex;
