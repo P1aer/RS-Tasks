@@ -62,7 +62,12 @@ input[name=agree] {
 }
 
 .feedback {
-  margin: 5% auto 15% auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 479px;
   height: 598px;
 }
@@ -1742,25 +1747,77 @@ body::-webkit-scrollbar, .visual-hidden, .br-640, .br-320, .br-1200, .zoo-geo-32
     width: 55px;
     height: 65px;
   }
+  .zoo-geo-map-icons:hover {
+    width: 85px;
+    height: 95px;
+  }
 
   .Eagle-icon {
     left: 70px;
     top: 105px;
+  }
+  .Eagle-icon:hover {
+    left: 60px;
+    top: 85px;
+    width: 85px;
+    height: 95px;
+  }
+  .Eagle-icon.icon-active {
+    left: 60px;
+    top: 85px;
+    width: 85px;
+    height: 95px;
   }
 
   .Alligator-icon {
     left: 144px;
     top: 120px;
   }
+  .Alligator-icon:hover {
+    left: 134px;
+    top: 100px;
+    width: 85px;
+    height: 95px;
+  }
+  .Alligator-icon.icon-active {
+    left: 134px;
+    top: 100px;
+    width: 85px;
+    height: 95px;
+  }
 
   .Gorilla-icon {
     left: 309px;
     top: 172px;
   }
+  .Gorilla-icon:hover {
+    left: 299px;
+    top: 152px;
+    width: 85px;
+    height: 95px;
+  }
+  .Gorilla-icon.icon-active {
+    left: 299px;
+    top: 152px;
+    width: 85px;
+    height: 95px;
+  }
 
   .Panda-icon {
     left: 492px;
     top: 109px;
+  }
+  .Panda-icon:hover {
+    left: 482px;
+    top: 89px;
+    width: 85px;
+    height: 95px;
+  }
+  .Panda-icon.icon-active {
+    left: 482px;
+    top: 89px;
+    width: 85px;
+    height: 95px;
   }
 
   /*        footer          */

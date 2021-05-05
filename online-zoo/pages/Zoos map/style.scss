@@ -24,7 +24,7 @@ body::-webkit-scrollbar{
   min-height: 100%;
 }
 
-.visual-hidden, .eagle-icon,.zoo-geo-320menu{
+.visual-hidden, .Eagle-icon,.zoo-geo-320menu{
   display: none;
 }
 
@@ -165,25 +165,53 @@ body::-webkit-scrollbar{
     }
   }
 }
-.alligator-icon{
+.Alligator-icon{
   top:212px;
   left: 208px;
+  &.icon-active{
+    top:192px;
+    left: 195px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
   &:hover{
     top:192px;
     left: 195px;
   }
 }
-.gorilla-icon{
+.Gorilla-icon{
   top:455px;
   left: 908px;
+  &.icon-active{
+    top: 435px;
+    left: 895px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
+
   &:hover{
     top: 435px;
     left: 895px;
   }
 }
-.panda-icon{
+.Panda-icon{
   top:249px;
  left: 1588px;
+  &.icon-active{
+    top: 229px;
+    left:1575px;
+    width: 140px;
+    height: 168px;
+    .stroke-class{
+      stroke:#609FFF;
+    }
+  }
   &:hover{
     top: 229px;
     left:1575px;
@@ -226,6 +254,8 @@ body::-webkit-scrollbar{
   padding-bottom: 4px;
 }
 .geo-card-img {
+  width: 344px;
+  height: 218px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-bottom: 20px;
@@ -258,9 +288,10 @@ body::-webkit-scrollbar{
 @media (max-width: 1200px) {
   /*         HEADER         */
   .header{
-    padding-top: 13px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 0;
+    margin-top: 13px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
   .header-box{
     height: 70px;
@@ -328,22 +359,63 @@ body::-webkit-scrollbar{
     width: 83px;
     height: 97px;
   }
- .panda-icon{
+  .geo-card-img{
+    height: 198px;
+  }
+ .Panda-icon{
     top:280px;
    left: 1100px;
+   &:hover{
+     top:240px;
+     left: 1080px;
+   }
+   &.icon-active{
+     top:240px;
+     left: 1080px;
+   }
  }
-  .alligator-icon{
+  .Alligator-icon{
     left: 214px;
     top: 254px;
+    &:hover{
+      top:214px;
+      left:194px;
+    }
+    &.icon-active{
+      top:214px;
+      left:194px;
+    }
   }
-  .eagle-icon{
+  .Eagle-icon{
     display: block;
     top:90px;
     left:0;
+    &:hover{
+      top:50px;
+      left:-20px;
+      .stroke-class{
+        stroke:#609FFF;
+      }
+    }
+    &.icon-active{
+      top:50px;
+      left:-20px;
+      .stroke-class{
+        stroke:#609FFF;
+      }
+    }
   }
-  .gorilla-icon{
+  .Gorilla-icon{
     top:402px;
-    left:665px
+    left:665px;
+    &:hover{
+      top:362px;
+      left:645px;
+    }
+    &.icon-active{
+      top:362px;
+      left:645px;
+    }
   }
 
 .geo-card{
@@ -452,22 +524,22 @@ body::-webkit-scrollbar{
     width: 113px;
     height: 127px;
   }
-  .panda-icon{
+  .Panda-icon{
     display: none;
     top:280px;
     left: 1100px;
   }
-  .alligator-icon{
+  .Alligator-icon{
     display: none;
     left: 214px;
     top: 254px;
   }
-  .eagle-icon{
+  .Eagle-icon{
     display: none;
     top:90px;
     left:0;
   }
-  .gorilla-icon{
+  .Gorilla-icon{
     left: 318px;
     top: 380px;
     .stroke-class{
@@ -583,24 +655,28 @@ body::-webkit-scrollbar{
     width: 113px - 43px;
     height: 127px - 43px;
   }
-  .panda-icon{
+  .Panda-icon{
     display: none;
     top:280px;
     left: 1100px;
+
   }
-  .alligator-icon{
+  .Alligator-icon{
     display: none;
     left: 214px;
     top: 254px;
+
   }
-  .eagle-icon{
+  .Eagle-icon{
     display: none;
     top:90px;
     left:0;
+
   }
-  .gorilla-icon{
+  .Gorilla-icon{
     left: 180px;
     top: 215px;
+
     .stroke-class{
       stroke: #609FFF;
     }

@@ -810,6 +810,10 @@ body::-webkit-scrollbar {
     height: 54px;
   }
 
+  .invisible-class {
+    display: none;
+  }
+
   .donate-title {
     padding: 0;
     border: none;

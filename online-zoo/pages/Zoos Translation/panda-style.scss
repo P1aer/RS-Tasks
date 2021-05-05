@@ -730,6 +730,9 @@ body::-webkit-scrollbar{
     width: 54px;
     height: 54px;
   }
+  .invisible-class{
+    display: none;
+  }
   .donate-title{
     padding: 0;
     border: none;
@@ -740,6 +743,7 @@ body::-webkit-scrollbar{
     padding-top: 25px;
     margin-bottom: 15px;
   }
+
   .eye{
     width: 16px;
     height: 16px;
