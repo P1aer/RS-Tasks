@@ -147,7 +147,7 @@ const  showNextSlides = (e) => {
 const  showNextComments = (e) => {
     if(e!=='timeout'){
         clearInterval(testim_timer)
-        setTimeout(setTimer,TIMER_SLEEP-TIMER_INTERVAL)
+        testim_timer = setTimeout(setTimer,TIMER_SLEEP-TIMER_INTERVAL)
     }
     for (let i = 0; i < testim_comments.length; i++) {
         testim_comments[i].style.display = "none";
