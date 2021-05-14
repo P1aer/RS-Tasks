@@ -1,0 +1,121 @@
+@import "~normalize-css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+h3 {
+  margin: 0 0;
+}
+.header-container{
+  margin-bottom: 30px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap:wrap;
+  max-width: 1920px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2196F3;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.header-nav-item{
+  width: 100px;
+  list-style-type: none;
+  height: 100px;
+  color: white;
+}
+.nav-item{
+  height: 100%;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.header-logo{
+  height: 80px;
+  width: 80px;
+  border-radius:100% ;
+}
+.header-nav-list{
+  display: flex;
+  padding: 0 0;
+  margin:  0 0;
+  height: 100px;
+}
+.logo-mini{
+  height: 40px;
+  width: 40px;
+  border-radius:100% ;
+  margin: 15px 0 10px 0;
+}
+.active{
+  background: #1E88E5;
+}
+.header-btn{
+  font-style: normal;
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: #2196F3;
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 1px 18px rgba(0, 0, 0, 0.12), 0 6px 10px rgba(0, 0, 0, 0.14);
+}
+.header-logo-container{
+  display: flex;
+  align-items: center;
+}
+.logo-text{
+  color: darkgreen;
+  padding-left: 20px;
+}
+.main-container{
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  height: 800px;
+  margin:  0 auto 125px auto;
+}
+.about-h3{
+  text-align: center;
+  font-size: 30px;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+.about-wrapper{
+  max-width: 1200px - 80px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.about-section{
+  max-width: 1200px - 80px;
+  background-color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.section-text{
+  font-size: 14px;
+  line-height: 20px;
+}
+.play-btn{
+  padding: 20px 26px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 38px;
+  color: #2196F3;
+  background: #F2F9FE;
+  border: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 1px 18px rgba(0, 0, 0, 0.12), 0 6px 10px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+}
