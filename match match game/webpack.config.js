@@ -10,7 +10,7 @@ module.exports = {
     main: "./src/scripts/index.ts",
   },
   output: {
-    filename: "bundle.js",
+    filename: "scripts/bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
@@ -35,7 +35,7 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: "styles/[name].css",
+      filename: "[name].css",
     }),
   ],
   module: {
