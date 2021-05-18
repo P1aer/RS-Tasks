@@ -2,7 +2,7 @@ import "../styles/style.scss";
 import about from "./About";
 import "./database";
 import best from "./best";
-import game from "./game";
+import game from "./components/game";
 
 (function createHeader() {
   const header = document.createElement("header");
@@ -10,6 +10,7 @@ import game from "./game";
       <form action="" class="challenger-form">
       <div class="form-container">
         <div class="form-wrapper">
+       
          <div class="form-head">
           <h3 class="form-head-h3">New challenger approaching</h3>
          </div>

@@ -6,15 +6,14 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: {
-    main: "./src/scripts/index.ts",
-  },
+  entry: ["babel-polyfill", "./src/scripts/index.ts"],
+
   output: {
     filename: "scripts/bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000,
   },
@@ -23,7 +22,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: "src/index.html"
+      template: "src/index.html",
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -51,7 +50,7 @@ module.exports = {
           options: {
             name: "[name].[ext]",
           },
-        }
+        },
       },
       {
         test: /\.s[ac]ss$/,
@@ -72,10 +71,10 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env", "@babel/preset-typescript"],
-            plugins: ["@babel/plugin-proposal-class-properties"]
-          }
-        }
+            plugins: ["@babel/plugin-proposal-class-properties"],
+          },
+        },
       },
-    ]
-  }
+    ],
+  },
 };
