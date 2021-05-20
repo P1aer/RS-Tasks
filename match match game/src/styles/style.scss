@@ -10,7 +10,6 @@ h3 {
 //       HEADER
 
 .header-container{
-  margin-bottom: 30px;
   padding: 0 20px;
   display: flex;
   flex-wrap:wrap;
@@ -87,7 +86,7 @@ h3 {
   max-width: 1200px;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  height: 800px;
+  height: 640px;
   margin:  0 auto 0 auto;
 }
 .about-h3{
@@ -128,7 +127,7 @@ h3 {
 }
 // form
 .challenger-form{
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -203,15 +202,16 @@ margin-left: 30px;
 }
 //game
 .card-field{
-  width: 70%;
+  width: 90%;
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap:wrap;
+  margin: 0 auto;
 }
 .card-container{
    margin: 1%;
-   flex: 1 0 20%;
+  flex:1 auto;
    display: flex;
    align-items: center;
    justify-content: space-around;
@@ -227,8 +227,8 @@ margin-left: 30px;
  }
 .card{
   position: relative;
-  width: 10rem;
-  height: 10rem;
+  width: 9rem;
+  height: 9rem;
   transform-style: preserve-3d;
   transition: all  .5s;
   transform-origin: right;
@@ -245,7 +245,8 @@ margin-left: 30px;
     border-radius: inherit;
   }
   &-front{
-  background: pink;
+    background-position:center ;
+    background-size: cover;
   }
   &-back{
     background-color:grey ;

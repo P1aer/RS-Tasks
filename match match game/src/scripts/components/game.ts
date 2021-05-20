@@ -4,7 +4,7 @@ import { Card } from "./card";
 import { CardField } from "./card-field";
 import { delay } from "../../shared/delay";
 
-const FLIP_DELAY = 3; // тоже в настройки улетит
+const FLIP_DELAY = 0.5; // тоже в настройки улетит
 
 export class Game extends BaseComponent {
   private readonly cardsField = new CardField();
@@ -33,10 +33,12 @@ export class Game extends BaseComponent {
 
   private async cardHandler(card: Card) {
     if (this.isAnimation) return;
+    if(!card.isFlipped) return ;
     this.isAnimation = true;
     await card.flipToFront();
     if (!this.activeCard) {
       this.activeCard = card;
+      this.isAnimation = false;
       return;
     }
     if (this.activeCard.image !== card.image) {
@@ -56,7 +58,15 @@ function createGameHTML() {
            <div class="card-timer">
             <h3 class="timer">0 : 0</h3>
            </div>
+           
              <div class="card-field">
+                   <div class="card-container">
+                    <div class="card">
+                       <div class="card-front">f</div>
+                       <div class="card-back">b</div>
+                    </div>
+                 </div>
+                 
              
                  <div class="card-container">
                     <div class="card">
@@ -75,13 +85,37 @@ function createGameHTML() {
                        <div class="card-front">f</div>
                        <div class="card-back">b</div>
                     </div>
+                 </div>   
+                 <div class="card-container">
+                    <div class="card">
+                       <div class="card-front">f</div>
+                       <div class="card-back">b</div>
+                    </div>
                  </div>
-                 
-              </div>
-            </div>
+                 <div class="card-container">
+                    <div class="card">
+                       <div class="card-front">f</div>
+                       <div class="card-back">b</div>
+                    </div>
+                 </div>  
+                                  <div class="card-container">
+                    <div class="card">
+                       <div class="card-front">f</div>
+                       <div class="card-back">b</div>
+                    </div>
+                 </div>
+                 <div class="card-container">
+                    <div class="card">
+                       <div class="card-front">f</div>
+                       <div class="card-back">b</div>
+                    </div>
+                 </div>  
+           </div>
+            
   `;
 }
 function startGame() {
+
   createGameHTML();
   const from = new Date().getTime();
   const countdownfunc = setInterval(() => {
