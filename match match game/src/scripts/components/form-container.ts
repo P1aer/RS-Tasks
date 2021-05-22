@@ -60,10 +60,20 @@ export class FormContainer extends BaseComponent {
     type: string,
     require = false,
     placeholder = "",
-    value = ""
+    value = "",
+    fstyle: string[]
   ) {
     this.forminputs.push(
-      new FormInput(label, styles, id, type, require, placeholder, value)
+      new FormInput(
+        label,
+        styles,
+        id,
+        type,
+        require,
+        placeholder,
+        value,
+        fstyle
+      )
     );
   }
 }

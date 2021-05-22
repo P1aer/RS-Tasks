@@ -1,7 +1,6 @@
 import { BaseComponent } from "./base-component";
 import { Card } from "./card";
-
-const SHOW_TIME = 5; // заменю объектом потом с настройками
+import globalState from "../../shared/services/globalState";
 
 export class CardField extends BaseComponent {
   private cards: Card[] = [];
@@ -20,6 +19,6 @@ export class CardField extends BaseComponent {
     this.cards.forEach((card) => this.element.appendChild(card.element));
     setTimeout(() => {
       this.cards.forEach((card) => card.flipToBack());
-    }, SHOW_TIME * 1000);
+    }, globalState.settings.SHOW_TIME * 1000);
   }
 }

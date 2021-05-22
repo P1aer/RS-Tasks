@@ -23,6 +23,5 @@ export class AboutWrapper extends BaseComponent {
 
   deployBtn(place: HTMLElement) {
     place.appendChild(this.playbtn.element);
-    console.log(this.playbtn);
   }
 }

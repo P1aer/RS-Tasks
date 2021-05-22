@@ -11,9 +11,13 @@ export class Header extends BaseComponent {
     return this.challengerform;
   }
 
+  get Container() {
+    return this.container;
+  }
+
   constructor() {
     super("header", ["header"]);
-    this.challengerform = new Form();
+    this.challengerform = new Form(["challenger-form"]);
     this.container = new HeaderContainer();
     this.element.appendChild(this.container.element);
   }
@@ -110,7 +114,9 @@ export class Header extends BaseComponent {
       "fname",
       "text",
       true,
-      "Jessie"
+      "Jessie",
+      "",
+      ["form-input"]
     );
     this.challengerform.container.addInput(
       "Last Name",
@@ -118,7 +124,9 @@ export class Header extends BaseComponent {
       "fsur",
       "text",
       true,
-      "Doe"
+      "Doe",
+      "",
+      ["form-input"]
     );
     this.challengerform.container.addInput(
       "E-mail",
@@ -126,7 +134,9 @@ export class Header extends BaseComponent {
       "fmail",
       "email",
       true,
-      "Jessie.Doe@mail.com"
+      "Jessie.Doe@mail.com",
+      "",
+      ["form-input"]
     );
     this.challengerform.container.addSimpleInput([], "file", "file");
     this.challengerform.container.addSimpleInput(

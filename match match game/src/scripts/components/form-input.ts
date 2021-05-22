@@ -11,9 +11,10 @@ export class FormInput extends BaseComponent {
     type: string,
     require = false,
     placeholder = "",
-    value = ""
+    value = "",
+    fstyle: string[]
   ) {
-    super("div", ["form-input"]);
+    super("div", fstyle);
     this.input = new Input(styles, id, type, require, placeholder, value);
     this.element.innerHTML = ` <label for="${id}">${label}</label><br>`;
     this.element.appendChild(this.input.element);

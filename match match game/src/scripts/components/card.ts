@@ -9,7 +9,7 @@ export class Card extends BaseComponent {
     super("div", ["card-container"]);
     this.element.innerHTML = `
         <div class="card">
-           <div class="card-front" style="background-image:url('./images/${image}') "></div>
+           <div class="card-front" style="background-image:url('./images/${image}')"></div>
            <div class="card-back"></div>
         </div>`;
   }

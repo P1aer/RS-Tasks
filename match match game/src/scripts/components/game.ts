@@ -3,19 +3,34 @@ import { BaseComponent } from "./base-component";
 import { Card } from "./card";
 import { CardField } from "./card-field";
 import { delay } from "../../shared/delay";
+import { TimerContainer } from "./timer-container";
 
-const FLIP_DELAY = 0.5; // тоже в настройки улетит
-
+/* 
+Расчет очков игрока должен производиться по следующей формуле: 
+(количество сравнений - количество ошибочных сравнений) * 100 
+- (время прошедшее с начала в секундах) * 10. При этом количество очков не должно быть меньше 0. 
+*/
 export class Game extends BaseComponent {
+  private scoreData = {
+    total: 0,
+    mistakes: 0,
+    left: globalState.settings.number,
+    time: 0,
+  };
+
   private readonly cardsField = new CardField();
 
   private activeCard?: Card;
+
+  private timer: TimerContainer;
 
   private isAnimation = false;
 
   constructor() {
     super();
+    this.timer = new TimerContainer();
     this.cardsField = new CardField();
+    this.element.appendChild(this.timer.element);
     this.element.appendChild(this.cardsField.element);
   }
 
@@ -29,11 +44,12 @@ export class Game extends BaseComponent {
       card.element.addEventListener("click", () => this.cardHandler(card))
     );
     this.cardsField.addCards(cards);
+    this.timer.timer.setShowTimer();
   }
 
   private async cardHandler(card: Card) {
     if (this.isAnimation) return;
-    if(!card.isFlipped) return ;
+    if (!card.isFlipped) return;
     this.isAnimation = true;
     await card.flipToFront();
     if (!this.activeCard) {
@@ -42,92 +58,32 @@ export class Game extends BaseComponent {
       return;
     }
     if (this.activeCard.image !== card.image) {
-      await delay(FLIP_DELAY * 1000);
+      this.handleMistake(this.activeCard, card);
+      await delay(globalState.settings.FLIP_DELAY * 1000);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
+      this.activeCard.element.classList.remove("red-card");
+      card.element.classList.remove("red-card");
     } else {
+      this.handleHit(this.activeCard, card);
       // очки или анимация
     }
     this.activeCard = undefined;
     this.isAnimation = false;
   }
-}
 
-function createGameHTML() {
-  const main = document.querySelector(".main-container");
-  main.innerHTML = `
-           <div class="card-timer">
-            <h3 class="timer">0 : 0</h3>
-           </div>
-           
-             <div class="card-field">
-                   <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>
-                 
-             
-                 <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>
-                                  <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>
-                                  <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>   
-                 <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>
-                 <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>  
-                                  <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>
-                 <div class="card-container">
-                    <div class="card">
-                       <div class="card-front">f</div>
-                       <div class="card-back">b</div>
-                    </div>
-                 </div>  
-           </div>
-            
-  `;
-}
-function startGame() {
+  handleMistake(card1, card2) {
+    card2.element.classList.add("red-card");
+    card1.element.classList.add("red-card");
+    this.scoreData.mistakes += 1;
+    this.scoreData.total += 1;
+    console.log(this.scoreData);
+  }
 
-  createGameHTML();
-  const from = new Date().getTime();
-  const countdownfunc = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = now - from;
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    const timer = document.querySelector(".timer");
-    timer.innerHTML = `${minutes} : ${seconds}`;
-    if (distance >= globalState.settings.time * 1000) {
-      clearInterval(countdownfunc);
-    }
-  }, 1000);
+  handleHit(card1, card2) {
+    card1.element.classList.add("green-card");
+    card2.element.classList.add("green-card");
+    this.scoreData.total += 1;
+    this.scoreData.left -= 1;
+    console.log(this.scoreData);
+  }
 }
-export default { startGame };
