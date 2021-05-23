@@ -65,7 +65,7 @@ export class App {
     this.cleanMain();
     const res = await fetch("../images/images.json");
     const categories: ImageCategory[] = await res.json();
-    const cat = categories[0];
+    const cat = categories[globalState.settings.type];
     const images = [];
     for (let i = 0; i < globalState.settings.number; i += 1)
       // cat.images.map((name) => `${cat.type}/${name}`);

@@ -1,6 +1,6 @@
 const globalState = {
   settings: {
-    type: "pokemon",
+    type: 0,
     number: 8,
     time: 100,
     SHOW_TIME: 5,

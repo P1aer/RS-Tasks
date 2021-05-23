@@ -225,11 +225,11 @@ margin-left: 30px;
         transform-origin: left;
     }
 
-  &.red-card > .card{
+  &.red-card > .card  > .card-front{
     background-color: red;
   }
 
-  &.green-card > .card{
+  &.green-card > .card > .card-front{
     background-color: green;
   }
  }
