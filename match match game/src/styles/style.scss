@@ -1,6 +1,12 @@
 @import "~normalize-css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+:root{
+   --cardSpace: 22%;
+   --cardSize: 10rem;
+}
+
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -147,6 +153,28 @@ h3 {
   width: 30%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
+.form-input{
+  background: lightcyan;
+  border-radius: 6px 6px 0 0;
+  label{
+   padding-top: 10px;
+    padding-left: 20px;
+  }
+  input {
+    background: inherit;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 2px solid gray;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+    &:valid{
+        background-color: lightgreen;
+        border: grey 1px solid;
+    }
+  }
+
+}
+
 .form-wrapper{
   padding: 20px 20px;
 }
@@ -158,12 +186,13 @@ h3 {
   background: #FFFFFF;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-evenly;
 }
 .form-content{
   background: #FFFFFF;
   display: flex;
+  justify-content: space-evenly;
 }
 .cancel{
   padding: 10px 16px;
@@ -176,6 +205,9 @@ h3 {
   line-height: 16px;
   letter-spacing: 1.25px;
   border: none;
+}
+input[type=file]{
+  max-width: 136px;
 }
 input[type=submit]{
   padding: 10px 16px;
@@ -192,8 +224,14 @@ input[type=submit]{
 }
 .form-canvas{
   border-radius: 100%;
-margin-left: 30px;
-  margin-bottom: 90px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+.form-content-inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height:220px;
 }
 .header-profile{
    height: 70px;
@@ -211,7 +249,7 @@ margin-left: 30px;
 }
 .card-container{
    margin: 1%;
-  flex:0 1 23%;
+  flex:1 1 var(--cardSpace);
    display: flex;
    align-items: center;
    justify-content: space-around;
@@ -235,8 +273,8 @@ margin-left: 30px;
  }
 .card{
   position: relative;
-  width: 10rem;
-  height: 10rem;
+  width: var(--cardSize);
+  height:  var(--cardSize);
   transform-style: preserve-3d;
   transition: all  .5s;
   transform-origin: right;
@@ -279,4 +317,54 @@ margin-left: 30px;
   font-size: 36px;
   line-height: 30px;
   color: rgba(0, 0, 0, 0.4);
+}
+/*           SETTINGS        */
+.settings-container{
+  background-color: white;
+  max-width: 1100px;
+  width: 1000px;
+  margin: 50px auto 0 auto;
+}
+input[type='range'] {
+  order: 3;
+  display: block;
+  appearance: none;
+  height: 3px;
+  background-color: #a2abb3;
+  outline: none;
+  border-radius: 0.25rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #313940;
+  border: 1px solid #a2abb3;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.setting-input{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+   label{
+     order: 1;
+     width: 150px;
+     font-size: 24px;
+     padding-right: 10px;
+
+   }
+  output{
+    order: 2;
+    background-color: cyan;
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+  }
+
 }

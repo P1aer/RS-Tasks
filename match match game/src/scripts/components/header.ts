@@ -34,9 +34,6 @@ export class Header extends BaseComponent {
     document
       .getElementById("register")
       .addEventListener("click", this.visibleModal);
-
-    window.onclick = this.hideModal;
-
     this.container.nav.list.goToPage("about");
     this.challengerform.element.addEventListener("submit", (ev) => {
       ev.preventDefault();
@@ -82,10 +79,7 @@ export class Header extends BaseComponent {
     this.challengerform.container.Btns.forEach((btn) =>
       footer.appendChild(btn.element)
     );
-
-    const canvas =
-      this.challengerform.container.element.querySelector(".canvas-section");
-    canvas.append(this.challengerform.container.SipleInputs[0].element);
+    footer.prepend(this.challengerform.container.SipleInputs[0].element);
   }
 
   cleanForm() {

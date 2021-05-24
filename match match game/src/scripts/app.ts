@@ -5,6 +5,7 @@ import { Header } from "./components/header";
 import { MainContainer } from "./components/main-container";
 import { AboutWrapper } from "./components/about-wrapper";
 import { Settings } from "./components/settings";
+import { ScoreBoard } from "./components/score-board";
 
 export class App {
   private readonly game: Game;
@@ -17,7 +18,10 @@ export class App {
 
   private readonly settings: Settings;
 
+  private readonly score: ScoreBoard;
+
   constructor(private readonly rootElement: HTMLElement) {
+    this.score = new ScoreBoard();
     this.settings = new Settings();
     this.about = new AboutWrapper();
     this.main = new MainContainer();
@@ -43,6 +47,15 @@ export class App {
       "click",
       () => this.buildSettingsPage()
     );
+    this.header.Container.nav.list.Best.element.addEventListener("click", () =>
+      this.buildScorePage()
+    );
+  }
+
+  buildScorePage() {
+    this.cleanMain();
+    this.main.element.appendChild(this.score.element);
+    this.header.Container.nav.list.goToPage("best");
   }
 
   buildSettingsPage() {

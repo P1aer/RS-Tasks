@@ -1,9 +1,12 @@
 import { BaseComponent } from "./base-component";
 import { FormInput } from "./form-input";
 import globalState from "../../shared/services/globalState";
+import { Output } from "./output";
 
 export class Settings extends BaseComponent {
   private readonly inputs: FormInput[];
+
+  private readonly outputs: Output[];
 
   constructor() {
     super("div", ["settings-container"]);
@@ -24,7 +27,17 @@ export class Settings extends BaseComponent {
         "setting-input",
       ]),
     ];
+    this.outputs = [
+      new Output("5", "out-show"),
+      new Output("0.5", "out-delay"),
+      new Output("4 x 4", "out-size"),
+      new Output("pokemon", "out-type"),
+      new Output("60", "out-time"),
+    ];
     this.inputs.forEach((input) => this.element.appendChild(input.element));
+    for (let i = 0; i < this.outputs.length; i += 1) {
+      this.inputs[i].element.append(this.outputs[i].element);
+    }
   }
 
   initInputs() {
@@ -46,25 +59,77 @@ export class Settings extends BaseComponent {
     timeInput.min = "30";
     timeInput.max = "180";
     timeInput.step = "10";
-    showInput.addEventListener("change", (ev) => {
+    showInput.addEventListener("input", (ev) => {
       globalState.settings.SHOW_TIME = Number(
         (<HTMLInputElement>ev.target).value
       );
+      (<HTMLOutputElement>(
+        this.outputs[0].element
+      )).value = `${globalState.settings.SHOW_TIME}`;
     });
-    delayInput.addEventListener("change", (ev) => {
+    delayInput.addEventListener("input", (ev) => {
       globalState.settings.FLIP_DELAY = Number(
         (<HTMLInputElement>ev.target).value
       );
+      (<HTMLOutputElement>(
+        this.outputs[1].element
+      )).value = `${globalState.settings.FLIP_DELAY}`;
     });
-    sizeInput.addEventListener("change", (ev) => {
+    sizeInput.addEventListener("input", (ev) => {
       globalState.settings.number =
         Number((<HTMLInputElement>ev.target).value) ** 2 / 2;
+      this.changeCardSize(globalState.settings.number);
+      (<HTMLOutputElement>this.outputs[2].element).value = `${
+        (<HTMLInputElement>ev.target).value
+      } x ${(<HTMLInputElement>ev.target).value}`;
     });
-    typeInput.addEventListener("change", (ev) => {
+    typeInput.addEventListener("input", (ev) => {
       globalState.settings.type = Number((<HTMLInputElement>ev.target).value);
+      (<HTMLOutputElement>this.outputs[3].element).value = this.defineType(
+        globalState.settings.type
+      );
     });
-    timeInput.addEventListener("change", (ev) => {
+    timeInput.addEventListener("input", (ev) => {
       globalState.settings.time = Number((<HTMLInputElement>ev.target).value);
+      (<HTMLOutputElement>(
+        this.outputs[4].element
+      )).value = `${globalState.settings.time}`;
     });
   }
+
+  defineType = (type: number) => {
+    switch (type) {
+      case 0:
+        return "pokemon";
+      case 1:
+        return "kanji";
+      default:
+        return "pokemon";
+    }
+  };
+
+  changeCardSize = (size: number) => {
+    let tempSize;
+    let tempSpace;
+    switch (size) {
+      case 8:
+        tempSize = "10rem";
+        tempSpace = "22%";
+        break;
+      case 18:
+        tempSize = "6rem";
+        tempSpace = "14%";
+        break;
+      case 32:
+        tempSize = "4.5rem";
+        tempSpace = "10%";
+        break;
+      default:
+        tempSize = "10rem";
+        tempSpace = "22%";
+        break;
+    }
+    document.documentElement.style.setProperty("--cardSpace", tempSpace);
+    document.documentElement.style.setProperty("--cardSize", tempSize);
+  };
 }
