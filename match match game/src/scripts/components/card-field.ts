@@ -14,6 +14,7 @@ export class CardField extends BaseComponent {
     this.element.innerHTML = "";
   }
 
+  /// баги велком
   addCards(cards: Card[]) {
     this.cards = cards;
     this.cards.forEach((card) => this.element.appendChild(card.element));

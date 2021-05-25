@@ -94,13 +94,6 @@ export class Header extends BaseComponent {
     this.element.appendChild(this.challengerform.element);
   };
 
-  hideModal = (event) => {
-    if (event.target === this.challengerform.element) {
-      this.challengerform.element.remove();
-      this.cleanForm();
-    }
-  };
-
   createElementsModal() {
     this.challengerform.container.addInput(
       "First Name",

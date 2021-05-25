@@ -2,7 +2,7 @@ import { BaseComponent } from "./base-component";
 import { HeaderNavItem } from "./header-nav-item";
 
 export class HeaderNavList extends BaseComponent {
-  private paths: HeaderNavItem[];
+  private readonly paths: HeaderNavItem[];
 
   get About() {
     return this.paths[0];
