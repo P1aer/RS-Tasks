@@ -6,11 +6,6 @@ import { delay } from "../../shared/delay";
 import { TimerContainer } from "./timer-container";
 import { Form } from "./form";
 
-/* 
-Расчет очков игрока должен производиться по следующей формуле: 
-(количество сравнений - количество ошибочных сравнений) * 100 
-- (время прошедшее с начала в секундах) * 10. При этом количество очков не должно быть меньше 0. 
-*/
 export class Game extends BaseComponent {
   private scoreData = {
     total: 0,
@@ -28,7 +23,7 @@ export class Game extends BaseComponent {
 
   private activeCard?: Card;
 
-  private timer: TimerContainer;
+  private timerContainer: TimerContainer;
 
   private isAnimation = false;
 
@@ -42,12 +37,12 @@ export class Game extends BaseComponent {
 
   constructor() {
     super();
-    this.resultForm = new Form(["challenger-form"]);
+    this.resultForm = new Form(["challenger-form", "result-form-container"]);
     this.resultForm.container.createBtns();
     this.resultForm.container.addBtn(["result-btn"], "OK", "score-btn");
-    this.timer = new TimerContainer();
+    this.timerContainer = new TimerContainer();
     this.cardsField = new CardField();
-    this.element.appendChild(this.timer.element);
+    this.element.appendChild(this.timerContainer.element);
     this.element.appendChild(this.cardsField.element);
   }
 
@@ -98,10 +93,12 @@ export class Game extends BaseComponent {
     this.scoreData.time = 0;
     this.cardsField.clear();
     this.stopTimer();
+    clearTimeout(this.cardsField.timeout);
+    this.resultForm.element.remove();
   }
 
   endGame() {
-    const time = this.timer.element.innerText.split(":");
+    const time = this.timerContainer.element.innerText.split(":");
     this.scoreData.time = Number(time[0]) * 60 + Number(time[1]);
     let score =
       (this.scoreData.total - this.scoreData.mistakes) * 100 -
@@ -115,7 +112,7 @@ export class Game extends BaseComponent {
     this.resultForm.container.element.innerHTML = `
       <h2 class="result-h2">Game Over</h2>
         <div class="result-stats">
-            <h3 class="result-h3"> Statistic</h3>
+            <h3 class="result-h3"> Statistics</h3>
                 <ul class="result-list">
                    <li class="result-stat-item">Comparisons: ${
                      this.scoreData.total
@@ -134,11 +131,15 @@ export class Game extends BaseComponent {
                    }</span>
                    </li>
                 </ul>
+                <div class="result-btn-container">
+                
+            </div>
         </div>   
     `;
-    this.resultForm.container.element.append(
-      this.resultForm.container.Btns[0].element
+    const div = this.resultForm.container.element.querySelector(
+      ".result-btn-container"
     );
+    div.append(this.resultForm.container.Btns[0].element);
     this.element.append(this.resultForm.element);
   }
 
@@ -157,15 +158,16 @@ export class Game extends BaseComponent {
   }
 
   setShowTimer() {
-    const timer = this.timer.timer.element;
-    timer.innerHTML = ` 0 : ${globalState.settings.SHOW_TIME}`;
+    const timer = this.timerContainer.timer.element;
+    timer.innerText = ` 0 : ${globalState.settings.SHOW_TIME}`;
     let from = new Date().getTime() + globalState.settings.SHOW_TIME * 1000;
+
     this.countdownfunc = setInterval(() => {
       const now = new Date().getTime();
       const distance = Math.abs(from - now);
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.round((distance % (1000 * 60)) / 1000);
-      timer.innerHTML = `${minutes} : ${seconds}`;
+      timer.innerText = `${minutes} : ${seconds}`;
       if (distance <= 0) {
         from = new Date().getTime();
       }

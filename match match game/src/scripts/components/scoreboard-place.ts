@@ -18,7 +18,7 @@ export class ScoreBoardPlace extends BaseComponent {
             </div>
       </div>
        <p class="scoreboard-text">
-       Score
+       Score:
         <span class="scoreboard-score">${score}</span>
         </p>
       `;

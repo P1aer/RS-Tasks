@@ -17,7 +17,8 @@ export class Input extends BaseComponent {
     if (require) {
       (<HTMLInputElement>this.element).required = true;
       if (type !== "email")
-        (<HTMLInputElement>this.element).pattern = "[A-Za-zА-Яа-яЁё]+";
+        (<HTMLInputElement>this.element).pattern =
+          "[^ ~ ! @ # $ % * () _ — + = | : ; \" ' ` < > , . ? / ^ 0-9]+";
       (<HTMLInputElement>this.element).maxLength = 30;
     }
   }

@@ -6,8 +6,17 @@ import { MainContainer } from "./components/main-container";
 import { AboutWrapper } from "./components/about-wrapper";
 import { Settings } from "./components/settings";
 import { ScoreBoard } from "./components/score-board";
+import { ScoreBoardPlace } from "./components/scoreboard-place";
 
 export class App {
+  private readonly userData = {
+    name: "",
+    surname: "",
+    mail: "",
+    img: "",
+    score: 0,
+  };
+
   private readonly game: Game;
 
   private readonly header: Header;
@@ -20,26 +29,124 @@ export class App {
 
   private readonly score: ScoreBoard;
 
-  constructor(private readonly rootElement: HTMLElement) {
+  private request: IDBOpenDBRequest;
+
+  constructor(rootElement: HTMLElement) {
     this.score = new ScoreBoard();
     this.settings = new Settings();
     this.about = new AboutWrapper();
     this.main = new MainContainer();
     this.game = new Game();
     this.header = new Header();
-    this.rootElement.appendChild(this.header.element);
+    this.request = indexedDB.open("P1aer", 1);
+    rootElement.appendChild(this.header.element);
     this.header.createHeader();
-    this.rootElement.appendChild(this.main.element);
+    rootElement.appendChild(this.main.element);
+  }
+
+  addProfile = () => {
+    const transaction = this.request.result.transaction(
+      "profiles",
+      "readwrite"
+    );
+    const store = transaction.objectStore("profiles");
+    // Define a person
+    const person = {
+      score: this.userData.score,
+      name: this.userData.name,
+      email: this.userData.mail,
+      surname: this.userData.surname,
+      img: this.userData.img,
+      created: new Date(),
+    };
+
+    // Perform the add
+    const request = store.add(person);
+
+    request.onerror = function () {
+      console.log("add Error");
+    };
+
+    request.onsuccess = function () {
+      console.log("Woot! Did it");
+    };
+  };
+
+  getTopScores = () => {
+    const transaction = this.request.result.transaction("profiles");
+    const profiles = transaction.objectStore("profiles");
+
+    const request = profiles.openCursor();
+
+    const all = [];
+
+    const comparer = (a, b) => {
+      if (a.score < b.score) {
+        return 1;
+      }
+      if (a.score > b.score) {
+        return -1;
+      }
+      return 0;
+    };
+
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (cursor) {
+        all.push(cursor.value);
+        cursor.continue();
+      } else {
+        console.log(all.sort(comparer));
+        this.updateBestPlaces(all.sort(comparer));
+      }
+    };
+  };
+
+  updateBestPlaces(arr) {
+    this.score.cleanScoreBoard();
+    const data = arr;
+    console.log(data.length);
+    for (let i = 0; i < 10; i += 1) {
+      if (data.length === i) {
+        break;
+      }
+      const challenger = new ScoreBoardPlace(
+        data[i].img,
+        data[i].name,
+        data[i].surname,
+        data[i].email,
+        data[i].score
+      );
+      this.score.addChallenger(challenger);
+    }
   }
 
   buildFirstPage() {
+    this.request.onupgradeneeded = function () {
+      const DB = this.result;
+      if (!DB.objectStoreNames.contains("profiles")) {
+        // если хранилище не существует
+        console.log("database created");
+        DB.createObjectStore("profiles", { autoIncrement: true }); // создаем хранилище
+      }
+    };
+    this.request.onsuccess = () => {
+      console.log("success");
+      this.getTopScores();
+    };
+
+    this.request.onerror = function () {
+      console.log("error");
+    };
     this.buildAboutPage();
     this.settings.initInputs();
+    this.header.Form.element.addEventListener("submit", this.defineProfile);
     this.header.Form.element.addEventListener("submit", () =>
       this.about.deployBtn(this.about.element)
     );
-    this.about.deployBtn(this.about.element);
-    this.about.playbtn.element.addEventListener("click", () => this.start());
+    this.about.playbtn.element.addEventListener("click", () =>
+      this.startGame()
+    );
     this.header.Container.nav.list.About.element.addEventListener("click", () =>
       this.buildAboutPage()
     );
@@ -79,11 +186,30 @@ export class App {
   }
 
   handleEndGame() {
+    this.userData.score = this.game.Score;
+    this.addProfile();
+    this.getTopScores();
     this.buildScorePage();
     this.game.ResultForm.element.remove();
   }
 
-  async start() {
+  defineProfile = () => {
+    this.userData.img = (<HTMLImageElement>(
+      document.getElementById("preview")
+    )).src;
+    this.userData.name = (<HTMLInputElement>(
+      document.getElementById("fname")
+    )).value;
+    this.userData.surname = (<HTMLInputElement>(
+      document.getElementById("fsur")
+    )).value;
+    this.userData.mail = (<HTMLInputElement>(
+      document.getElementById("fmail")
+    )).value;
+    this.header.Form.element.remove();
+  };
+
+  async startGame() {
     this.cleanMain();
     const res = await fetch("../images/images.json");
     const categories: ImageCategory[] = await res.json();

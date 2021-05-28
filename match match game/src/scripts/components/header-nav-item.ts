@@ -4,7 +4,7 @@ import { NavItem } from "./nav-item";
 export class HeaderNavItem extends BaseComponent {
   private readonly item: NavItem;
 
-  private name: string;
+  private readonly name: string;
 
   constructor(page: string, img: string, text: string) {
     super("li", ["header-nav-item"]);
