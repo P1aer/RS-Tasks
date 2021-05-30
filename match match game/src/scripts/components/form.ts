@@ -1,7 +1,7 @@
-import { BaseComponent } from "./base-component";
-import { FormContainer } from "./form-container";
+import BaseComponent from "./base-component";
+import FormContainer from "./form-container";
 
-export class Form extends BaseComponent {
+class Form extends BaseComponent {
   readonly container: FormContainer;
 
   constructor(styles: string[]) {
@@ -10,3 +10,5 @@ export class Form extends BaseComponent {
     this.element.appendChild(this.container.element);
   }
 }
+
+export default Form;

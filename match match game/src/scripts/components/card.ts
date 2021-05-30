@@ -1,8 +1,8 @@
-import { BaseComponent } from "./base-component";
+import BaseComponent from "./base-component";
 
-const FLIPP_CLASS = "flipped";
+const FLIP_CLASS = "flipped";
 
-export class Card extends BaseComponent {
+class Card extends BaseComponent {
   isFlipped = false;
 
   constructor(readonly image: string) {
@@ -26,10 +26,12 @@ export class Card extends BaseComponent {
 
   private flip(isFront = false): Promise<void> {
     return new Promise((resolve) => {
-      this.element.classList.toggle(FLIPP_CLASS, isFront);
+      this.element.classList.toggle(FLIP_CLASS, isFront);
       this.element.addEventListener("transitionend", () => resolve(), {
         once: true,
       });
     });
   }
 }
+
+export default Card;

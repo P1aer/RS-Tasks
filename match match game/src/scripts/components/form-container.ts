@@ -1,21 +1,21 @@
-import { BaseComponent } from "./base-component";
-import { FormInput } from "./form-input";
-import { Button } from "./button";
-import { Input } from "./input";
+import BaseComponent from "./base-component";
+import FormInput from "./form-input";
+import Button from "./button";
+import Input from "./input";
 
-export class FormContainer extends BaseComponent {
-  private forminputs?: FormInput[];
+class FormContainer extends BaseComponent {
+  private formInputs?: FormInput[];
 
   private inputs?: Input[];
 
-  private btns?: Button[];
+  private buttons?: Button[];
 
-  get Btns() {
-    return this.btns;
+  get Buttons() {
+    return this.buttons;
   }
 
   get Inputs() {
-    return this.forminputs;
+    return this.formInputs;
   }
 
   get SipleInputs() {
@@ -27,7 +27,7 @@ export class FormContainer extends BaseComponent {
   }
 
   createInputs() {
-    this.forminputs = [];
+    this.formInputs = [];
   }
 
   createSimpleInput() {
@@ -45,12 +45,12 @@ export class FormContainer extends BaseComponent {
     this.inputs.push(new Input(styles, id, type, require, placeholder, value));
   }
 
-  createBtns() {
-    this.btns = [];
+  createButtons() {
+    this.buttons = [];
   }
 
   addBtn(style: string[], text: string, id: string) {
-    this.btns.push(new Button(style, text, id));
+    this.buttons.push(new Button(style, text, id));
   }
 
   addInput(
@@ -63,7 +63,7 @@ export class FormContainer extends BaseComponent {
     value = "",
     fstyle: string[]
   ) {
-    this.forminputs.push(
+    this.formInputs.push(
       new FormInput(
         label,
         styles,
@@ -77,3 +77,5 @@ export class FormContainer extends BaseComponent {
     );
   }
 }
+
+export default FormContainer;

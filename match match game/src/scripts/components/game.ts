@@ -1,12 +1,12 @@
 import globalState from "../../shared/services/globalState";
-import { BaseComponent } from "./base-component";
-import { Card } from "./card";
-import { CardField } from "./card-field";
-import { delay } from "../../shared/delay";
-import { TimerContainer } from "./timer-container";
-import { Form } from "./form";
+import BaseComponent from "./base-component";
+import Card from "./card";
+import CardField from "./card-field";
+import delay from "../../shared/delay";
+import TimerContainer from "./timer-container";
+import Form from "./form";
 
-export class Game extends BaseComponent {
+class Game extends BaseComponent {
   private scoreData = {
     total: 0,
     mistakes: 0,
@@ -15,11 +15,11 @@ export class Game extends BaseComponent {
     score: 0,
   };
 
-  private countdownfunc;
+  private countdown;
 
   private readonly resultForm: Form;
 
-  private readonly cardsField;
+  private readonly cardsField: CardField;
 
   private activeCard?: Card;
 
@@ -27,8 +27,14 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
+  isPaused = false;
+
   get ResultForm() {
     return this.resultForm;
+  }
+
+  get Field() {
+    return this.cardsField;
   }
 
   get Score() {
@@ -38,7 +44,7 @@ export class Game extends BaseComponent {
   constructor() {
     super();
     this.resultForm = new Form(["challenger-form", "result-form-container"]);
-    this.resultForm.container.createBtns();
+    this.resultForm.container.createButtons();
     this.resultForm.container.addBtn(["result-btn"], "OK", "score-btn");
     this.timerContainer = new TimerContainer();
     this.cardsField = new CardField();
@@ -59,9 +65,23 @@ export class Game extends BaseComponent {
     this.setShowTimer();
   }
 
+  cleanGame() {
+    this.scoreData.left = globalState.settings.number;
+    this.scoreData.total = 0;
+    this.scoreData.mistakes = 0;
+    this.scoreData.time = 0;
+    this.cardsField.clear();
+    this.stopTimer();
+    clearTimeout(this.cardsField.timeout);
+    this.resultForm.element.remove();
+    this.isPaused = false;
+    this.isAnimation = false;
+    this.activeCard = undefined;
+  }
+
   private async cardHandler(card: Card) {
     if (this.isAnimation) return;
-    if (!card.isFlipped) return;
+    if (!card.isFlipped || this.isPaused) return;
     this.isAnimation = true;
     await card.flipToFront();
     if (!this.activeCard) {
@@ -86,15 +106,71 @@ export class Game extends BaseComponent {
     }
   }
 
-  cleanGame() {
-    this.scoreData.left = globalState.settings.number;
-    this.scoreData.total = 0;
-    this.scoreData.mistakes = 0;
-    this.scoreData.time = 0;
-    this.cardsField.clear();
-    this.stopTimer();
-    clearTimeout(this.cardsField.timeout);
-    this.resultForm.element.remove();
+  handleMistake(card1, card2) {
+    card2.element.classList.add("red-card");
+    card1.element.classList.add("red-card");
+    this.scoreData.mistakes += 1;
+    this.scoreData.total += 1;
+  }
+
+  handleHit(card1, card2) {
+    card1.element.classList.add("green-card");
+    card2.element.classList.add("green-card");
+    this.scoreData.total += 1;
+    this.scoreData.left -= 1;
+  }
+
+  setShowTimer() {
+    const timer = this.timerContainer.timer.element;
+    timer.innerText = ` 0 : ${globalState.settings.SHOW_TIME}`;
+    let from = globalState.settings.SHOW_TIME;
+
+    this.countdown = setInterval(() => {
+      from -= 1;
+      timer.innerText = `0 : ${from}`;
+      if (from <= 0) {
+        clearInterval(this.countdown);
+        this.setGameTimer();
+      }
+    }, 1000);
+  }
+
+  setGameTimer(time = 0) {
+    const timer = this.timerContainer.timer.element;
+    let from = time;
+    this.countdown = setInterval(() => {
+      from += 1;
+      const minutes = Math.floor(from / 60);
+      timer.innerText = `${minutes} : ${from}`;
+      if (from >= globalState.settings.time) {
+        clearInterval(this.countdown);
+        this.endGame();
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    clearInterval(this.countdown);
+  }
+
+  handlePauseClick(state: boolean, element) {
+    if (state) {
+      return;
+    }
+    const btn = element;
+    if (!this.isPaused) {
+      btn.innerText = "Resume Gambling";
+    } else {
+      btn.innerText = "Pause Gambling";
+    }
+    this.isPaused = !this.isPaused;
+    if (this.isPaused) {
+      this.stopTimer();
+    } else {
+      const time = this.timerContainer.element.innerText.split(":");
+      const pauseTime = Number(time[0]) * 60 + Number(time[1]);
+      this.setGameTimer(pauseTime);
+    }
   }
 
   endGame() {
@@ -139,46 +215,9 @@ export class Game extends BaseComponent {
     const div = this.resultForm.container.element.querySelector(
       ".result-btn-container"
     );
-    div.append(this.resultForm.container.Btns[0].element);
+    div.append(this.resultForm.container.Buttons[0].element);
     this.element.append(this.resultForm.element);
   }
-
-  handleMistake(card1, card2) {
-    card2.element.classList.add("red-card");
-    card1.element.classList.add("red-card");
-    this.scoreData.mistakes += 1;
-    this.scoreData.total += 1;
-  }
-
-  handleHit(card1, card2) {
-    card1.element.classList.add("green-card");
-    card2.element.classList.add("green-card");
-    this.scoreData.total += 1;
-    this.scoreData.left -= 1;
-  }
-
-  setShowTimer() {
-    const timer = this.timerContainer.timer.element;
-    timer.innerText = ` 0 : ${globalState.settings.SHOW_TIME}`;
-    let from = new Date().getTime() + globalState.settings.SHOW_TIME * 1000;
-
-    this.countdownfunc = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = Math.abs(from - now);
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.round((distance % (1000 * 60)) / 1000);
-      timer.innerText = `${minutes} : ${seconds}`;
-      if (distance <= 0) {
-        from = new Date().getTime();
-      }
-      if (distance >= globalState.settings.time * 1000) {
-        this.stopTimer();
-        this.endGame();
-      }
-    }, 1000);
-  }
-
-  stopTimer() {
-    clearInterval(this.countdownfunc);
-  }
 }
+
+export default Game;

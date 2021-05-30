@@ -1,4 +1,4 @@
-export class BaseComponent {
+class BaseComponent {
   readonly element: HTMLElement;
 
   constructor(tag = "div", styles: string[] = []) {
@@ -6,3 +6,4 @@ export class BaseComponent {
     this.element.classList.add(...styles);
   }
 }
+export default BaseComponent;

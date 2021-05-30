@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --mode development ",
-    "watch": "webpack --mode development --watch"
+    "start": "webpack serve --config webpack.dev.config.js",
+    "watch": "webpack --config webpack.dev.config.js --watch"
   },
   "author": "",
   "license": "ISC",

@@ -1,7 +1,7 @@
-import { BaseComponent } from "./base-component";
-import { HeaderNavItem } from "./header-nav-item";
+import BaseComponent from "./base-component";
+import HeaderNavItem from "./header-nav-item";
 
-export class HeaderNavList extends BaseComponent {
+class HeaderNavList extends BaseComponent {
   private readonly paths: HeaderNavItem[];
 
   get About() {
@@ -32,3 +32,5 @@ export class HeaderNavList extends BaseComponent {
     );
   }
 }
+
+export default HeaderNavList;

@@ -1,7 +1,9 @@
-import { BaseComponent } from "./base-component";
+import BaseComponent from "./base-component";
 
-export class Timer extends BaseComponent {
+class Timer extends BaseComponent {
   constructor() {
     super("h3", ["timer"]);
   }
 }
+
+export default Timer;

@@ -1,7 +1,7 @@
-import { BaseComponent } from "./base-component";
-import { Button } from "./button";
+import BaseComponent from "./base-component";
+import Button from "./button";
 
-export class ChallengerContainer extends BaseComponent {
+class ChallengerContainer extends BaseComponent {
   private readonly btn: Button;
 
   constructor() {
@@ -21,3 +21,5 @@ export class ChallengerContainer extends BaseComponent {
     `;
   }
 }
+
+export default ChallengerContainer;

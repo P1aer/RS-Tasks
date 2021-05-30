@@ -1,14 +1,19 @@
-import { BaseComponent } from "./base-component";
-import { Form } from "./form";
-import { HeaderContainer } from "./header-container";
+import BaseComponent from "./base-component";
+import Form from "./form";
+import HeaderContainer from "./header-container";
+import Button from "./button";
 
-export class Header extends BaseComponent {
-  private readonly challengerform: Form;
+class Header extends BaseComponent {
+  private readonly challengerForm: Form;
+
+  readonly playButton: Button;
+
+  readonly pauseButton: Button;
 
   private readonly container: HeaderContainer;
 
   get Form() {
-    return this.challengerform;
+    return this.challengerForm;
   }
 
   get Container() {
@@ -17,17 +22,19 @@ export class Header extends BaseComponent {
 
   constructor() {
     super("header", ["header"]);
-    this.challengerform = new Form(["challenger-form"]);
+    this.pauseButton = new Button(["pause-btn"], "Pause Gambling", "pause");
+    this.challengerForm = new Form(["challenger-form"]);
+    this.playButton = new Button(["play-btn"], "Start Gambling", "play");
     this.container = new HeaderContainer();
     this.element.appendChild(this.container.element);
   }
 
   createHeader() {
-    this.challengerform.container.createBtns();
-    this.challengerform.container.createInputs();
-    this.challengerform.container.createSimpleInput();
+    this.challengerForm.container.createButtons();
+    this.challengerForm.container.createInputs();
+    this.challengerForm.container.createSimpleInput();
     this.createElementsModal();
-    this.challengerform.container.SipleInputs[0].element.addEventListener(
+    this.challengerForm.container.SipleInputs[0].element.addEventListener(
       "change",
       this.loadImage
     );
@@ -35,22 +42,22 @@ export class Header extends BaseComponent {
       .getElementById("register")
       .addEventListener("click", this.visibleModal);
     this.container.nav.list.goToPage("about");
-    this.challengerform.element.addEventListener("submit", (ev) => {
+    this.challengerForm.element.addEventListener("submit", (ev) => {
       ev.preventDefault();
       const img = (<HTMLImageElement>document.getElementById("preview")).src;
       this.container.btn.changeToImg(img);
     });
-    this.challengerform.container.Btns[0].element.addEventListener(
+    this.challengerForm.container.Buttons[0].element.addEventListener(
       "click",
       () => {
-        this.challengerform.element.remove();
+        this.challengerForm.element.remove();
         this.cleanForm();
       }
     );
   }
 
   initForm() {
-    this.challengerform.container.element.innerHTML = `
+    this.challengerForm.container.element.innerHTML = `
          <div class="form-wrapper">
          <div class="form-head">
           <h3 class="form-head-h3">New challenger approaching</h3>
@@ -66,35 +73,35 @@ export class Header extends BaseComponent {
         </div>
         </div>
     `;
-    const inputs = this.challengerform.container.element.querySelector(
+    const inputs = this.challengerForm.container.element.querySelector(
       ".form-content-inputs"
     );
-    this.challengerform.container.Inputs.forEach((input) =>
+    this.challengerForm.container.Inputs.forEach((input) =>
       inputs.appendChild(input.element)
     );
     const footer =
-      this.challengerform.container.element.querySelector(".form-footer");
-    footer.appendChild(this.challengerform.container.SipleInputs[1].element);
-    this.challengerform.container.Btns.forEach((btn) =>
+      this.challengerForm.container.element.querySelector(".form-footer");
+    footer.appendChild(this.challengerForm.container.SipleInputs[1].element);
+    this.challengerForm.container.Buttons.forEach((btn) =>
       footer.appendChild(btn.element)
     );
-    footer.prepend(this.challengerform.container.SipleInputs[0].element);
+    footer.prepend(this.challengerForm.container.SipleInputs[0].element);
   }
 
   cleanForm() {
-    this.challengerform.container.SipleInputs[0].cleanInput();
-    this.challengerform.container.Inputs.forEach((input) =>
+    this.challengerForm.container.SipleInputs[0].cleanInput();
+    this.challengerForm.container.Inputs.forEach((input) =>
       input.input.cleanInput()
     );
   }
 
   visibleModal = () => {
     this.initForm();
-    this.element.appendChild(this.challengerform.element);
+    this.element.appendChild(this.challengerForm.element);
   };
 
   createElementsModal() {
-    this.challengerform.container.addInput(
+    this.challengerForm.container.addInput(
       "First Name",
       [],
       "fname",
@@ -104,7 +111,7 @@ export class Header extends BaseComponent {
       "",
       ["form-input"]
     );
-    this.challengerform.container.addInput(
+    this.challengerForm.container.addInput(
       "Last Name",
       [],
       "fsur",
@@ -114,7 +121,7 @@ export class Header extends BaseComponent {
       "",
       ["form-input"]
     );
-    this.challengerform.container.addInput(
+    this.challengerForm.container.addInput(
       "E-mail",
       [],
       "fmail",
@@ -124,8 +131,8 @@ export class Header extends BaseComponent {
       "",
       ["form-input"]
     );
-    this.challengerform.container.addSimpleInput([], "file", "file");
-    this.challengerform.container.addSimpleInput(
+    this.challengerForm.container.addSimpleInput([], "file", "file");
+    this.challengerForm.container.addSimpleInput(
       [],
       "submit",
       "submit",
@@ -133,12 +140,12 @@ export class Header extends BaseComponent {
       "CONFIRM",
       "CONFIRM"
     );
-    this.challengerform.container.addBtn(["cancel"], "NO THANKS", "cancel");
+    this.challengerForm.container.addBtn(["cancel"], "NO THANKS", "cancel");
   }
 
   loadImage = () => {
     const file = <HTMLInputElement>(
-      this.challengerform.container.SipleInputs[0].element
+      this.challengerForm.container.SipleInputs[0].element
     );
     const preview = <HTMLImageElement>document.getElementById("preview");
     if (file.files.length === 0) return;
@@ -150,8 +157,20 @@ export class Header extends BaseComponent {
     reader.onload = (e) => {
       if (typeof e.target.result === "string") {
         preview.src = e.target.result;
-      } // В src будет что-то типа data:image/jpeg;base64,....
+      }
     };
     reader.readAsDataURL(f);
   };
+
+  deployPlayBtn(place: HTMLElement) {
+    place.prepend(this.playButton.element);
+    this.pauseButton.element.remove();
+  }
+
+  deployPauseBtn(place: HTMLElement) {
+    place.prepend(this.pauseButton.element);
+    this.playButton.element.remove();
+  }
 }
+
+export default Header;

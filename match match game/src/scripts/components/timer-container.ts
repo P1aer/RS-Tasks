@@ -1,7 +1,7 @@
-import { BaseComponent } from "./base-component";
-import { Timer } from "./timer";
+import BaseComponent from "./base-component";
+import Timer from "./timer";
 
-export class TimerContainer extends BaseComponent {
+class TimerContainer extends BaseComponent {
   readonly timer: Timer;
 
   constructor() {
@@ -10,3 +10,5 @@ export class TimerContainer extends BaseComponent {
     this.element.appendChild(this.timer.element);
   }
 }
+
+export default TimerContainer;

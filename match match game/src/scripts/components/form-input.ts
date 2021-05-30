@@ -1,7 +1,7 @@
-import { BaseComponent } from "./base-component";
-import { Input } from "./input";
+import BaseComponent from "./base-component";
+import Input from "./input";
 
-export class FormInput extends BaseComponent {
+class FormInput extends BaseComponent {
   readonly input: Input;
 
   constructor(
@@ -20,3 +20,5 @@ export class FormInput extends BaseComponent {
     this.element.appendChild(this.input.element);
   }
 }
+
+export default FormInput;

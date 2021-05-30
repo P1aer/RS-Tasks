@@ -1,9 +1,9 @@
-import { BaseComponent } from "./base-component";
-import { FormInput } from "./form-input";
+import BaseComponent from "./base-component";
+import FormInput from "./form-input";
 import globalState from "../../shared/services/globalState";
-import { Output } from "./output";
+import Output from "./output";
 
-export class Settings extends BaseComponent {
+class Settings extends BaseComponent {
   private readonly inputs: FormInput[];
 
   private readonly outputs: Output[];
@@ -133,3 +133,5 @@ export class Settings extends BaseComponent {
     document.documentElement.style.setProperty("--cardSize", tempSize);
   };
 }
+
+export default Settings;

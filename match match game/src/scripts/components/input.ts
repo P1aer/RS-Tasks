@@ -1,6 +1,6 @@
-import { BaseComponent } from "./base-component";
+import BaseComponent from "./base-component";
 
-export class Input extends BaseComponent {
+class Input extends BaseComponent {
   constructor(
     styles: string[],
     id: string,
@@ -27,3 +27,5 @@ export class Input extends BaseComponent {
     (<HTMLInputElement>this.element).value = "";
   }
 }
+
+export default Input;

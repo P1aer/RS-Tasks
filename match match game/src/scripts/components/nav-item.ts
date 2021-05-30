@@ -1,6 +1,6 @@
-import { BaseComponent } from "./base-component";
+import BaseComponent from "./base-component";
 
-export class NavItem extends BaseComponent {
+class NavItem extends BaseComponent {
   constructor(page: string, img: string, text: string) {
     super("div", ["nav-item"]);
     this.element.innerHTML = `
@@ -9,3 +9,5 @@ export class NavItem extends BaseComponent {
     `;
   }
 }
+
+export default NavItem;

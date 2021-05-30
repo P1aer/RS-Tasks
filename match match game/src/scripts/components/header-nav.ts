@@ -1,7 +1,7 @@
-import { BaseComponent } from "./base-component";
-import { HeaderNavList } from "./header-nav-list";
+import BaseComponent from "./base-component";
+import HeaderNavList from "./header-nav-list";
 
-export class HeaderNav extends BaseComponent {
+class HeaderNav extends BaseComponent {
   readonly list: HeaderNavList;
 
   constructor() {
@@ -10,3 +10,5 @@ export class HeaderNav extends BaseComponent {
     this.element.appendChild(this.list.element);
   }
 }
+
+export default HeaderNav;

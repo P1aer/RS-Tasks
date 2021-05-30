@@ -1,9 +1,8 @@
-import { BaseComponent } from "./base-component";
-import { ScoreBoardPlace } from "./scoreboard-place";
+import BaseComponent from "./base-component";
+import ScoreBoardPlace from "./scoreboard-place";
 
-export class ScoreBoard extends BaseComponent {
-
-  private places:ScoreBoardPlace[]
+class ScoreBoard extends BaseComponent {
+  private places: ScoreBoardPlace[];
 
   constructor() {
     super("div", ["scoreboard-container"]);
@@ -14,11 +13,12 @@ export class ScoreBoard extends BaseComponent {
   addChallenger(place: ScoreBoardPlace) {
     this.places.push(place);
     this.element.append(place.element);
-    console.log(place.element);
   }
 
   cleanScoreBoard() {
-    this.places.forEach((place) => place.element.remove())
+    this.places.forEach((place) => place.element.remove());
     this.places = [];
   }
 }
+
+export default ScoreBoard;

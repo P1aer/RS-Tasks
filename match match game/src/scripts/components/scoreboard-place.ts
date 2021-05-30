@@ -1,6 +1,6 @@
-import { BaseComponent } from "./base-component";
+import BaseComponent from "./base-component";
 
-export class ScoreBoardPlace extends BaseComponent {
+class ScoreBoardPlace extends BaseComponent {
   constructor(
     img: string,
     name: string,
@@ -24,3 +24,5 @@ export class ScoreBoardPlace extends BaseComponent {
       `;
   }
 }
+
+export default ScoreBoardPlace;

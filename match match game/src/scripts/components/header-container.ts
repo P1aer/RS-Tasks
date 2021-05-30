@@ -1,8 +1,8 @@
-import { BaseComponent } from "./base-component";
-import { HeaderNav } from "./header-nav";
-import { ChallengerContainer } from "./challenger-container";
+import BaseComponent from "./base-component";
+import HeaderNav from "./header-nav";
+import ChallengerContainer from "./challenger-container";
 
-export class HeaderContainer extends BaseComponent {
+class HeaderContainer extends BaseComponent {
   readonly nav: HeaderNav;
 
   readonly btn: ChallengerContainer;
@@ -21,3 +21,5 @@ export class HeaderContainer extends BaseComponent {
     this.element.append(this.btn.element);
   }
 }
+
+export default HeaderContainer;

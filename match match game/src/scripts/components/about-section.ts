@@ -1,6 +1,6 @@
-import { BaseComponent } from "./base-component";
+import BaseComponent from "./base-component";
 
-export class AboutSection extends BaseComponent {
+class AboutSection extends BaseComponent {
   constructor(text: string) {
     super("div", ["about-section"]);
     this.element.innerHTML = `
@@ -8,3 +8,5 @@ export class AboutSection extends BaseComponent {
     `;
   }
 }
+
+export default AboutSection;

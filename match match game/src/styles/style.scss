@@ -107,32 +107,53 @@ h3,h4,h5 {
   padding-top: 30px;
 }
 .about-section{
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
   max-width: 1200px - 80px;
+  height: 60px;
+  width: 600px;
+  max-height: 200px;
   background-color: white;
   margin-bottom: 20px;
-  text-align: center;
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    img{
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
 .section-text{
   font-size: 14px;
   line-height: 20px;
 }
-.play-btn{
-  padding: 20px 26px;
+.play-btn,.pause-btn{
+  padding: 10px 16px;
+  height: 50px;
   font-weight: 500;
-  font-size: 40px;
-  line-height: 38px;
   color: #2196F3;
   background: #F2F9FE;
   border: none;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 1px 18px rgba(0, 0, 0, 0.12), 0 6px 10px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
 }
-.play-btn:hover{
+.play-btn:hover,.pause-btn:hover{
   color: #F2F9FE;
   background: #2196F3;
 }
 .challenger-container{
+  display: flex;
   width: 250px;
+  justify-content: space-between;
+  align-items: center;
 }
 // form
 .result-btn{
@@ -178,6 +199,7 @@ h3,h4,h5 {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .form-container{
+  border-radius: 8px;
   position: relative;
   background-color: white;
   margin: auto;
@@ -273,8 +295,6 @@ input[type=submit]{
   border-radius: 100%;
   border: 2px solid grey;
   background-color: lightgray;
-  margin-left: 180px;
-
 }
 //game
 .card-field{
@@ -427,8 +447,8 @@ input[type='range']::-webkit-slider-thumb {
   margin: 20px 0;
   height: 50px;
   img {
-    height: 44px;
-    width: 44px;
+    height: 40px;
+    width: 40px;
     border-radius:100% ;
     background-color: lightgray;
     border: 2px solid grey;
