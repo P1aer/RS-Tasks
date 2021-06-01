@@ -44,7 +44,6 @@ class App {
     rootElement.appendChild(this.main.element);
   }
 
-
   buildFirstPage() {
     this.request.onupgradeneeded = () => {
       const DB = this.request.result;

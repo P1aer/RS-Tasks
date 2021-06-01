@@ -21,5 +21,6 @@ module.exports = {
     // чтобы не злился на отсутсвие ts
     "import/extensions": "off",
     "prettier/prettier": "error",
+    "no-control-regex": 0,
   },
 };

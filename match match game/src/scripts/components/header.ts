@@ -131,6 +131,10 @@ class Header extends BaseComponent {
       "",
       ["form-input"]
     );
+    this.challengerForm.container.Inputs[2].element.addEventListener(
+      "input",
+      () => this.challengerForm.container.Inputs[2].input.onInput()
+    );
     this.challengerForm.container.addSimpleInput([], "file", "file");
     this.challengerForm.container.addSimpleInput(
       [],
