@@ -1,0 +1,21 @@
+.header-nav-item{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background: lightblue;
+  justify-content: center;
+  width: 20%;
+  img{
+    background-color:black ;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+  &.active{
+    background: lightskyblue;
+  }
+  h3{
+    margin-top: 5px;
+  }
+}
