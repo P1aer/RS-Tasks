@@ -1,0 +1,25 @@
+.place-inputs{
+  display: flex;
+  align-items: center;
+}
+.garage-place{
+  margin: 10px 0;
+  background-color: lightcyan;
+  border-radius: 5px;
+  button{
+    margin: 5px 10px;
+    width: fit-content;
+  }
+  .place-start{
+    background-color: lightgreen;
+    color: black;
+    margin: 0 5px 10px 10px;
+  }
+  .place-break{
+    background-color: lightgray;
+    color: black;
+    margin: 0 0 10px 0;
+  }
+}
+
+
