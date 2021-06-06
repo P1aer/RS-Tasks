@@ -1,0 +1,17 @@
+.garage-footer{
+  margin-top: 20px;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  h3{
+    background-color: lightskyblue;
+    border: 1px black;
+    text-align: center;
+    width: 20%;
+    font-size: 30px;
+  }
+  button{
+    width: 20%;
+    margin: 0 20px;
+  }
+}

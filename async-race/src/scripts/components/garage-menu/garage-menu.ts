@@ -1,21 +1,18 @@
 import BaseComponent from "../base-component";
 import "./garage-menu.scss";
 import BtnContainer from "../button-container/btn-container";
-import GarageTable from "../garage-table/garage-table";
 
 class GarageMenu extends BaseComponent {
-  private readonly buttons: BtnContainer[];
 
-  private table: GarageTable;
+  readonly buttons: BtnContainer[];
 
   constructor() {
     super("div", ["garage-menu"]);
     this.element.innerHTML = `
-    <button> Generate</button>
-    <button> reset</button>
+    <button id="generate"> Generate</button>
+    <button id="reset"> reset</button>
     <button class="race-btn">RACE</button>
     `;
-    this.table = new GarageTable();
     this.buttons = [
       new BtnContainer("Change Car", "change"),
       new BtnContainer("Create Car", "create"),

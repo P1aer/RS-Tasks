@@ -85,7 +85,11 @@ export const getWinnerStatus = async (id: number) =>
 export const deleteWinner = async (id: number) =>
   (await fetch(`${winners}/${id}`, { method: "DELETE" })).json();
 
-export const createWinner = async (body: { wins: number; id: number; time: Date }) =>
+export const createWinner = async (body: {
+  wins: number;
+  id: number;
+  time: Date;
+}) =>
   (
     await fetch(winners, {
       method: "POST",

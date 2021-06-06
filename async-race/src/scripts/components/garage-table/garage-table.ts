@@ -15,7 +15,9 @@ class GarageTable extends BaseComponent {
   }
 
   addPlace(car: { id: number; color: string; name: string }) {
-    this.places.push(new GaragePlace(car));
+    if (this.places.length < 7) {
+      this.places.push(new GaragePlace(car));
+    }
   }
 
   createTable() {

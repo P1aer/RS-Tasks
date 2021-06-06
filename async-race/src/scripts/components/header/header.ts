@@ -5,9 +5,10 @@ import HeaderContainer from "../header-container/header-container";
 class Header extends BaseComponent {
   private readonly container: HeaderContainer;
 
-  get Container(){
+  get Container() {
     return this.container;
   }
+
   constructor() {
     super("header", ["header"]);
     this.container = new HeaderContainer();

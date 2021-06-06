@@ -2,8 +2,24 @@
   display: flex;
   align-items: center;
 }
+.place-info{
+   width: 55%;
+}
+.flag-container{
+ width: 80px;
+  overflow: hidden;
+  img{
+    height: 100%;
+    width: 80px;
+    object-fit: cover;
+  }
+}
 .garage-place{
+  padding: 0 20px;
+  display: flex;
   margin: 10px 0;
+  align-items: center;
+  justify-content: space-between;
   background-color: lightcyan;
   border-radius: 5px;
   button{
@@ -20,6 +36,14 @@
     color: black;
     margin: 0 0 10px 0;
   }
+}
+.place-car{
+  display: flex;
+  object-fit: cover;
+}
+.place-car-container{
+  padding-left: 10px;
+  height: 50px;
 }
 
 

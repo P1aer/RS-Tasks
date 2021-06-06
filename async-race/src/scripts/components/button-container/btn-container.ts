@@ -24,6 +24,7 @@ class BtnContainer extends BaseComponent {
     (<HTMLInputElement>this.inputColor.element).type = "color";
     (<HTMLInputElement>this.inputColor.element).id = `${id}-color`;
     this.element.innerHTML = `
+           <p class="invisible" id="${id}-invisible">0</p>
           <button class="menu-${id}-btn" id="${id}-btn">${button}</button>
              <div class="input-container">
             </div>   
@@ -34,29 +35,26 @@ class BtnContainer extends BaseComponent {
     this.element
       .querySelector(".input-container")
       .append(this.inputColor.element);
-/*    this.element
-      .querySelector(`#${id}-btn`)
-      .addEventListener("click", () => this.createCar());*/
   }
 
-  createCar() {
+  async createCar() {
     const name = (<HTMLInputElement>this.inputText.element).value;
     if (name === "") {
       console.log("Empty name");
       return;
     }
     const color = (<HTMLInputElement>this.inputColor.element).value;
-    createCar({ name, color }).then((res) => console.log(res, `created`));
+    await createCar({ name, color });
   }
 
-  updateCar(id: number){
+  async updateCar(id: number) {
     const name = (<HTMLInputElement>this.inputText.element).value;
     if (name === "") {
       console.log("Empty name");
       return;
     }
     const color = (<HTMLInputElement>this.inputColor.element).value;
-    updateCar(id, { name, color }).then((r) => console.log(r, `created`));
+    await updateCar(id, { name, color }).then((r) => console.log(r, `created`));
   }
 }
 
