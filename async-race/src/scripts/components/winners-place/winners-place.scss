@@ -1,0 +1,10 @@
+.winners-table-place{
+  padding: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  background-color: lightcyan;
+  h3{
+    box-sizing: border-box;
+  }
+}

@@ -59,8 +59,8 @@ export const getSortOrder = (sort: string, order: string) => {
 export const getWinners = async (
   page: number,
   limit = 10,
-  sort: "id" | "wins" | "time" | "",
-  order: "ASC" | "DESC" | ""
+  sort: string,
+  order: string
 ) => {
   const response = await fetch(
     `${winners}?_page=${page}&_limit=${limit},${getSortOrder(sort, order)}`

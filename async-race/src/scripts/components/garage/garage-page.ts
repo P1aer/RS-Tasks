@@ -3,7 +3,7 @@ import "./garage.scss";
 import GarageMenu from "../garage-menu/garage-menu";
 import { getCars } from "../../api";
 import GarageTable from "../garage-table/garage-table";
-import GarageFooter from "../garage-footer/garage-footer";
+import PageFooter from "../page-footer/page-footer";
 
 class GaragePage extends BaseComponent {
   private readonly menu: GarageMenu;
@@ -12,7 +12,7 @@ class GaragePage extends BaseComponent {
 
   private readonly table: GarageTable;
 
-  private footer: GarageFooter;
+  private footer: PageFooter;
 
   get Menu() {
     return this.menu;
@@ -22,7 +22,7 @@ class GaragePage extends BaseComponent {
     super("div", ["garage-section"]);
     this.menu = new GarageMenu();
     this.table = new GarageTable();
-    this.footer = new GarageFooter();
+    this.footer = new PageFooter("garage");
     this.currentPage = 1;
     this.element.innerHTML = `<h3 class="garage-h3"></h3>`;
     this.element.prepend(this.menu.element);
@@ -30,10 +30,10 @@ class GaragePage extends BaseComponent {
     this.element.append(this.footer.element);
     this.getCarsPage();
     this.footer.element
-      .querySelector(".footer-prev-btn")
+      .querySelector(".garage-footer-prev-btn")
       .addEventListener("click", () => this.handlePrevBtn());
     this.footer.element
-      .querySelector(".footer-next-btn")
+      .querySelector(".garage-footer-next-btn")
       .addEventListener("click", () => this.handleNextBtn());
   }
 

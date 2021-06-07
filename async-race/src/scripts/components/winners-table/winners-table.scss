@@ -1,0 +1,13 @@
+.table-head{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  background-color: deepskyblue;
+  margin-top: 30px;
+}
+.table-head-elem {
+  width: 20%;
+}
+.table-wins,.table-time{
+  cursor: pointer;
+}
