@@ -37,15 +37,15 @@ class BtnContainer extends BaseComponent {
       .append(this.inputColor.element);
   }
 
-  async createCar() {
+  createCar = async () => {
     const name = (<HTMLInputElement>this.inputText.element).value;
-    if (name === "") {
-      console.log("Empty name");
-      return;
-    }
+    let result: { id: number; color: string; name: string };
     const color = (<HTMLInputElement>this.inputColor.element).value;
-    await createCar({ name, color });
-  }
+    await createCar({ name, color }).then((resolve) => {
+      result = resolve;
+    });
+    return result;
+  };
 
   async updateCar(id: number) {
     const name = (<HTMLInputElement>this.inputText.element).value;

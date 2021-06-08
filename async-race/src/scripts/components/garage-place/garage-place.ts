@@ -1,11 +1,14 @@
 import BaseComponent from "../base-component";
 import "./garage-place.scss";
-import { deleteCar } from "../../api";
+import { deleteCar, deleteWinner, getWinner } from "../../api";
+import { winnersDelete } from "../../shared/table-data";
 
 class GaragePlace extends BaseComponent {
-  private readonly placeID: number;
-  private color: string;
-  private name: string;
+  private placeID: number;
+
+  private readonly color: string;
+
+  private readonly name: string;
 
   get ID() {
     return this.placeID;
@@ -40,7 +43,7 @@ class GaragePlace extends BaseComponent {
     this.element
       .querySelector(".place-remove")
       .addEventListener("click", () => {
-        deleteCar(this.placeID).then(() => this.element.remove());
+        deleteCar(this.placeID).then(() => this.handleDelete());
       });
     this.element
       .querySelector(".place-select")
@@ -53,6 +56,19 @@ class GaragePlace extends BaseComponent {
     (<HTMLInputElement>document.getElementById("change-color")).value =
       this.color;
     document.getElementById("change-invisible").innerText = `${this.placeID}`;
+  }
+
+  async handleDelete() {
+    getWinner(this.placeID).then((result) => {
+      if (result !== {}) {
+        deleteWinner(result.id).then(() => winnersDelete(result.id));
+      }
+    });
+    this.placeID = 0;
+    this.element.remove();
+    const counter = document.getElementById("garage-count");
+    const cars = Number(counter.innerHTML) - 1;
+    counter.innerHTML = `${cars}`;
   }
 }
 

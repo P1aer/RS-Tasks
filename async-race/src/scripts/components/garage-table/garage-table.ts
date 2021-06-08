@@ -1,28 +1,20 @@
 import BaseComponent from "../base-component";
 import "./garage-table.scss";
 import GaragePlace from "../garage-place/garage-place";
+import { garageTable, garageTableCheck } from "../../shared/table-data";
 
 class GarageTable extends BaseComponent {
-  private places: GaragePlace[];
-
   constructor() {
     super("div", ["garage-pages"]);
-    this.places = [];
-  }
-
-  clearPlaces() {
-    this.places = [];
   }
 
   addPlace(car: { id: number; color: string; name: string }) {
-    if (this.places.length < 7) {
-      this.places.push(new GaragePlace(car));
+    // уточнить тут
+    garageTableCheck();
+    if (garageTable.length < 7) {
+      garageTable.push(new GaragePlace(car));
+      this.element.append(garageTable[garageTable.length - 1].element);
     }
-  }
-
-  createTable() {
-    console.log(this.places);
-    this.places.forEach((place) => this.element.append(place.element));
   }
 }
 

@@ -1,5 +1,5 @@
 class BaseComponent {
-  readonly element: HTMLElement;
+  element: HTMLElement;
 
   constructor(tag = "div", styles: string[] = []) {
     this.element = document.createElement(tag);

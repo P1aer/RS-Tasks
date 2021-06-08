@@ -1,13 +1,11 @@
 import BaseComponent from "../base-component";
 import "./winners-table.scss";
 import WinnersPlace from "../winners-place/winners-place";
+import { winnersTable } from "../../shared/table-data";
 
 class WinnersTable extends BaseComponent {
-  private places: WinnersPlace[];
-
   constructor() {
     super("div", ["winners-table"]);
-    this.places = [];
     this.element.innerHTML = `
         <div class="table-head">
           <h3 class="table-head-elem table-number">Number</h3>
@@ -24,18 +22,17 @@ class WinnersTable extends BaseComponent {
     wins: number;
     car: { id: number; name: string; color: string };
   }) {
-    if (this.places.length < 10) {
-      const info = { name: newCar.car.name, color: newCar.car.color };
-      this.places.push(
-        new WinnersPlace(this.places.length + 1, newCar.time, newCar.wins, info)
+    if (winnersTable.length < 10) {
+      winnersTable.push(
+        new WinnersPlace(
+          winnersTable.length + 1,
+          newCar.time,
+          newCar.wins,
+          newCar.car
+        )
       );
-      this.element.append(this.places[this.places.length - 1].element);
+      this.element.append(winnersTable[winnersTable.length - 1].element);
     }
-  }
-
-  cleanTablePlaces() {
-    this.places.forEach((item) => item.element.remove())
-    this.places = [];
   }
 }
 

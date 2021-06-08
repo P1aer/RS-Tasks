@@ -4,6 +4,7 @@ import GarageMenu from "../garage-menu/garage-menu";
 import { getCars } from "../../api";
 import GarageTable from "../garage-table/garage-table";
 import PageFooter from "../page-footer/page-footer";
+import { garageTableClear } from "../../shared/table-data";
 
 class GaragePage extends BaseComponent {
   private readonly menu: GarageMenu;
@@ -24,7 +25,7 @@ class GaragePage extends BaseComponent {
     this.table = new GarageTable();
     this.footer = new PageFooter("garage");
     this.currentPage = 1;
-    this.element.innerHTML = `<h3 class="garage-h3"></h3>`;
+    this.element.innerHTML = `<h3 class="garage-h3">Garage currently serving: <span class="garage-count" id="garage-count"></span></h3>`;
     this.element.prepend(this.menu.element);
     this.element.append(this.table.element);
     this.element.append(this.footer.element);
@@ -53,19 +54,26 @@ class GaragePage extends BaseComponent {
   }
 
   getCarsPage() {
-    this.table.element.innerHTML = "";
-    this.table.clearPlaces();
+    garageTableClear();
     const res = getCars(this.currentPage);
     res.then((resolve) => {
-      this.element.querySelector(".garage-h3").innerHTML = `
-      Garage currently serving: ${resolve.count}`;
+      this.element.querySelector(
+        ".garage-count"
+      ).innerHTML = `${resolve.count}`;
       resolve.items.forEach(
         (item: { id: number; color: string; name: string }) =>
           this.table.addPlace(item)
       );
-      this.table.createTable();
     });
   }
+
+  addCarsOnPage(car: { id: number; color: string; name: string }) {
+    const counter = this.element.querySelector(".garage-count");
+    const cars = Number(counter.innerHTML) + 1;
+    counter.innerHTML = `${cars}`;
+    this.table.addPlace(car);
+  }
+
 }
 
 export default GaragePage;

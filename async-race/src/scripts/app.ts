@@ -60,14 +60,17 @@ class App {
       .addEventListener("click", () =>
         this.garage.Menu.buttons[1]
           .createCar()
-          .then(() => this.garage.getCarsPage())
+          .then((res) => this.garage.addCarsOnPage(res))
       );
-    this.garage.Menu.element.querySelector("#change-btn").addEventListener("click" ,() => this.changeHandler());
+    this.garage.Menu.element
+      .querySelector("#change-btn")
+      .addEventListener("click", () => this.changeHandler());
   }
 
   generateCars() {
-    for (let i=0; i<100;i +=1){
-      createCar(this.getRandomCar()).then(() => this.garage.getCarsPage());
+    for (let i = 0; i < 100; i += 1) {
+      const newCar = this.getRandomCar();
+      createCar(newCar).then((res) => this.garage.addCarsOnPage(res));
     }
   }
 
@@ -83,7 +86,7 @@ class App {
       name,
       color,
     };
-  }
+  };
 
   goToGarage() {
     this.clearMain();
@@ -92,6 +95,7 @@ class App {
   }
 
   goToWinners() {
+    this.winners.updateCounter();
     this.clearMain();
     this.main.element.append(this.winners.element);
     this.header.Container.Nav.goToPage("winners");
@@ -101,12 +105,14 @@ class App {
     this.main.element.innerHTML = "";
   }
 
-   changeHandler() {
+  changeHandler() {
     const num = document.getElementById("change-invisible").innerText;
-    if(num === "0"){
-      return
+    if (num === "0") {
+      return;
     }
-    this.garage.Menu.buttons[0].updateCar(Number(num)).then(() => this.garage.getCarsPage())
+    this.garage.Menu.buttons[0]
+      .updateCar(Number(num))
+      .then(() => this.garage.getCarsPage());
   }
 }
 export default App;
