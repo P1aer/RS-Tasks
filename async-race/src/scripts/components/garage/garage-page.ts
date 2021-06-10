@@ -19,6 +19,10 @@ class GaragePage extends BaseComponent {
     return this.menu;
   }
 
+  get Table() {
+    return this.table;
+  }
+
   constructor() {
     super("div", ["garage-section"]);
     this.menu = new GarageMenu();

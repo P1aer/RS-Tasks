@@ -5,6 +5,7 @@
 .place-info{
    width: 55%;
 }
+
 .flag-container{
  width: 80px;
   overflow: hidden;
@@ -32,16 +33,29 @@
     margin: 0 5px 10px 10px;
   }
   .place-break{
-    background-color: lightgray;
+    background-color: coral;
     color: black;
     margin: 0 0 10px 0;
   }
+  .disable{
+     background-color: lightgray;
+   }
+}
+.svg-car{
+  z-index: 2;
+}
+.pepega-head{
+   height: 10px;
+  transform: translateX(24px) translateY(2px) ;
+   position: absolute;
 }
 .place-car{
   display: flex;
   object-fit: cover;
 }
 .place-car-container{
+  display: flex;
+  flex-direction: column;
   padding-left: 10px;
   height: 50px;
 }

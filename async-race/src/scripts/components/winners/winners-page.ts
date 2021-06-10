@@ -40,7 +40,7 @@ class WinnersPage extends BaseComponent {
   handleTimeSort() {
     if (this.sortType === "TDESC" || !this.sortType) {
       this.sortType = "TASC";
-      console.log("sort:", this.sortType)
+      console.log("sort:", this.sortType);
       this.getWinnersPage("time", "ASC");
     } else {
       this.sortType = "TDESC";
@@ -52,11 +52,11 @@ class WinnersPage extends BaseComponent {
   handleWinsSort() {
     if (this.sortType === "WDESC" || !this.sortType) {
       this.sortType = "WASC";
-      console.log("sort:", this.sortType)
+      console.log("sort:", this.sortType);
       this.getWinnersPage("wins", "ASC");
     } else {
       this.sortType = "WDESC";
-      console.log("sort:", this.sortType)
+      console.log("sort:", this.sortType);
       this.getWinnersPage("wins", "DESC");
     }
   }
@@ -75,7 +75,8 @@ class WinnersPage extends BaseComponent {
     this.getWinnersPage();
     this.footer.updatePage(this.currentPage);
   }
-// переход на страницу не сбрасывает сотировку?
+
+  // переход на страницу не сбрасывает сотировку?
   getWinnersPage(sort = "", order = "") {
     const count = this.element.querySelector("#winners-count");
     winnersTableClear();
@@ -93,9 +94,9 @@ class WinnersPage extends BaseComponent {
   }
 
   updateCounter() {
-    this.element.querySelector(
-      "#winners-count"
-    ).innerHTML = `${winnersTable.length}`;
+    getWinners(this.currentPage, 10, "", "").then((res) => {
+      this.element.querySelector("#winners-count").innerHTML = `${res.count}`;
+    });
   }
 }
 

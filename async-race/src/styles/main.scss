@@ -3,8 +3,12 @@
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Roboto', sans-serif;
 html{
+
   font-family:'Roboto', sans-serif;
   font-weight:normal;
+}
+html::-webkit-scrollbar{
+  display: none;
 }
 main {
 /*  background: url("../images/main-back.jpg") ;

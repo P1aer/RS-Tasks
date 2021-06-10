@@ -88,7 +88,7 @@ export const deleteWinner = async (id: number) =>
 export const createWinner = async (body: {
   wins: number;
   id: number;
-  time: Date;
+  time: number;
 }) =>
   (
     await fetch(winners, {
@@ -111,7 +111,7 @@ export const updateWinner = async (id: number, body: object) =>
     })
   ).json();
 
-export const saveWinner = async (id: number, time: Date) => {
+export const saveWinner = async (id: number, time: number) => {
   const winnerStatus = await getWinnerStatus(id);
 
   if (winnerStatus === 404) {

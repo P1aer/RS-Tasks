@@ -3,6 +3,10 @@ import WinnersPlace from "../components/winners-place/winners-place";
 
 export const garageTable: GaragePlace[] = [];
 export const winnersTable: WinnersPlace[] = [];
+export const globalState = {
+  isRace: false,
+}
+
 
 export const garageTableClear = () => {
   garageTable.forEach((item) => item.element.remove());
@@ -19,15 +23,5 @@ export const garageTableCheck = () => {
 export const winnersTableClear = () => {
   winnersTable.forEach((item) => item.element.remove());
   winnersTable.splice(0, garageTable.length);
-}
+};
 
-export const winnersDelete = (id: number) => {
-  const index = winnersTable.findIndex(
-    (item: WinnersPlace) => item.number === id
-  );
-  console.log(index);
-  if (typeof index !== "undefined") {
-    winnersTable[index].element.remove();
-    winnersTable.splice(index, 1);
-  }
-}
