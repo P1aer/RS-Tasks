@@ -3,16 +3,33 @@ import GaragePage from "./components/garage/garage-page";
 import WinnersPage from "./components/winners/winners-page";
 import BaseComponent from "./components/base-component";
 import { createCar, saveWinner } from "./api";
-import {
-  garageTable,
-  garageTableCheck,
-  globalState,
-} from "./shared/table-data";
+import globalState from "./shared/table-data";
 
 const colors = "0123456789ABCDEF";
-
-const names = ["A", "B", "C", "D", "E", "F", "G", "K", "L", "M"];
-const ends = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const names = [
+  "Mercedes",
+  "Toyota",
+  "Porsche",
+  "BMW",
+  "Kamaz",
+  "Ferrari",
+  "Audi",
+  "Volvo",
+  "Bugatti",
+  "Niisan",
+];
+const ends = [
+  "Benz",
+  "M8",
+  "C-Max",
+  "F8",
+  "488",
+  "911",
+  "Cherokee",
+  "Qashqai",
+  "350-ZX",
+  "Classic",
+];
 
 class App {
   private readonly header: Header;
@@ -30,7 +47,6 @@ class App {
     this.winners = new WinnersPage();
     document.body.append(this.header.element);
     document.body.append(this.main.element);
-    this.initListeners();
     this.goToGarage();
   }
 
@@ -63,18 +79,20 @@ class App {
   }
 
   async race() {
-    garageTableCheck();
+    const garage = this.garage.Table;
+    const { cars } = garage;
+    garage.carsCheckIdentity();
     const promises = [];
-    for (let i = 0; i < garageTable.length; i += 1) {
-      if (garageTable[i].isAnimated) {
+    for (let i = 0; i < cars.length; i += 1) {
+      if (cars[i].isAnimated) {
         return;
       }
-      promises.push(garageTable[i].startEngine());
+      promises.push(cars[i].startEngine());
     }
     globalState.isRace = true;
     const winner = await this.raceAll(
       promises,
-      garageTable.map((car) => car.ID)
+      globalState.cars.map((car) => car.id)
     );
     this.handleEndRace(winner);
   }
@@ -83,6 +101,13 @@ class App {
     promises: Promise<{ success: string; id: number; time: number }>[],
     ids: number[]
   ): Promise<{ id: number; name: string; time: number }> {
+    if (ids.length === 0) {
+      return {
+        id: 0,
+        name: "no Winner",
+        time: 0,
+      };
+    }
     const { success, id, time } = await Promise.race(promises);
     if (!success) {
       const failedIndex = ids.findIndex((i) => i === id);
@@ -96,9 +121,9 @@ class App {
       ];
       return this.raceAll(restPromises, restIds);
     }
-    const result = garageTable.find((car) => car.ID === id);
+    const result = globalState.cars.find((car) => car.id === id);
     return {
-      id: result.ID,
+      id: result.id,
       name: result.name,
       time: +(time / 1000).toFixed(2),
     };
@@ -108,10 +133,10 @@ class App {
     if (globalState.isRace) {
       return;
     }
-    garageTableCheck();
+    this.garage.Table.carsCheckIdentity();
     const promises: Promise<void>[] = [];
-    for (let i = 0; i < garageTable.length; i += 1) {
-      promises.push(garageTable[i].stopEngine());
+    for (let i = 0; i < this.garage.Table.cars.length; i += 1) {
+      promises.push(this.garage.Table.cars[i].stopEngine());
     }
     Promise.all(promises);
   };
@@ -124,11 +149,19 @@ class App {
   }
 
   handleEndRace = (winner: { name: string; id: number; time: number }) => {
+    const element = new BaseComponent("div", ["victory-letter"]);
+    element.element.innerHTML = `
+        <img src="../images/victory-pepega.gif" alt="gif">
+        <h3>Winner is ${winner.name} with time:${winner.time}</h3>
+`;
+    this.garage.Menu.element.after(element.element);
     globalState.isRace = false;
-    saveWinner(winner.id, winner.time).then(() =>
-      this.winners.getWinnersPage()
-    );
-    console.log(winner.name);
+    setTimeout(() => element.element.remove(), 5000);
+    if (winner.id !== 0) {
+      saveWinner(winner.id, winner.time).then(() =>
+        this.winners.getWinnersPage()
+      );
+    }
   };
 
   getRandomCar = () => {
@@ -152,10 +185,32 @@ class App {
   }
 
   goToWinners() {
+    this.checkWinnersIdentity();
     this.winners.updateCounter();
     this.clearMain();
     this.main.element.append(this.winners.element);
     this.header.Container.Nav.goToPage("winners");
+  }
+
+  checkWinnersIdentity() {
+    const winners = this.winners.Table.Winners;
+    if (globalState.winners.length !== winners.length) {
+      const toDelete: number[] = [];
+      for (let i = 0; i < winners.length; i += 1) {
+        if (
+          !globalState.winners.find(
+            (item: { id?: number }) => item.id === winners[i].id
+          )
+        ) {
+          toDelete.push(winners[i].id);
+        }
+      }
+      for (let j = 0; j < toDelete.length; j += 1) {
+        const index = winners.findIndex((item) => item.id === toDelete[j]);
+        winners[index].element.remove();
+        winners.splice(index, 1);
+      }
+    }
   }
 
   clearMain() {
@@ -167,9 +222,9 @@ class App {
     if (num === "0") {
       return;
     }
-    this.garage.Menu.buttons[0]
-      .updateCar(Number(num))
-      .then(() => this.garage.getCarsPage());
+    this.garage.Menu.buttons[0].updateCar(Number(num)).then(() => {
+      this.garage.getCarsPage().then(() => this.winners.getWinnersPage());
+    });
   }
 }
 export default App;

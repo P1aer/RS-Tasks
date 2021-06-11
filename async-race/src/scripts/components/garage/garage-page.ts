@@ -4,12 +4,10 @@ import GarageMenu from "../garage-menu/garage-menu";
 import { getCars } from "../../api";
 import GarageTable from "../garage-table/garage-table";
 import PageFooter from "../page-footer/page-footer";
-import { garageTableClear } from "../../shared/table-data";
+import globalState from "../../shared/table-data";
 
 class GaragePage extends BaseComponent {
   private readonly menu: GarageMenu;
-
-  private currentPage: number;
 
   private readonly table: GarageTable;
 
@@ -28,7 +26,6 @@ class GaragePage extends BaseComponent {
     this.menu = new GarageMenu();
     this.table = new GarageTable();
     this.footer = new PageFooter("garage");
-    this.currentPage = 1;
     this.element.innerHTML = `<h3 class="garage-h3">Garage currently serving: <span class="garage-count" id="garage-count"></span></h3>`;
     this.element.prepend(this.menu.element);
     this.element.append(this.table.element);
@@ -43,41 +40,35 @@ class GaragePage extends BaseComponent {
   }
 
   handlePrevBtn() {
-    if (this.currentPage === 1) {
+    if (globalState.carsPage === 1) {
       return;
     }
-    this.currentPage -= 1;
-    this.getCarsPage();
-    this.footer.updatePage(this.currentPage);
+    globalState.carsPage -= 1;
+    this.getCarsPage().then(() => this.footer.updatePage(globalState.carsPage));
   }
 
   handleNextBtn() {
-    this.currentPage += 1;
-    this.getCarsPage();
-    this.footer.updatePage(this.currentPage);
+    globalState.carsPage += 1;
+    this.getCarsPage().then(() => this.footer.updatePage(globalState.carsPage));
   }
 
-  getCarsPage() {
-    garageTableClear();
-    const res = getCars(this.currentPage);
-    res.then((resolve) => {
-      this.element.querySelector(
-        ".garage-count"
-      ).innerHTML = `${resolve.count}`;
-      resolve.items.forEach(
-        (item: { id: number; color: string; name: string }) =>
-          this.table.addPlace(item)
-      );
-    });
+  async getCarsPage() {
+    this.table.clearPlaces();
+    const { items, count } = await getCars(globalState.carsPage);
+    globalState.carsCount = Number(count);
+    globalState.cars = items;
+    this.element.querySelector(
+      ".garage-count"
+    ).innerHTML = `${globalState.carsCount}`;
+    this.table.getFullPage();
   }
 
   addCarsOnPage(car: { id: number; color: string; name: string }) {
     const counter = this.element.querySelector(".garage-count");
-    const cars = Number(counter.innerHTML) + 1;
-    counter.innerHTML = `${cars}`;
-    this.table.addPlace(car);
+    globalState.carsCount += 1;
+    counter.innerHTML = `${globalState.carsCount}`;
+    this.table.addPlaceOnPage(car);
   }
-
 }
 
 export default GaragePage;

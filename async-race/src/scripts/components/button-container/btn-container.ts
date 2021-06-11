@@ -7,14 +7,6 @@ class BtnContainer extends BaseComponent {
 
   private readonly inputColor: BaseComponent;
 
-  get ColorInput() {
-    return this.inputColor.element;
-  }
-
-  get TextInput() {
-    return this.inputText.element;
-  }
-
   constructor(button: string, id: string) {
     super("div", ["btn-container"]);
     this.inputText = new BaseComponent("input");
@@ -50,11 +42,17 @@ class BtnContainer extends BaseComponent {
   async updateCar(id: number) {
     const name = (<HTMLInputElement>this.inputText.element).value;
     if (name === "") {
-      console.log("Empty name");
       return;
     }
     const color = (<HTMLInputElement>this.inputColor.element).value;
-    await updateCar(id, { name, color }).then((r) => console.log(r, `created`));
+    await updateCar(id, { name, color });
+    this.clearInputs();
+  }
+
+  clearInputs() {
+    (<HTMLInputElement>this.inputText.element).value = "";
+    (<HTMLInputElement>this.inputColor.element).value = "#000000";
+    this.element.querySelector(".invisible").innerHTML = "0";
   }
 }
 

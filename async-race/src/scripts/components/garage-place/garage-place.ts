@@ -8,8 +8,8 @@ import {
   startEngine,
   stopEngine,
 } from "../../api";
-import WinnersPlace from "../winners-place/winners-place";
-import { winnersTable, globalState } from "../../shared/table-data";
+
+import globalState from "../../shared/table-data";
 
 class GaragePlace extends BaseComponent {
   private placeID: number;
@@ -82,25 +82,25 @@ class GaragePlace extends BaseComponent {
   }
 
   winnersDelete = (id: number) => {
-    const index = winnersTable.findIndex(
-      (item: WinnersPlace) => item.number === id
+    const index = globalState.winners.findIndex(
+      (item: { id: number; color: string; name: string }) => item.id === id
     );
-    if (typeof index !== "undefined") {
-      winnersTable[index].element.remove();
-      winnersTable.splice(index, 1);
-    }
+    globalState.winners.splice(index, 1);
+    globalState.winnersCount -= 1;
   };
 
   async handleDelete() {
-    const { result } = await getWinner(this.placeID);
-    if (result) {
-      deleteWinner(result.id).then(() => this.winnersDelete(result.id));
+    const { id } = await getWinner(this.placeID);
+    if (id) {
+      deleteWinner(id).then(() => this.winnersDelete(id));
     }
+    const index = globalState.cars.findIndex((car) => car.id === this.placeID);
+    globalState.cars.splice(index, 1);
     this.placeID = 0;
     this.element.remove();
     const counter = document.getElementById("garage-count");
-    const cars = Number(counter.innerHTML) - 1;
-    counter.innerHTML = `${cars}`;
+    globalState.carsCount -= 1;
+    counter.innerHTML = `${globalState.carsCount}`;
   }
 
   animation = (car: HTMLElement, distance: number, animationTime: number) => {
@@ -109,7 +109,6 @@ class GaragePlace extends BaseComponent {
     const state = {
       id: 0,
     };
-
     function step(timestamp: number) {
       if (!start) {
         start = timestamp;
@@ -131,6 +130,7 @@ class GaragePlace extends BaseComponent {
     if (this.isAnimated) {
       return { success: false, time: 0, id: this.placeID };
     }
+    this.isAnimated = true;
     const { velocity, distance } = await startEngine(this.placeID);
     const time = distance / velocity;
     const car = <HTMLElement>this.element.querySelector(".place-car-container");
@@ -138,7 +138,6 @@ class GaragePlace extends BaseComponent {
     this.element.querySelector(".place-break").classList.remove("disable");
     const path = this.countDistance();
     this.animate = this.animation(car, path, time);
-    this.isAnimated = true;
     const { success } = await drive(this.placeID);
     if (!success) {
       window.cancelAnimationFrame(this.animate.id);

@@ -1,11 +1,18 @@
 import BaseComponent from "../base-component";
 import "./winners-table.scss";
 import WinnersPlace from "../winners-place/winners-place";
-import { winnersTable } from "../../shared/table-data";
+import globalState from "../../shared/table-data";
 
 class WinnersTable extends BaseComponent {
+  private items: WinnersPlace[];
+
+  get Winners() {
+    return this.items;
+  }
+
   constructor() {
     super("div", ["winners-table"]);
+    this.items = [];
     this.element.innerHTML = `
         <div class="table-head">
           <h3 class="table-head-elem table-number">Number</h3>
@@ -17,22 +24,30 @@ class WinnersTable extends BaseComponent {
     `;
   }
 
-  addTablePlace(newCar: {
-    time: number;
-    wins: number;
-    car: { id: number; name: string; color: string };
-  }) {
-    if (winnersTable.length < 10) {
-      winnersTable.push(
-        new WinnersPlace(
-          winnersTable.length + 1,
-          newCar.time,
-          newCar.wins,
-          newCar.car
-        )
-      );
-      this.element.append(winnersTable[winnersTable.length - 1].element);
-    }
+  getFullPage() {
+    this.clearPlaces();
+    globalState.winners.forEach(
+      (winner: {
+        id: number;
+        wins: number;
+        time: number;
+        car: { id: number; color: string; name: string };
+      }) => {
+        const elementWinner = new WinnersPlace(
+          winner.id,
+          winner.time,
+          winner.wins,
+          winner.car
+        );
+        this.items.push(elementWinner);
+        this.element.append(this.items[this.items.length - 1].element);
+      }
+    );
+  }
+
+  clearPlaces() {
+    this.items.forEach((item) => item.element.remove());
+    this.items = [];
   }
 }
 

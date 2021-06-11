@@ -3,16 +3,16 @@ import "./winners.scss";
 import WinnersTable from "../winners-table/winners-table";
 import { getWinners } from "../../api";
 import PageFooter from "../page-footer/page-footer";
-import { winnersTable, winnersTableClear } from "../../shared/table-data";
+import globalState from "../../shared/table-data";
 
 class WinnersPage extends BaseComponent {
   private readonly table: WinnersTable;
 
-  private currentPage = 1;
-
-  private sortType = "";
-
   private footer: PageFooter;
+
+  get Table() {
+    return this.table;
+  }
 
   constructor() {
     super("div", ["winners-section"]);
@@ -38,65 +38,58 @@ class WinnersPage extends BaseComponent {
   }
 
   handleTimeSort() {
-    if (this.sortType === "TDESC" || !this.sortType) {
-      this.sortType = "TASC";
-      console.log("sort:", this.sortType);
-      this.getWinnersPage("time", "ASC");
+    if (globalState.sortType === "TDESC" || !globalState.sortType) {
+      globalState.sortType = "TASC";
     } else {
-      this.sortType = "TDESC";
-      console.log("sort:", this.sortType);
-      this.getWinnersPage("time", "DESC");
+      globalState.sortType = "TDESC";
     }
+    this.getWinnersPage();
   }
 
   handleWinsSort() {
-    if (this.sortType === "WDESC" || !this.sortType) {
-      this.sortType = "WASC";
-      console.log("sort:", this.sortType);
-      this.getWinnersPage("wins", "ASC");
+    if (globalState.sortType === "WDESC" || !globalState.sortType) {
+      globalState.sortType = "WASC";
     } else {
-      this.sortType = "WDESC";
-      console.log("sort:", this.sortType);
-      this.getWinnersPage("wins", "DESC");
+      globalState.sortType = "WDESC";
     }
+    this.getWinnersPage();
   }
 
   handlePrevBtn() {
-    if (this.currentPage === 1) {
+    if (globalState.winnersPage === 1) {
       return;
     }
-    this.currentPage -= 1;
+    globalState.winnersPage -= 1;
     this.getWinnersPage();
-    this.footer.updatePage(this.currentPage);
+    this.footer.updatePage(globalState.winnersPage);
   }
 
   handleNextBtn() {
-    this.currentPage += 1;
+    globalState.winnersPage += 1;
     this.getWinnersPage();
-    this.footer.updatePage(this.currentPage);
+    this.footer.updatePage(globalState.winnersPage);
   }
 
-  // переход на страницу не сбрасывает сотировку?
-  getWinnersPage(sort = "", order = "") {
-    const count = this.element.querySelector("#winners-count");
-    winnersTableClear();
-    const result = getWinners(this.currentPage, 10, sort, order);
-    result.then((res) => {
-      count.innerHTML = `${res.count}`;
-      res.items.forEach(
-        (item: {
-          time: number;
-          wins: number;
-          car: { id: number; name: string; color: string };
-        }) => this.table.addTablePlace(item)
-      );
-    });
+  async getWinnersPage() {
+    const counter = this.element.querySelector("#winners-count");
+    const sort = globalState.sortType[0] === "W" ? "wins" : "time";
+    const order = globalState.sortType[1] === "A" ? "ASC" : "DESC";
+    const { items, count } = await getWinners(
+      globalState.winnersPage,
+      10,
+      sort,
+      order
+    );
+    counter.innerHTML = `${count}`;
+    globalState.winnersCount = Number(count);
+    globalState.winners = items;
+    this.table.getFullPage();
   }
 
   updateCounter() {
-    getWinners(this.currentPage, 10, "", "").then((res) => {
-      this.element.querySelector("#winners-count").innerHTML = `${res.count}`;
-    });
+    this.element.querySelector(
+      "#winners-count"
+    ).innerHTML = `${globalState.winnersCount}`;
   }
 }
 

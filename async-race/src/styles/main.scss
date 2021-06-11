@@ -3,16 +3,20 @@
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Roboto', sans-serif;
 html{
-
   font-family:'Roboto', sans-serif;
   font-weight:normal;
 }
 html::-webkit-scrollbar{
   display: none;
 }
-main {
-/*  background: url("../images/main-back.jpg") ;
-  background-size: cover;
-  width: 1920px;
-  height: 800px;*/
+.victory-letter{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  object-fit: contain;
+  justify-content: center;
+  img{
+    height: 60px;
+    width: 120px;
+  }
 }

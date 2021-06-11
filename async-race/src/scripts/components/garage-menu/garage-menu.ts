@@ -3,7 +3,6 @@ import "./garage-menu.scss";
 import BtnContainer from "../button-container/btn-container";
 
 class GarageMenu extends BaseComponent {
-
   readonly buttons: BtnContainer[];
 
   constructor() {

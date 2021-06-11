@@ -2,7 +2,6 @@ import BaseComponent from "../base-component";
 import "./page-footer.scss";
 
 class PageFooter extends BaseComponent {
-
   constructor(place: string) {
     super("div", ["page-footer"]);
     this.element.innerHTML = `
@@ -13,10 +12,7 @@ class PageFooter extends BaseComponent {
   }
 
   updatePage(page: number) {
-
-    this.element.querySelector(
-      ".footer-page"
-    ).innerHTML = `${page}`;
+    this.element.querySelector(".footer-page").innerHTML = `${page}`;
   }
 }
 
