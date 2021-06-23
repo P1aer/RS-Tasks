@@ -1,23 +1,23 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import "./categories-container.scss";
 import Card from "../category-card/card";
 
 const cards = [
-  { name: "card1", image: "path", id: 1 },
-  { name: "card2", image: "path", id: 2 },
-  { name: "card3", image: "path", id: 3 },
-  { name: "card4", image: "path", id: 4 },
-  { name: "card5", image: "path", id: 5 },
-  { name: "card6", image: "path", id: 6 },
-  { name: "card7", image: "path", id: 7 },
-  { name: "card8", image: "path", id: 8 },
+  { name: "Actions 1", image: "images/action1.jpg", id: 1 },
+  { name: "Actions 2", image: "images/action2.jpg", id: 2 },
+  { name: "Animals 1", image: "images/animals1.jpg", id: 3 },
+  { name: "Animals 2", image: "images/animals2.png", id: 4 },
+  { name: "Clothes", image: "images/clothes.jpg", id: 5 },
+  { name: "Emotions", image: "images/emotions.jpg", id: 6 },
+  { name: "Nature", image: "images/nature.jpg", id: 7 },
+  { name: "Things", image: "images/things.jpg", id: 8 },
 ];
 
-export default function CategoryContainer(): ReactElement {
-  return (<div className={"category-container"}>
+const CategoryContainer:React.FC = () => (<div className={"category-container"}>
           {
               cards.map((card) => <Card cardInfo={card} key={card.id}/>)
           }
           </div>
-  );
-}
+);
+
+export default CategoryContainer;

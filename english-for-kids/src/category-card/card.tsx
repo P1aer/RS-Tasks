@@ -1,10 +1,14 @@
 import React, { ReactElement } from "react";
 import "./category-card.scss";
 
-function Card({ cardInfo }: {cardInfo: {name: string, id: number, image: string}}):ReactElement {
+interface CardInfo {
+    cardInfo: {name: string, id: number, image: string}
+}
+
+function Card({ cardInfo }: CardInfo):ReactElement {
   return (<div className={"category-card"}>
+          <img src={cardInfo.image}/>
            <p>{cardInfo.name}</p>
-           <p>{cardInfo.image}</p>
           </div>
   );
 }

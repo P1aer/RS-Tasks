@@ -1,8 +1,10 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import "./header.scss";
+import SlideMenu from "../slide-menu/slide-menu";
 
-export default function Header():ReactElement {
-  return (
+const names = ["a", "b", "c", "d"];
+
+const Header:React.FC = () => (
        <header className={"app-header"}>
          <nav>
              <div className="menuToggle">
@@ -10,6 +12,7 @@ export default function Header():ReactElement {
                  <span/>
                  <span/>
                  <span/>
+                 <SlideMenu cardNames={names}/>
              </div>
          </nav>
            <label className="switch">
@@ -20,5 +23,5 @@ export default function Header():ReactElement {
                    </div>
            </label>
        </header>
-  );
-}
+);
+export default Header;

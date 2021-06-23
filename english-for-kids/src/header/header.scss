@@ -20,6 +20,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
   }
 }
 
@@ -65,6 +66,7 @@ input:checked + .slider:before {
   -webkit-transform: translateX(82px);
   -ms-transform: translateX(82px);
   transform: translateX(82px);
+
 }
 
 .on
@@ -138,7 +140,6 @@ nav {
     transition: transform .5s cubic-bezier(.77,.2,.05,1),background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease,-webkit-transform .5s cubic-bezier(.77,.2,.05,1);*/
   }
 }
-
 
 .menuToggle, .menuToggle input {
   display: block;
