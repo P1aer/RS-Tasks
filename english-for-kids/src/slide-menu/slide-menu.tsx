@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./slide-menu.scss";
+import { NavLink } from "react-router-dom";
+import context from "../context";
 
-function SlideMenu({ cardNames }:{cardNames:string[]}):React.ReactElement {
+function SlideMenu():React.ReactElement {
+  const { cards } = useContext(context);
   return (
-        <ul className="menu">
-            <li className="menu-item">Main Page</li>
+        <ul className="menu ">
+            <NavLink className="menu-item" to="/" exact={true}>Main Page</NavLink>
             {
-                cardNames.map((name) => (<li className={"menu-item"} key={cardNames.indexOf(name + 1)}>{name}</li>))
+                cards.map((card) => (<NavLink className={"menu-item"} to={`/${card.name}`} key={card.id}>{card.name}</NavLink>))
             }
         </ul>
   );
 }
-
 export default SlideMenu;

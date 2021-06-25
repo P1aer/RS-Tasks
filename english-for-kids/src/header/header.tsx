@@ -2,8 +2,6 @@ import React from "react";
 import "./header.scss";
 import SlideMenu from "../slide-menu/slide-menu";
 
-const names = ["a", "b", "c", "d"];
-
 const Header:React.FC = () => (
        <header className={"app-header"}>
          <nav>
@@ -12,7 +10,7 @@ const Header:React.FC = () => (
                  <span/>
                  <span/>
                  <span/>
-                 <SlideMenu cardNames={names}/>
+                 <SlideMenu/>
              </div>
          </nav>
            <label className="switch">
