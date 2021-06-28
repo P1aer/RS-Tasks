@@ -18,8 +18,15 @@ const cards = [
 ];
 
 function App() :React.ReactElement {
+  const [state, setState] = React.useState({
+    menu: false,
+    play: false,
+  });
+  const exitMenu:()=>void = () => setState({ menu: false, play: state.play });
   return (
-      <context.Provider value={{ cards }}>
+      <context.Provider value={{
+        cards, state, setState, exitMenu,
+      }}>
           <div className="App">
               <Header />
               <Switch>

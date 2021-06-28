@@ -30,7 +30,7 @@
   cursor: pointer;
   color: white;
 }
-.menuToggle input:checked~.menu {
+.menuVisible {
   -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1;
