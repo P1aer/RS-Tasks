@@ -33,7 +33,7 @@
     {
       "word": "fly",
       "translation": "летать",
-      "image": "images/fly.jpg",
+      "image": "images/fly.png",
       "audio": "audio/fly.mp3"
     },
     {
@@ -45,11 +45,161 @@
     {
       "word": "jump",
       "translation": "прыгать",
-      "image": "images/jump.jpg",
+      "image": "images/jump.png",
       "audio": "audio/jump.mp3"
     }
   ],
   "Actions 2": [
+    {
+      "word": "open",
+      "translation": "открывать",
+      "image": "images/open.jpg",
+      "audio": "audio/open.mp3"
+    },
+    {
+      "word": "play",
+      "translation": "играть",
+      "image": "images/play.jpg",
+      "audio": "audio/play.mp3"
+    },
+    {
+      "word": "argue",
+      "translation": "спорить",
+      "image": "images/argue.jpg",
+      "audio": "audio/argue.mp3"
+    },
+    {
+      "word": "ride",
+      "translation": "ездить",
+      "image": "images/ride.jpg",
+      "audio": "audio/ride.mp3"
+    },
+    {
+      "word": "run",
+      "translation": "бегать",
+      "image": "images/run.jpg",
+      "audio": "audio/run.mp3"
+    },
+    {
+      "word": "sing",
+      "translation": "петь",
+      "image": "images/sing.jpg",
+      "audio": "audio/sing.mp3"
+    },
+    {
+      "word": "point",
+      "translation": "указывать",
+      "image": "images/point.jpg",
+      "audio": "audio/point.mp3"
+    },
+    {
+      "word": "close",
+      "translation": "закрыть",
+      "image": "images/close.jpg",
+      "audio": "audio/close.mp3"
+    }
+  ],
+  "Animals 1": [
+    {
+      "word": "cat",
+      "translation": "кот",
+      "image": "images/cat.jpg",
+      "audio": "audio/cat.mp3"
+    },
+    {
+      "word": "wolf",
+      "translation": "волк",
+      "image": "images/wolf.jpg",
+      "audio": "audio/wolf.mp3"
+    },
+    {
+      "word": "horse",
+      "translation": "лошадь",
+      "image": "images/horse.jpg",
+      "audio": "audio/horse.mp3"
+    },
+    {
+      "word": "dog",
+      "translation": "собака",
+      "image": "images/dog.jpg",
+      "audio": "audio/dog.mp3"
+    },
+    {
+      "word": "rabbit",
+      "translation": "кролик",
+      "image": "images/rabbit.jpg",
+      "audio": "audio/rabbit.mp3"
+    },
+    {
+      "word": "panda",
+      "translation": "панда",
+      "image": "images/panda.jpg",
+      "audio": "audio/panda.mp3"
+    },
+    {
+      "word": "bear",
+      "translation": "медведь",
+      "image": "images/bear.jpg",
+      "audio": "audio/bear.mp3"
+    },
+    {
+      "word": "fox",
+      "translation": "лиса",
+      "image": "images/fox.jpg",
+      "audio": "audio/fox.mp3"
+    }
+  ],
+  "Animals 2": [
+    {
+      "word": "bird",
+      "translation": "птица",
+      "image": "images/bird.jpg",
+      "audio": "audio/bird.mp3"
+    },
+    {
+      "word": "turtle",
+      "translation": "черепаха",
+      "image": "images/turtle.jpg",
+      "audio": "audio/turtle.mp3"
+    },
+    {
+      "word": "caracal",
+      "translation": "каракал",
+      "image": "images/floppa.jpg",
+      "audio": "audio/floppa.mp3"
+    },
+    {
+      "word": "dragon",
+      "translation": "дракон",
+      "image": "images/dragon.jpg",
+      "audio": "audio/dragon.mp3"
+    },
+    {
+      "word": "peacock",
+      "translation": "павлин",
+      "image": "images/peacock.jpg",
+      "audio": "audio/peacock.mp3"
+    },
+    {
+      "word": "parrot",
+      "translation": "попугай",
+      "image": "images/parrot.jpg",
+      "audio": "audio/parrot.mp3"
+    },
+    {
+      "word": "ferret",
+      "translation": "хорек",
+      "image": "images/ferret.jpg",
+      "audio": "audio/ferret.mp3"
+    },
+    {
+      "word": "sheep",
+      "translation": "овца",
+      "image": "images/sheep.jpg",
+      "audio": "audio/sheep.mp3"
+    }
+  ],
+  "Clothes": [
     {
       "word": "cry",
       "translation": "плакать",
@@ -77,175 +227,25 @@
     {
       "word": "fish",
       "translation": "рыбачить",
-      "image": "img/fish.jpg",
+      "image": "images/fish.jpg",
       "audio": "audio/fish.mp3"
     },
     {
       "word": "fly",
       "translation": "летать",
-      "image": "img/fly.jpg",
+      "image": "images/fly.jpg",
       "audio": "audio/fly.mp3"
     },
     {
       "word": "hug",
       "translation": "обнимать",
-      "image": "img/hug.jpg",
+      "image": "images/hug.jpg",
       "audio": "audio/hug.mp3"
     },
     {
       "word": "jump",
       "translation": "прыгать",
-      "image": "img/jump.jpg",
-      "audio": "audio/jump.mp3"
-    }
-  ],
-  "Animals 1": [
-    {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "img/cry.jpg",
-      "audio": "audio/cry.mp3"
-    },
-    {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "img/dance.jpg",
-      "audio": "audio/dance.mp3"
-    },
-    {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "img/dive.jpg",
-      "audio": "audio/dive.mp3"
-    },
-    {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "img/draw.jpg",
-      "audio": "audio/draw.mp3"
-    },
-    {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "img/fish.jpg",
-      "audio": "audio/fish.mp3"
-    },
-    {
-      "word": "fly",
-      "translation": "летать",
-      "image": "img/fly.jpg",
-      "audio": "audio/fly.mp3"
-    },
-    {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "img/hug.jpg",
-      "audio": "audio/hug.mp3"
-    },
-    {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "img/jump.jpg",
-      "audio": "audio/jump.mp3"
-    }
-  ],
-  "Animals 2": [
-    {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "img/cry.jpg",
-      "audio": "audio/cry.mp3"
-    },
-    {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "img/dance.jpg",
-      "audio": "audio/dance.mp3"
-    },
-    {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "img/dive.jpg",
-      "audio": "audio/dive.mp3"
-    },
-    {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "img/draw.jpg",
-      "audio": "audio/draw.mp3"
-    },
-    {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "img/fish.jpg",
-      "audio": "audio/fish.mp3"
-    },
-    {
-      "word": "fly",
-      "translation": "летать",
-      "image": "img/fly.jpg",
-      "audio": "audio/fly.mp3"
-    },
-    {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "img/hug.jpg",
-      "audio": "audio/hug.mp3"
-    },
-    {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "img/jump.jpg",
-      "audio": "audio/jump.mp3"
-    }
-  ],
-  "Clothes": [
-    {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "img/cry.jpg",
-      "audio": "audio/cry.mp3"
-    },
-    {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "img/dance.jpg",
-      "audio": "audio/dance.mp3"
-    },
-    {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "img/dive.jpg",
-      "audio": "audio/dive.mp3"
-    },
-    {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "img/draw.jpg",
-      "audio": "audio/draw.mp3"
-    },
-    {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "img/fish.jpg",
-      "audio": "audio/fish.mp3"
-    },
-    {
-      "word": "fly",
-      "translation": "летать",
-      "image": "img/fly.jpg",
-      "audio": "audio/fly.mp3"
-    },
-    {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "img/hug.jpg",
-      "audio": "audio/hug.mp3"
-    },
-    {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "img/jump.jpg",
+      "image": "images/jump.jpg",
       "audio": "audio/jump.mp3"
     }
   ],
@@ -253,49 +253,49 @@
     {
       "word": "cry",
       "translation": "плакать",
-      "image": "img/cry.jpg",
+      "image": "images/cry.jpg",
       "audio": "audio/cry.mp3"
     },
     {
       "word": "dance",
       "translation": "танцевать",
-      "image": "img/dance.jpg",
+      "image": "images/dance.jpg",
       "audio": "audio/dance.mp3"
     },
     {
       "word": "dive",
       "translation": "нырять",
-      "image": "img/dive.jpg",
+      "image": "images/dive.jpg",
       "audio": "audio/dive.mp3"
     },
     {
       "word": "draw",
       "translation": "рисовать",
-      "image": "img/draw.jpg",
+      "image": "images/draw.jpg",
       "audio": "audio/draw.mp3"
     },
     {
       "word": "fish",
       "translation": "рыбачить",
-      "image": "img/fish.jpg",
+      "image": "images/fish.jpg",
       "audio": "audio/fish.mp3"
     },
     {
       "word": "fly",
       "translation": "летать",
-      "image": "img/fly.jpg",
+      "image": "images/fly.jpg",
       "audio": "audio/fly.mp3"
     },
     {
       "word": "hug",
       "translation": "обнимать",
-      "image": "img/hug.jpg",
+      "image": "images/hug.jpg",
       "audio": "audio/hug.mp3"
     },
     {
       "word": "jump",
       "translation": "прыгать",
-      "image": "img/jump.jpg",
+      "image": "images/jump.jpg",
       "audio": "audio/jump.mp3"
     }
   ],
@@ -303,49 +303,49 @@
     {
       "word": "cry",
       "translation": "плакать",
-      "image": "img/cry.jpg",
+      "image": "images/cry.jpg",
       "audio": "audio/cry.mp3"
     },
     {
       "word": "dance",
       "translation": "танцевать",
-      "image": "img/dance.jpg",
+      "image": "images/dance.jpg",
       "audio": "audio/dance.mp3"
     },
     {
       "word": "dive",
       "translation": "нырять",
-      "image": "img/dive.jpg",
+      "image": "images/dive.jpg",
       "audio": "audio/dive.mp3"
     },
     {
       "word": "draw",
       "translation": "рисовать",
-      "image": "img/draw.jpg",
+      "image": "images/draw.jpg",
       "audio": "audio/draw.mp3"
     },
     {
       "word": "fish",
       "translation": "рыбачить",
-      "image": "img/fish.jpg",
+      "image": "images/fish.jpg",
       "audio": "audio/fish.mp3"
     },
     {
       "word": "fly",
       "translation": "летать",
-      "image": "img/fly.jpg",
+      "image": "images/fly.jpg",
       "audio": "audio/fly.mp3"
     },
     {
       "word": "hug",
       "translation": "обнимать",
-      "image": "img/hug.jpg",
+      "image": "images/hug.jpg",
       "audio": "audio/hug.mp3"
     },
     {
       "word": "jump",
       "translation": "прыгать",
-      "image": "img/jump.jpg",
+      "image": "images/jump.jpg",
       "audio": "audio/jump.mp3"
     }
   ],
@@ -353,49 +353,49 @@
     {
       "word": "cry",
       "translation": "плакать",
-      "image": "img/cry.jpg",
+      "image": "images/cry.jpg",
       "audio": "audio/cry.mp3"
     },
     {
       "word": "dance",
       "translation": "танцевать",
-      "image": "img/dance.jpg",
+      "image": "images/dance.jpg",
       "audio": "audio/dance.mp3"
     },
     {
       "word": "dive",
       "translation": "нырять",
-      "image": "img/dive.jpg",
+      "image": "images/dive.jpg",
       "audio": "audio/dive.mp3"
     },
     {
       "word": "draw",
       "translation": "рисовать",
-      "image": "img/draw.jpg",
+      "image": "images/draw.jpg",
       "audio": "audio/draw.mp3"
     },
     {
       "word": "fish",
       "translation": "рыбачить",
-      "image": "img/fish.jpg",
+      "image": "images/fish.jpg",
       "audio": "audio/fish.mp3"
     },
     {
       "word": "fly",
       "translation": "летать",
-      "image": "img/fly.jpg",
+      "image": "images/fly.jpg",
       "audio": "audio/fly.mp3"
     },
     {
       "word": "hug",
       "translation": "обнимать",
-      "image": "img/hug.jpg",
+      "image": "images/hug.jpg",
       "audio": "audio/hug.mp3"
     },
     {
       "word": "jump",
       "translation": "прыгать",
-      "image": "img/jump.jpg",
+      "image": "images/jump.jpg",
       "audio": "audio/jump.mp3"
     }
   ]

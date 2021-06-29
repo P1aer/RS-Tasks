@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./word-card.scss";
 
-function Word({ info }:
-                  {
+function Word({ info }: {
                     info:{
                         word:string,
                         translation:string,
