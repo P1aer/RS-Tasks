@@ -1,0 +1,27 @@
+.start-btn-container{
+  width: 100%;
+  text-align: center;
+}
+.start-btn{
+  user-select: none;
+   color: white;
+  background: linear-gradient(40deg, #ffd86f, #fc6262);
+  border: none;
+  border-radius:5px;
+  font-size: 24px;
+  padding: 16px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.not-started{
+  box-sizing: border-box;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+

@@ -28,7 +28,7 @@ function Header():React.ReactElement {
                 </div>
             </nav>
             <label className="switch">
-                <input type="checkbox" id="togBtn" />
+                <input type="checkbox" onClick={() => setState({ play: !state.play, menu: state.menu })} id="togBtn" />
                 <div className="slider round">
                     <span className="on">PLAY</span>
                     <span className="off">TRAIN</span>

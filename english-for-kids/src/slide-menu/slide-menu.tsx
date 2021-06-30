@@ -9,6 +9,9 @@ function SlideMenu():React.ReactElement {
   if (state.menu) {
     classes.push("menuVisible");
   }
+  if (state.play) {
+    classes.push("orange");
+  }
   return (
       <ul className={classes.join(" ")}>
           <NavLink

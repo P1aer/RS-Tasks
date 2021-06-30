@@ -83,6 +83,14 @@
   .back{
     transform: rotateY(180deg);
   }
+  &.play-mode{
+    .card-bottom{
+      display: none;
+    }
+    img {
+      height: 100%;
+    }
+  }
 }
 
 

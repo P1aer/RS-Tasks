@@ -201,202 +201,202 @@
   ],
   "Clothes": [
     {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "images/cry.jpg",
-      "audio": "audio/cry.mp3"
+      "word": "pants",
+      "translation": "брюки",
+      "image": "images/pants.jpg",
+      "audio": "audio/pants.mp3"
     },
     {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "images/dance.jpg",
-      "audio": "audio/dance.mp3"
+      "word": "shirt",
+      "translation": "рубашка",
+      "image": "images/shirt.png",
+      "audio": "audio/shirt.mp3"
     },
     {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "images/dive.jpg",
-      "audio": "audio/dive.mp3"
+      "word": "dress",
+      "translation": "платье",
+      "image": "images/dress.png",
+      "audio": "audio/dress.mp3"
     },
     {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "images/draw.jpg",
-      "audio": "audio/draw.mp3"
+      "word": "boots",
+      "translation": "ботинки",
+      "image": "images/boots.jpg",
+      "audio": "audio/boots.mp3"
     },
     {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "images/fish.jpg",
-      "audio": "audio/fish.mp3"
+      "word": "jacket",
+      "translation": "куртка",
+      "image": "images/jacket.jpg",
+      "audio": "audio/jacket.mp3"
     },
     {
-      "word": "fly",
-      "translation": "летать",
-      "image": "images/fly.jpg",
-      "audio": "audio/fly.mp3"
+      "word": "jeans",
+      "translation": "джинсы",
+      "image": "images/jeans.jpg",
+      "audio": "audio/jeans.mp3"
     },
     {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "images/hug.jpg",
-      "audio": "audio/hug.mp3"
+      "word": "pijamas",
+      "translation": "пижама",
+      "image": "images/pijama.jpg",
+      "audio": "audio/pijama.mp3"
     },
     {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "images/jump.jpg",
-      "audio": "audio/jump.mp3"
+      "word": "socks",
+      "translation": "носки",
+      "image": "images/socks.jpg",
+      "audio": "audio/socks.mp3"
     }
   ],
   "Emotions": [
     {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "images/cry.jpg",
-      "audio": "audio/cry.mp3"
+      "word": "sad",
+      "translation": "грустный",
+      "image": "images/sad.jpg",
+      "audio": "audio/sad.mp3"
     },
     {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "images/dance.jpg",
-      "audio": "audio/dance.mp3"
+      "word": "angry",
+      "translation": "злой",
+      "image": "images/angry.jpg",
+      "audio": "audio/angry.mp3"
     },
     {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "images/dive.jpg",
-      "audio": "audio/dive.mp3"
+      "word": "happy",
+      "translation": "счастливый",
+      "image": "images/happy.jpg",
+      "audio": "audio/happy.mp3"
     },
     {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "images/draw.jpg",
-      "audio": "audio/draw.mp3"
+      "word": "tired",
+      "translation": "уставший",
+      "image": "images/tired.jpg",
+      "audio": "audio/tired.mp3"
     },
     {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "images/fish.jpg",
-      "audio": "audio/fish.mp3"
+      "word": "surprised",
+      "translation": "удивленный",
+      "image": "images/surprised.jpg",
+      "audio": "audio/surprised.mp3"
     },
     {
-      "word": "fly",
-      "translation": "летать",
-      "image": "images/fly.jpg",
-      "audio": "audio/fly.mp3"
+      "word": "scared",
+      "translation": "испуганный",
+      "image": "images/scared.jpg",
+      "audio": "audio/scared.mp3"
     },
     {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "images/hug.jpg",
-      "audio": "audio/hug.mp3"
+      "word": "smile",
+      "translation": "улыбка",
+      "image": "images/smile.jpg",
+      "audio": "audio/smile.mp3"
     },
     {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "images/jump.jpg",
-      "audio": "audio/jump.mp3"
+      "word": "laugh",
+      "translation": "смех",
+      "image": "images/laugh.png",
+      "audio": "audio/laugh.mp3"
     }
   ],
   "Nature": [
     {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "images/cry.jpg",
-      "audio": "audio/cry.mp3"
+      "word": "tree",
+      "translation": "дерево",
+      "image": "images/tree.png",
+      "audio": "audio/tree.mp3"
     },
     {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "images/dance.jpg",
-      "audio": "audio/dance.mp3"
+      "word": "sun",
+      "translation": "солнце",
+      "image": "images/sun.jpg",
+      "audio": "audio/sun.mp3"
     },
     {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "images/dive.jpg",
-      "audio": "audio/dive.mp3"
+      "word": "water",
+      "translation": "вода",
+      "image": "images/water.jpg",
+      "audio": "audio/water.mp3"
     },
     {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "images/draw.jpg",
-      "audio": "audio/draw.mp3"
+      "word": "cloud",
+      "translation": "облако",
+      "image": "images/cloud.jpg",
+      "audio": "audio/cloud.mp3"
     },
     {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "images/fish.jpg",
-      "audio": "audio/fish.mp3"
+      "word": "forest",
+      "translation": "лес",
+      "image": "images/forest.png",
+      "audio": "audio/forest.mp3"
     },
     {
-      "word": "fly",
-      "translation": "летать",
-      "image": "images/fly.jpg",
-      "audio": "audio/fly.mp3"
+      "word": "beach",
+      "translation": "пляж",
+      "image": "images/beach.jpg",
+      "audio": "audio/beach.mp3"
     },
     {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "images/hug.jpg",
-      "audio": "audio/hug.mp3"
+      "word": "mountain",
+      "translation": "гора",
+      "image": "images/mountain.jpg",
+      "audio": "audio/mountain.mp3"
     },
     {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "images/jump.jpg",
-      "audio": "audio/jump.mp3"
+      "word": "hill",
+      "translation": "холм",
+      "image": "images/hill.jpg",
+      "audio": "audio/hill.mp3"
     }
   ],
   "Things": [
     {
-      "word": "cry",
-      "translation": "плакать",
-      "image": "images/cry.jpg",
-      "audio": "audio/cry.mp3"
+      "word": "sofa",
+      "translation": "диван",
+      "image": "images/sofa.jpg",
+      "audio": "audio/sofa.mp3"
     },
     {
-      "word": "dance",
-      "translation": "танцевать",
-      "image": "images/dance.jpg",
-      "audio": "audio/dance.mp3"
+      "word": "chair",
+      "translation": "стул",
+      "image": "images/chair.jpg",
+      "audio": "audio/chair.mp3"
     },
     {
-      "word": "dive",
-      "translation": "нырять",
-      "image": "images/dive.jpg",
-      "audio": "audio/dive.mp3"
+      "word": "table",
+      "translation": "стол",
+      "image": "images/table.jpg",
+      "audio": "audio/table.mp3"
     },
     {
-      "word": "draw",
-      "translation": "рисовать",
-      "image": "images/draw.jpg",
-      "audio": "audio/draw.mp3"
+      "word": "traffic light",
+      "translation": "светофор",
+      "image": "images/light.jpg",
+      "audio": "audio/light.mp3"
     },
     {
-      "word": "fish",
-      "translation": "рыбачить",
-      "image": "images/fish.jpg",
-      "audio": "audio/fish.mp3"
+      "word": "television",
+      "translation": "телевидение",
+      "image": "images/tv.jpg",
+      "audio": "audio/tv.mp3"
     },
     {
-      "word": "fly",
-      "translation": "летать",
-      "image": "images/fly.jpg",
-      "audio": "audio/fly.mp3"
+      "word": "phone",
+      "translation": "телефон",
+      "image": "images/phone.jpg",
+      "audio": "audio/phone.mp3"
     },
     {
-      "word": "hug",
-      "translation": "обнимать",
-      "image": "images/hug.jpg",
-      "audio": "audio/hug.mp3"
+      "word": "lamp",
+      "translation": "лампа",
+      "image": "images/lamp.jpg",
+      "audio": "audio/lamp.mp3"
     },
     {
-      "word": "jump",
-      "translation": "прыгать",
-      "image": "images/jump.jpg",
-      "audio": "audio/jump.mp3"
+      "word": "bed",
+      "translation": "кровать",
+      "image": "images/bed.jpg",
+      "audio": "audio/bed.mp3"
     }
   ]
 }

@@ -33,9 +33,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-                  40deg
-          ,#00bf82,#0099ae);
+  background: linear-gradient(180deg, #1E90FF, #0099ae 100%, #fff 0, #fff);
   -webkit-transition: .3s;
   transition: .3s;
 }

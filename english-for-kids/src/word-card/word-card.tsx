@@ -1,26 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./word-card.scss";
+import context from "../context";
 
-function Word({ info }: {
-                    info:{
-                        word:string,
-                        translation:string,
-                        image:string,
-                        audio: string
-                  }}):React.ReactElement {
-  const [pressed, setPressed] = useState(false);
+function handleState(state: {play:boolean}, pressed:boolean) {
   const cardStyles = ["card"];
-  const sound = new Audio(info.audio);
   if (pressed) {
     cardStyles.push("flipped");
   }
+  if (state.play) {
+    cardStyles.push("play-mode");
+  }
+  return cardStyles.join(" ");
+}
+
+function handleFrontClick(sound: HTMLAudioElement, state:{play:boolean}) {
+  if (!state.play) {
+    sound.play();
+  }
+}
+
+function Word({ info }: {
+    info:{ word:string, translation:string, image:string, audio: string }}):React.ReactElement {
+  const [pressed, setPressed] = useState(false);
+  const { state } = useContext(context);
+  const sound = new Audio(info.audio);
   return (
       <div className={"word-container"}>
-          <div className={cardStyles.join(" ")} onMouseLeave={() => setPressed(false)}>
+          <div className={handleState(state, pressed)} onMouseLeave={() => setPressed(false)}>
               <div className={"front"}>
-                  <img src={info.image} onClick={() => sound.play() }/>
+                  <img src={info.image} onClick={() => handleFrontClick(sound, state) }/>
                   <div className="card-bottom">
-                      <h3 onClick={() => sound.play() }> {info.word} </h3>
+                      <h3 onClick={() => handleFrontClick(sound, state) }> {info.word} </h3>
                       <img onClick={() => setPressed(!pressed)} src="images/translate.png"/>
                   </div>
               </div>
