@@ -1,16 +1,19 @@
 import React, { ReactElement } from "react";
 import "./category-card.scss";
 import { Link } from "react-router-dom";
-import context from "../context";
+import { connect, ConnectedProps } from "react-redux";
 
-interface CardInfo {
+const mapStateToProps = (state:{header:{ playBtn:boolean}}) => ({
+  game: state.header.playBtn,
+});
+const connector = connect(mapStateToProps);
+type PropsFromRedux = ConnectedProps<typeof connector>
+type CardInfo = PropsFromRedux & {
     cardInfo: {name: string, id: number, image: string}
 }
-
-function Card({ cardInfo }: CardInfo):ReactElement {
-  const { state } = React.useContext(context);
+function Card({ cardInfo, game }: CardInfo):ReactElement {
   const classes = ["category-card"];
-  if (state.play) {
+  if (game) {
     classes.push("orange-card");
   }
   return (<Link to={`/${cardInfo.name}`} className={classes.join(" ")}>
@@ -19,4 +22,4 @@ function Card({ cardInfo }: CardInfo):ReactElement {
           </Link>
   );
 }
-export default Card;
+export default connector(Card);

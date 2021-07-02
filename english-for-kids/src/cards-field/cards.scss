@@ -4,7 +4,7 @@
 }
 .start-btn{
   user-select: none;
-   color: white;
+  color: white;
   background: linear-gradient(40deg, #ffd86f, #fc6262);
   border: none;
   border-radius:5px;
@@ -24,4 +24,14 @@
   margin: 0;
   padding: 0;
 }
+.repeat {
+  width: 65px;
+  height: 65px;
+  font-size: 0;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 32px 32px,cover;
+  background-position: 50%;
+}
+
 

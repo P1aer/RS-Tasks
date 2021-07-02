@@ -1,16 +1,27 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./header.scss";
+import { connect, ConnectedProps } from "react-redux";
 import SlideMenu from "../slide-menu/slide-menu";
-import context from "../context";
+import {
+  toggle, changeMenu, exitMenu, stopGame,
+} from "../redux/actions";
 
-function Header():React.ReactElement {
-  const { state, setState, exitMenu } = useContext(context);
+const mapStateToProps = (state:{header:{menu:boolean}, game:{isPlayed:boolean}}) => ({
+  menu: state.header.menu,
+  isPlayed: state.game.isPlayed,
+});
+const connector = connect(mapStateToProps, {
+  toggle, changeMenu, exitMenu, stopGame,
+});
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+function Header(props:PropsFromRedux):React.ReactElement {
   const divRef = React.useRef<HTMLElement>(null);
   React.useEffect(() => {
     document.onclick = (event) => {
-      if (divRef.current && event.target) {
+      if (divRef.current && event.target && props.menu) {
         if (!divRef.current.contains((event.target) as Node)) {
-          exitMenu();
+          props.exitMenu();
         }
       }
     };
@@ -19,7 +30,7 @@ function Header():React.ReactElement {
             <nav ref={divRef}>
                 <div className="menuToggle">
                     <input type="checkbox" onClick={() => {
-                      setState({ play: state.play, menu: !state.menu });
+                      props.changeMenu();
                     }}/>
                     <span/>
                     <span/>
@@ -28,7 +39,12 @@ function Header():React.ReactElement {
                 </div>
             </nav>
             <label className="switch">
-                <input type="checkbox" onClick={() => setState({ play: !state.play, menu: state.menu })} id="togBtn" />
+                <input type="checkbox" onClick={() => {
+                  props.toggle();
+                  if (props.isPlayed) {
+                    props.stopGame();
+                  }
+                }} />
                 <div className="slider round">
                     <span className="on">PLAY</span>
                     <span className="off">TRAIN</span>
@@ -36,4 +52,4 @@ function Header():React.ReactElement {
             </label>
         </header>);
 }
-export default Header;
+export default connector(Header);
