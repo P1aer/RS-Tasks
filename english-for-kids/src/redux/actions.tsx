@@ -1,5 +1,5 @@
 import {
-  ChangeMenu, ExitMenu, GameStart, GameStop, Toggle,
+  ChangeMenu, ExitMenu, GameStart, GameStop, RightAnswer, Toggle, WrongAnswer,
 } from "./types";
 
 export function changeMenu() {
@@ -27,5 +27,15 @@ export function startGame(audio:string[]) {
 export function stopGame() {
   return {
     type: GameStop,
+  };
+}
+export function rightAnswer() {
+  return {
+    type: RightAnswer,
+  };
+}
+export function wrongAnswer() {
+  return {
+    type: WrongAnswer,
   };
 }

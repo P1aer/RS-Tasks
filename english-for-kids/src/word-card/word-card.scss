@@ -90,6 +90,9 @@
     img {
       height: 100%;
     }
+    &.unactive-card{
+      opacity: 50%;
+    }
   }
 }
 

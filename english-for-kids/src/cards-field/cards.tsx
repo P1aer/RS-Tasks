@@ -6,7 +6,7 @@ import allWords from "./words.json";
 import "./cards.scss";
 import { startGame } from "../redux/actions";
 
-interface WordType{
+type WordType = {
     word:string,
     translation:string,
     image:string,
@@ -26,22 +26,23 @@ function shuffle(arr: []) {
   return shuffled;
 }
 const mapStateToProps = (state:{
-    game:{ audio:string[], isPlayed: boolean},
+    game:{ audio:string[], isPlayed: boolean, answers: boolean[]},
     header:{playBtn:boolean}
 }) => ({
   game: state.game,
   toggled: state.header.playBtn,
+  score: state.game.answers,
 });
+
 const connector = connect(mapStateToProps, { startGame });
 type PropsFromRedux = ConnectedProps<typeof connector>
 
-// eslint-disable-next-line no-shadow
-function Cards({ toggled, startGame, game }:PropsFromRedux):React.ReactElement {
+function Cards(props:PropsFromRedux):React.ReactElement {
   const btnClass = ["start-btn"];
-  if (!toggled) {
+  if (!props.toggled) {
     btnClass.push("not-started");
   }
-  if (game.isPlayed) {
+  if (props.game.isPlayed) {
     btnClass.push("repeat");
   }
   const style = {
@@ -52,16 +53,26 @@ function Cards({ toggled, startGame, game }:PropsFromRedux):React.ReactElement {
   const words = JSON.parse(res)[`${cardSet}`];
   const names = words.map((word:WordType) => word.word);
   function handleClick() {
-    if (!game.isPlayed) {
-      startGame(shuffle(names));
+    if (!props.game.isPlayed) {
+      props.startGame(shuffle(names));
     } else {
-      new Audio(`audio/${game.audio[game.audio.length - 1]}.mp3`).play();
+      new Audio(`audio/${props.game.audio[props.game.audio.length - 1]}.mp3`).play();
     }
   }
+  const keys = [];
+  for (let i = 0; i < props.score.length; i += 1) {
+    keys.push(i);
+  }
   return (<div className={"category-container"}>
+      <div className={"score-board"}>
+          {
+              keys.map((key) => <div key={key}
+              style={props.score[key] ? { backgroundImage: "url(images/right.png)" } : { backgroundImage: "url(images/wrong.png)" }}
+              className={"answer-card"}/>) }
+      </div>
       { words.map((word:WordType) => <Word info={word} key={words.indexOf(word)}/>)}
             <div className={"start-btn-container"}>
-                <button onClick={() => handleClick()} style={game.isPlayed ? style : {}} className={btnClass.join(" ")}>Start Game</button>
+                <button onClick={() => handleClick()} style={props.game.isPlayed ? style : {}} className={btnClass.join(" ")}>Start Game</button>
              </div>
          </div>);
 }
