@@ -165,8 +165,8 @@
     {
       "word": "caracal",
       "translation": "каракал",
-      "image": "images/floppa.jpg",
-      "audio": "audio/floppa.mp3"
+      "image": "images/caracal.jpg",
+      "audio": "audio/caracal.mp3"
     },
     {
       "word": "dragon",
@@ -237,7 +237,7 @@
       "audio": "audio/jeans.mp3"
     },
     {
-      "word": "pijamas",
+      "word": "pijama",
       "translation": "пижама",
       "image": "images/pijama.jpg",
       "audio": "audio/pijama.mp3"
@@ -371,11 +371,11 @@
     {
       "word": "traffic light",
       "translation": "светофор",
-      "image": "images/light.jpg",
-      "audio": "audio/light.mp3"
+      "image": "images/traffic light.jpg",
+      "audio": "audio/traffic light.mp3"
     },
     {
-      "word": "television",
+      "word": "tv",
       "translation": "телевидение",
       "image": "images/tv.jpg",
       "audio": "audio/tv.mp3"

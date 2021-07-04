@@ -1,10 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { connect, ConnectedProps } from "react-redux";
 import Word from "../word-card/word-card";
 import allWords from "./words.json";
 import "./cards.scss";
-import { startGame } from "../redux/actions";
+import { startGame, stopGame } from "../redux/actions";
 
 type WordType = {
     word:string,
@@ -33,11 +33,33 @@ const mapStateToProps = (state:{
   toggled: state.header.playBtn,
   score: state.game.answers,
 });
-
-const connector = connect(mapStateToProps, { startGame });
+function handleEndGame(score: boolean[], stop:()=>{type:string}):React.ReactElement {
+  let mistakes = 0;
+  const history = useHistory();
+  score.forEach((ans) => {
+    if (!ans) {
+      mistakes += 1;
+    }
+  });
+  const sound = !mistakes ? new Audio("audio/success.mp3") : new Audio("audio/failure.mp3");
+  sound.play();
+  setTimeout(() => setTimeout(() => {
+    history.push("/");
+    stop();
+  }, 3000));
+  const element = <div className={"end-screen"}>
+                        <h3 className={"end-screen-h3"}>{!mistakes ? "Congrats!" : `Sorry, but you have mistakes: ${mistakes} `}</h3>
+                        <img src={!mistakes ? "images/success.jpg" : "images/failure.jpg"} alt="End"/>
+                  </div>;
+  return (element);
+}
+const connector = connect(mapStateToProps, { startGame, stopGame });
 type PropsFromRedux = ConnectedProps<typeof connector>
 
 function Cards(props:PropsFromRedux):React.ReactElement {
+  if (props.game.isPlayed && props.game.audio.length === 0) {
+    return handleEndGame(props.score, props.stopGame);
+  }
   const btnClass = ["start-btn"];
   if (!props.toggled) {
     btnClass.push("not-started");
