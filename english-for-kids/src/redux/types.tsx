@@ -5,3 +5,7 @@ export const GameStart = "GAME/GAME_START";
 export const GameStop = "GAME/GAME_STOP";
 export const RightAnswer = "GAME/RIGHT_ANSWER";
 export const WrongAnswer = "GAME/WRONG_ANSWER";
+export const FetchWords = "APP/FETCH_WORDS";
+export const FetchCards = "APP/FETCH_CARDS";
+export const FetchWordsComplete = "APP/FETCH_WORDS_COMPLETE";
+export const FetchCardsComplete = "APP/FETCH_CARDS_COMPLETE";

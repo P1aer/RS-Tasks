@@ -7,13 +7,18 @@ const initialState = {
   isPlayed: false,
   answers: [],
 };
+type State = {
+  audio: string[],
+  isPlayed: boolean,
+  answers: boolean[],
+}
 interface Action {
   type: string,
   data?: string[]
 }
-function gameReducer(state = initialState, action:Action) {
+function gameReducer(state = initialState, action:Action):State {
   switch (action.type) {
-    case GameStart: return { answers: [], audio: action.data, isPlayed: true };
+    case GameStart: return { answers: [], audio: action.data, isPlayed: true } as State;
     case GameStop: return initialState;
     case RightAnswer: return {
       ...state,

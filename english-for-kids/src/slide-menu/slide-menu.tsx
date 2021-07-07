@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./slide-menu.scss";
 import { NavLink } from "react-router-dom";
-import { connect, ConnectedProps } from "react-redux";
-import context from "../context";
+import { connect, ConnectedProps, useSelector } from "react-redux";
 import { exitMenu, stopGame } from "../redux/actions";
 
 const mapStateToProps = (state:{header:{ menu:boolean, playBtn:boolean}}) => ({
@@ -13,7 +12,9 @@ const connector = connect(mapStateToProps, { exitMenu, stopGame });
 type PropsFromRedux = ConnectedProps<typeof connector>
 
 function SlideMenu(props:PropsFromRedux):React.ReactElement {
-  const { cards } = useContext(context);
+  const cards = useSelector(((state:{data: {cards:{
+                    name: string; id: number; image: string}[]}}) => state.data.cards
+  ));
   const classes = ["menu"];
   if (props.menu) {
     classes.push("menuVisible");
@@ -30,6 +31,12 @@ function SlideMenu(props:PropsFromRedux):React.ReactElement {
               }}
               className="menu-item" to="/" exact={true}>
               Main Page
+          </NavLink>
+          <NavLink to="/statistic" className={"menu-item"} onClick={() => {
+            props.exitMenu();
+            props.stopGame();
+          }}>
+              Statistic
           </NavLink>
           {
               cards.map((card) => (

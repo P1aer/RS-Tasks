@@ -32,9 +32,9 @@ function Header(props:PropsFromRedux):React.ReactElement {
                     <input type="checkbox" onClick={() => {
                       props.changeMenu();
                     }}/>
-                    <span/>
-                    <span/>
-                    <span/>
+                    <span className={props.menu ? "span1" : ""}/>
+                    <span className={props.menu ? "span2" : ""}/>
+                    <span className={props.menu ? "span3" : ""}/>
                     <SlideMenu/>
                 </div>
             </nav>

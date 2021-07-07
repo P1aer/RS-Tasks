@@ -121,6 +121,24 @@ nav {
     z-index: 2;
     -webkit-touch-callout: none;
   }
+  .span1{
+    opacity: 1;
+    -webkit-transform: rotate(45deg) translateY(-1px);
+    transform: rotate(45deg) translateY(-1px);
+    -webkit-transform-origin: 4px 0;
+    transform-origin: 4px 0;
+  }
+  .span3{
+    opacity: 1;
+    -webkit-transform: rotate(-45deg) translateY(-1px);
+    transform: rotate(-45deg
+    ) translateY(-1px);
+  }
+  .span2{
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(.2);
+    transform: rotate(0deg) scale(.2);
+  }
   span{
     display: block;
     width: 33px;
@@ -130,12 +148,9 @@ nav {
     background: #cdcdcd;
     border-radius: 3px;
     z-index: 1;
-/*    -webkit-transform-origin: 4px 0;
+    -webkit-transform-origin: 4px 0;
     transform-origin: 4px 0;
-    -webkit-transition: background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease,-webkit-transform .5s cubic-bezier(.77,.2,.05,1);
-    transition: background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease,-webkit-transform .5s cubic-bezier(.77,.2,.05,1);
-    transition: transform .5s cubic-bezier(.77,.2,.05,1),background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease;
-    transition: transform .5s cubic-bezier(.77,.2,.05,1),background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease,-webkit-transform .5s cubic-bezier(.77,.2,.05,1);*/
+    transition: 0.3s ease-in-out;
   }
 }
 

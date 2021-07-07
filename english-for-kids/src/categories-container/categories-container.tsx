@@ -1,15 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./categories-container.scss";
+import {
+  connect, useSelector,
+} from "react-redux";
 import Card from "../category-card/card";
-import context from "../context";
 
 function CategoryContainer():React.ReactElement {
-  const { cards } = useContext(context);
+  const arr = useSelector(((state:{data: {cards:{
+      name: string; id: number; image: string}[]}}) => state.data.cards
+  ));
+
   return (<div className={"category-container"}>
      {
-       cards.map((card) => <Card cardInfo={card} key={card.id}/>)
+       arr.map((card) => <Card cardInfo={card} key={card.id}/>)
      }
    </div>);
 }
 
-export default CategoryContainer;
+export default connect()(CategoryContainer);

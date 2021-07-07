@@ -3,6 +3,28 @@ import "./word-card.scss";
 import { connect, ConnectedProps } from "react-redux";
 import { rightAnswer, wrongAnswer } from "../redux/actions";
 
+function addToDataTrain(data: string) {
+  if (localStorage?.[data]) {
+    const current = JSON.parse(localStorage[data]);
+    const train = current?.train + 1 || 1;
+    localStorage[data] = JSON.stringify({ ...current, train });
+  } else {
+    localStorage[data] = JSON.stringify({ train: 1 });
+  }
+}
+
+function addToDataPlay(data: string, right: boolean) {
+  if (localStorage?.[data]) {
+    const current = JSON.parse(localStorage[data]);
+    const play = right ? current?.play + 1 || 1 : current?.mist + 1 || 1;
+    localStorage[data] = right ? JSON.stringify({ ...current, play })
+      : JSON.stringify({ ...current, mist: play });
+  } else {
+    localStorage[data] = right ? JSON.stringify({ play: 1 })
+      : JSON.stringify({ mist: 1 });
+  }
+}
+
 function handleState(
   state: boolean,
   pressed:boolean,
@@ -50,13 +72,19 @@ function Word({
   function Click() {
     const arr = game.audio;
     if (game.isPlayed && arr[arr.length - 1] === info.word) {
-      successSound.play().then(() => Tanswer());
+      successSound.play().then(() => {
+        Tanswer();
+        addToDataPlay(info.word, true);
+      });
       if (game.audio.length > 1) { new Audio(`audio/${arr[arr.length - 2]}.mp3`).play(); }
     } else if (game.isPlayed && arr[arr.length - 1] !== info.word && arr.includes(info.word)) {
-      errorSound.play().then(() => Fanswer());
+      errorSound.play().then(() => {
+        addToDataPlay(arr[arr.length - 1], false);
+        Fanswer();
+      });
     }
     if (!toggled) {
-      sound.play();
+      sound.play().then(() => addToDataTrain(info.word));
     }
   }
 

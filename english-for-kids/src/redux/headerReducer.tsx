@@ -7,8 +7,12 @@ const initialState = {
 interface Action {
   type: string,
 }
+type State = {
+  menu: boolean,
+  playBtn: boolean,
+}
 
-function headerReducer(state = initialState, action:Action) {
+function headerReducer(state = initialState, action:Action): State {
   switch (action.type) {
     case ChangeMenu:
       return { ...state, menu: !state.menu };
