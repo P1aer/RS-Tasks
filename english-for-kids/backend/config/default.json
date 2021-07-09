@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtSecret": "pepega kids",
+  "mongoURL": "mongodb+srv://admin:12345@cluster0.so7ai.mongodb.net/app?retryWrites=true&w=majority"
+}
