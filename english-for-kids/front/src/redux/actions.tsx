@@ -1,6 +1,7 @@
 import { Action, AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import {
+  ChangeCategory,
   ChangeMenu,
   ExitMenu,
   FetchCards,
@@ -18,7 +19,7 @@ type SimpleFunc = {
   type: string;
 }
 type DataFunc = {
-   type: string
+  type: string
   data:string[]
 }
 
@@ -76,10 +77,13 @@ export function fetchWords():ThunkAction<void, {word: unknown, cards: []}, unkno
 
 export function fetchCards():ThunkAction<void, {word: unknown, cards: []}, unknown, AnyAction> {
   return async (dispatch) => {
-    const result = await fetch("cards.json");
+    const result = await fetch("/api/category/", {
+      method: "GET",
+      body: null,
+      headers: {},
+    });
     const cardsObj = await result.json();
-    const { cards } = cardsObj;
-    dispatch({ type: FetchCards, cards });
+    dispatch({ type: FetchCards, cards: cardsObj });
   };
 }
 
@@ -91,5 +95,13 @@ export function fetchCardsComplete(): SimpleFunc {
 export function fetchWordsComplete():SimpleFunc {
   return {
     type: FetchWordsComplete,
+  };
+}
+
+export function changeCategory(name:string):{type: string, name: string} {
+  localStorage.setItem("path", JSON.stringify({ name }));
+  return {
+    type: ChangeCategory,
+    name,
   };
 }

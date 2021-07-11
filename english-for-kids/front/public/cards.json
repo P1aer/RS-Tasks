@@ -1,12 +1,12 @@
 {
   "cards" : [
-  { "name": "Actions 1", "image": "images/action1.jpg", "id": 1 },
-  { "name": "Actions 2", "image": "images/action2.jpg", "id": 2 },
-  { "name": "Animals 1","image": "images/animals1.jpg", "id": 3 },
-  { "name": "Animals 2","image": "images/animals2.png", "id": 4 },
-  { "name": "Clothes", "image": "images/clothes.jpg", "id": 5 },
-  { "name": "Emotions", "image": "images/emotions.jpg", "id": 6 },
-  { "name": "Nature", "image": "images/nature.jpg", "id": 7 },
-  { "name": "Things", "image": "images/things.jpg", "id": 8 }
+  { "name": "Actions 1", "image": "images/action1.jpg" },
+  { "name": "Actions 2", "image": "images/action2.jpg" },
+  { "name": "Animals 1","image": "images/animals1.jpg" },
+  { "name": "Animals 2","image": "images/animals2.png" },
+  { "name": "Clothes", "image": "images/clothes.jpg" },
+  { "name": "Emotions", "image": "images/emotions.jpg" },
+  { "name": "Nature", "image": "images/nature.jpg" },
+  { "name": "Things", "image": "images/things.jpg"}
 ]
 }

@@ -1,15 +1,23 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 
 type Context = {
-    active: boolean,
-    setActive: React.Dispatch<React.SetStateAction<boolean>>
+    token: string | null,
+   userId: string | null,
+    login: (jwtToken: any, id: any) => void
+    logout: () => void;
+    isAuthenticated: boolean
 }
 
 const context = createContext<Context>({
-  active: false,
-  setActive(value: ((prevState: boolean) => boolean) | boolean): void {
-    value.valueOf();
+  isAuthenticated: false,
+  login(jwtToken: any, id: any): void {
+    id.toString();
   },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  logout(): void {
+  },
+  token: "",
+  userId: "",
 });
 
 export default context;

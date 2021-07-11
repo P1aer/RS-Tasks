@@ -369,10 +369,10 @@
       "audio": "audio/table.mp3"
     },
     {
-      "word": "traffic light",
+      "word": "traffic-light",
       "translation": "светофор",
-      "image": "images/traffic light.jpg",
-      "audio": "audio/traffic light.mp3"
+      "image": "images/traffic-light.jpg",
+      "audio": "audio/traffic-light.mp3"
     },
     {
       "word": "tv",

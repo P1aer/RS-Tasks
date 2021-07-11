@@ -11,7 +11,7 @@ type WordType = {
     audio: string
 }
 
-function defineHard(words: [][]):(WordType | undefined)[] {
+function defineHard(words: [][]):WordType[] {
   const all: {word: string, mist: number}[] = [];
   const keys = Object.keys(localStorage);
   if (keys.length === 0) {
@@ -22,7 +22,7 @@ function defineHard(words: [][]):(WordType | undefined)[] {
       all.push({ word: keys[i], mist: JSON.parse(localStorage[keys[i]]).mist });
     }
   }
-  let answer;
+  let answer:{word: string, mist: number}[];
   if (all.length > 8) {
     all.sort((a, b) => {
       if (a.mist < b.mist) {
@@ -36,7 +36,14 @@ function defineHard(words: [][]):(WordType | undefined)[] {
     answer = all.slice(0, 8);
   } else answer = [...all];
   const flatWords:WordType[] = words.flat(1);
-  return answer.map((elem: {word: string, mist: number}) => flatWords.find((item) => item.word === elem.word));
+  const result:WordType[] = [];
+  answer.forEach((elem) => {
+    const temp = flatWords.find((item) => item.word === elem.word);
+    if (temp) {
+      result.push(temp);
+    }
+  });
+  return result;
 }
 
 function Stats():React.ReactElement {

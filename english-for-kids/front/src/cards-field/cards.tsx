@@ -1,11 +1,11 @@
 import React from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
-  connect, ConnectedProps,
+  connect, ConnectedProps, useDispatch,
 } from "react-redux";
 import Word from "../word-card/word-card";
 import "./cards.scss";
-import { startGame as Start, stopGame as Stop } from "../redux/actions";
+import { changeCategory, startGame as Start, stopGame as Stop } from "../redux/actions";
 
 type WordType = {
     word:string,
@@ -32,14 +32,16 @@ function shuffle(arr: string[] | undefined) {
 const mapStateToProps = (state:{
     game:{ audio:string[], isPlayed: boolean, answers: boolean[]},
     header:{playBtn:boolean},
-    data: {words:{key:WordType[]}, wordsFetch:boolean}
+    data: {words:{key:WordType[]}, wordsFetch:boolean, currentCard:string | undefined}
 }) => ({
   game: state.game,
   toggled: state.header.playBtn,
   score: state.game.answers,
   words: state.data.words,
+  cardSet: state.data.currentCard,
 });
 function handleEndGame(score: boolean[], stop:()=>{type:string}):React.ReactElement {
+  const dispatch = useDispatch();
   let mistakes = 0;
   const history = useHistory();
   score.forEach((ans) => {
@@ -52,6 +54,7 @@ function handleEndGame(score: boolean[], stop:()=>{type:string}):React.ReactElem
   setTimeout(() => setTimeout(() => {
     history.push("/");
     stop();
+    dispatch(changeCategory("main"));
   }, 3000));
   const element = <div className={"end-screen"}>
       <h3 className={"end-screen-h3"}>{!mistakes ? "Congrats!" : `Sorry, but you have mistakes: ${mistakes} `}</h3>
@@ -61,11 +64,11 @@ function handleEndGame(score: boolean[], stop:()=>{type:string}):React.ReactElem
 }
 const connector = connect(mapStateToProps, { startGame: Start, stopGame: Stop });
 type PropsFromRedux = ConnectedProps<typeof connector> & {
-    cards?: (WordType | undefined)[]
+    cards?: WordType[] | undefined
 }
 
 function Cards({
-  game, score, cards = [], toggled, words, startGame, stopGame,
+  game, score, cards = undefined, toggled, words, startGame, stopGame, cardSet,
 }:PropsFromRedux):React.ReactElement {
   if (game.isPlayed && game.audio.length === 0) {
     return handleEndGame(score, stopGame);
@@ -80,8 +83,7 @@ function Cards({
   const style = {
     backgroundImage: "url(images/replay.png),linear-gradient(40deg, #ffd86f, #fc6262)",
   };
-  const { cardSet } = useParams<{ cardSet:keyof { key: WordType[] }}>();
-  const wordTypes:WordType[] = words?.[cardSet] || cards;
+  const wordTypes:WordType[] = cards || words?.[cardSet as keyof {key: WordType[]}] || [];
   function handleClick() {
     if (!game.isPlayed) {
       startGame(shuffle(wordTypes.map((elem:WordType) => elem.word)));
