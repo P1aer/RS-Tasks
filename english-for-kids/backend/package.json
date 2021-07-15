@@ -4,10 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.ts",
+    "start": "cross-env NODE_ENV=production node app.ts",
     "server": "nodemon app.ts",
     "client": "npm run start --prefix ../front",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client:install": "npm install --prefix ../front",
+    "client:build": "npm run build --prefix ../front",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.3.6",
+    "cross-env": "^7.0.3",
     "eslint-config-airbnb-base": "^14.2.1",
     "express": "^4.17.1",
     "express-validator": "^6.12.0",
