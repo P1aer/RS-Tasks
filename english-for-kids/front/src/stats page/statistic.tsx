@@ -6,7 +6,7 @@ import Cards from "../cards-field/cards";
 
 type WordType = {
     word:string,
-    translation:string,
+    translate:string,
     image:string,
     audio: string
 }

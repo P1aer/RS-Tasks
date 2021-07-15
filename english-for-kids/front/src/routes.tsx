@@ -6,6 +6,7 @@ import CategoryContainer from "./categories-container/categories-container";
 import Stats from "./stats page/statistic";
 import Cards from "./cards-field/cards";
 import AdminPageCategories from "./admin-page-cat/admin-page-cat";
+import AdminPageWords from "./admin-word-page/admin-page-words";
 
 type Prop = {
     isAuthenticated:boolean,
@@ -13,7 +14,7 @@ type Prop = {
     setActive: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const useRoutes = ({ isAuthenticated, active, setActive }:Prop) => {
+const useRoutes = ({ isAuthenticated, active, setActive }:Prop): React.ReactElement => {
   if (!isAuthenticated) {
     return (
             <Switch>
@@ -22,7 +23,7 @@ const useRoutes = ({ isAuthenticated, active, setActive }:Prop) => {
                     <Modal active={active} setActive={setActive}/>
                     <CategoryContainer/>
                 </Route>
-                <Route exact path="/statistic">
+                <Route path="/statistic">
                     <Header modal={setActive}/>
                     <Modal active={active} setActive={setActive}/>
                     <Stats/>
@@ -38,10 +39,13 @@ const useRoutes = ({ isAuthenticated, active, setActive }:Prop) => {
   }
   return (
           <Switch>
-              <Route exact path={"/categories"}>
+              <Route exact path={"/"}>
                   <AdminPageCategories/>
               </Route>
-              <Redirect to={"/categories"}/>
+              <Route path={"/:name/words"}>
+                <AdminPageWords/>
+              </Route>
+              <Redirect to={"/"}/>
           </Switch>
   );
 };

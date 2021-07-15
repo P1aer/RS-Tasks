@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./admin-category.scss";
+import { Link } from "react-router-dom";
 import { connect, ConnectedProps } from "react-redux";
 import useHttp from "../hooks/http.hook";
 import { fetchCards } from "../redux/actions";
@@ -43,7 +44,7 @@ function AdminCategory({ info, update }:PropsFromRedux): React.ReactElement {
       </div>
       <div className={"admin-category-card-footer"}>
         <button onClick={() => setOpen(true)}> Update</button>
-        <button> Add Word</button>
+        <Link to={`/${info.name}/words`}> Add Word</Link>
       </div>
     </div>
       : <div className={"create-container"}>

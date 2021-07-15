@@ -61,7 +61,7 @@ const mapDispatchToProps = {
 const connector = connect(mapStateToProps, mapDispatchToProps);
 type PropsFromRedux = ConnectedProps<typeof connector>
 type Props = PropsFromRedux &{
-    info:{ word:string, translation:string, image:string, audio: string }
+    info:{ word:string, translate:string, image:string, audio: string }
 }
 function Word({
   info, game, toggled, Tanswer, Fanswer,
@@ -71,15 +71,15 @@ function Word({
 
   function Click() {
     const arr = game.audio;
-    if (game.isPlayed && arr[arr.length - 1] === info.word) {
+    if (game.isPlayed && arr[arr.length - 1] === info.audio) {
       successSound.play().then(() => {
         Tanswer();
         addToDataPlay(info.word, true);
       });
-      if (game.audio.length > 1) { new Audio(`audio/${arr[arr.length - 2]}.mp3`).play(); }
-    } else if (game.isPlayed && arr[arr.length - 1] !== info.word && arr.includes(info.word)) {
+      if (game.audio.length > 1) { new Audio(`${arr[arr.length - 2]}`).play(); }
+    } else if (game.isPlayed && arr[arr.length - 1] !== info.audio && arr.includes(info.audio)) {
       errorSound.play().then(() => {
-        addToDataPlay(arr[arr.length - 1], false);
+        addToDataPlay(info.word, false);
         Fanswer();
       });
     }
@@ -90,7 +90,7 @@ function Word({
 
   return (
       <div className={"word-container"}>
-          <div className={handleState(toggled, pressed, game, info.word)}
+          <div className={handleState(toggled, pressed, game, info.audio)}
                onMouseLeave={() => setPressed(false)}>
               <div className={"front"}>
                   <img src={info.image} onClick={() => Click() }/>
@@ -102,7 +102,7 @@ function Word({
               <div className={"back"} >
                   <img src={info.image}/>
                   <div className="card-bottom">
-                       <h3> {info.translation}</h3>
+                       <h3> {info.translate}</h3>
                   </div>
               </div>
           </div>

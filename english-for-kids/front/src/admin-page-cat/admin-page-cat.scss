@@ -5,16 +5,22 @@
   padding: 30px 15px;
   max-width: 1440px;
   margin: auto;
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    margin: 0 auto;
+    max-width: 1150px;
+    justify-content: flex-start;
+  }
 }
 .category-card-create{
-  width: 361px;
+  max-width: 361px;
   height: 244px;
   border: 2px solid rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
   border-radius: 5px;
   margin: 10px;
- justify-self: flex-start;
-
   .create-cat-button{
     cursor: pointer;
     border: none;
@@ -30,6 +36,7 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
+
   .button-container{
     display: flex;
     justify-content: space-between;
@@ -63,20 +70,21 @@
   .label-input {
     display: flex;
     flex-direction: column;
-    input{
+    input[type = text]{
       font-size: 22px;
       line-height: 26px;
       width: 283px;
       height: 35px;
       border: none;
       border-bottom: 1px solid #3F51B5;
+      margin-bottom: 10px;
     }
     label{
       display: flex;
       font-size: 9px;
       line-height: 11px;
       color: #3F51B5;
-      align-items: start;
+      align-items: flex-start;
     }
   }
 }

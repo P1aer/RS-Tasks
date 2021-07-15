@@ -39,7 +39,7 @@ export function toggle():SimpleFunc {
   };
 }
 export function startGame(audio:string[]):DataFunc {
-  new Audio(`audio/${audio[audio.length - 1]}.mp3`).play();
+  new Audio(`${audio[audio.length - 1]}`).play();
   return {
     type: GameStart,
     data: audio,
@@ -69,9 +69,13 @@ export function wrongAnswer(): SimpleFunc {
 
 export function fetchWords():ThunkAction<void, {word: unknown, cards: []}, unknown, AnyAction> {
   return async (dispatch) => {
-    const result = await fetch("words.json");
-    const words = await result.json();
-    dispatch({ type: FetchWords, words });
+    const result = await fetch("/api/word/", {
+      method: "GET",
+      body: null,
+      headers: {},
+    });
+    const cardsObj = await result.json();
+    dispatch({ type: FetchWords, words: cardsObj });
   };
 }
 

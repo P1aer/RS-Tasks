@@ -9,7 +9,7 @@ import { changeCategory, startGame as Start, stopGame as Stop } from "../redux/a
 
 type WordType = {
     word:string,
-    translation:string,
+    translate:string,
     image:string,
     audio: string
 }
@@ -86,9 +86,9 @@ function Cards({
   const wordTypes:WordType[] = cards || words?.[cardSet as keyof {key: WordType[]}] || [];
   function handleClick() {
     if (!game.isPlayed) {
-      startGame(shuffle(wordTypes.map((elem:WordType) => elem.word)));
+      startGame(shuffle(wordTypes.map((elem:WordType) => elem.audio)));
     } else {
-      new Audio(`audio/${game.audio[game.audio.length - 1]}.mp3`).play();
+      new Audio(`${game.audio[game.audio.length - 1]}`).play();
     }
   }
   const keys = [];

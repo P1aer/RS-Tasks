@@ -16,13 +16,17 @@
     align-items: center;
     height: 100%;
   }
+  .admin-nav {
+    display: flex;
+  }
   .nav-link{
     cursor: pointer;
     color: white;
     text-decoration: none;
-    margin-right: 50px;
+    margin:0 50px 0 0;
     font-size: 22px;
     line-height: 26px;
+    font-weight: 300;
   }
   .logout{
     cursor: pointer;

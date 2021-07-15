@@ -1,38 +1,44 @@
-.admin-category-card{
+.admin-word-card{
   width: 361px;
-  height: 244px;
-  margin: 10px;
+  height: 458px;
   border: 2px solid rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
   border-radius: 5px;
+  margin: 10px;
 }
-.admin-category-card-container{
+.admin-word-card-container{
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  img {
+  .crest-img {
     cursor: pointer;
     align-self: flex-end;
     position: absolute;
   }
-  .admin-category-card-head{
-    margin: 10px auto;
-  }
-  .admin-category-card-body{
-    width: 60%;
-    display: flex;
-    align-items: flex-start;
-    h2{
-      font-weight: 300;
-      margin: 10px 0 65px 0;
+  .admin-word-card-body{
+    padding-top: 30px ;
+     img {
+       object-fit: contain;
+       width: 253px;
+       height: 170px;
+       cursor: pointer;
+     }
+    h3 {
+      font-weight: 400;
+      span {
+        font-weight: bold;
+      }
     }
-  }
-  .admin-category-card-footer{
+
+}
+  .admin-word-card-footer {
     width: 85%;
     display: flex;
-    justify-content: space-between;
-    button, a{
+    align-items: center;
+    flex-direction: column;
+    button {
+      margin-top: 20px;
       text-decoration: none;
       cursor: pointer;
       color: #00BF82;

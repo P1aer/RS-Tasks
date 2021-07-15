@@ -14,6 +14,16 @@ const mapStateToProps = (state:{
 
 const connector = connect(mapStateToProps, { update: fetchCards });
 type PropsFromRedux = ConnectedProps<typeof connector>
+
+function madeRow(array:{ _id: string; name: string; words: [];}[]) {
+  const result = [];
+  const chunk = 3;
+  for (let i = 0, j = array.length; i < j; i += chunk) {
+    result.push(array.slice(i, i + chunk));
+  }
+  return result;
+}
+
 function AdminPageCategories({ categories, update }:PropsFromRedux): React.ReactElement {
   const { request } = useHttp();
   const [create, setCreate] = useState("");
@@ -31,31 +41,40 @@ function AdminPageCategories({ categories, update }:PropsFromRedux): React.React
       setCreate("");
     } catch (e) { console.log(e.message); }
   };
+  const result = madeRow(categories);
   return (<div>
     <AdminHeader/>
     <div className={"admin-category-container"}>
         <InfiniteScroll height={780} next={update} className={"scroll "}
                         hasMore={false} loader={<h3>Loading...</h3>} dataLength={categories.length}>
-          {categories.map((cat) => (<AdminCategory info={{ ...cat }} key={cat.name}/>))}
+          {result.map((row) => <div className={"row"} key={result.indexOf(row)}>
+              {
+                row.map((cat) => <AdminCategory info={{ ...cat }} key={cat.name}/>)
+              }
+            </div>)
+           }
+          <div className={"category-card-create"}>
+            {!open ? <div className={"create-container"}>
+                    <h3>Create new Category</h3>
+                    <button onClick={() => setOpen(true) } type={"button"} className={"create-cat-button"}>
+                        <img src="images/plus.svg" alt=""/>
+                    </button>
+                </div>
+              : <div className={"create-container"}>
+                    <div className={"label-input"}>
+                        <label htmlFor={"cat-name"}>Category name</label>
+                        <input onChange={changeHandler} value={create} type={"text"} id={"cat-name"} name={"category"}/>
+                    </div>
+                    <div className={"button-container"}>
+                        <button className={"cancel-cat"} type={"button"}
+                                onClick={() => setOpen(false)}> Cancel </button>
+                        <button className={"create-cat"} type={"button"}
+                                onClick={() => clickHandler()}> Create </button>
+                    </div>
+                </div>}
+        </div>
         </InfiniteScroll>
-      <div className={"category-card-create"}>
-        {!open ? <div className={"create-container"}>
-          <h3>Create new Category</h3>
-            <button onClick={() => setOpen(true) } type={"button"} className={"create-cat-button"}>
-              <img src="images/plus.svg" alt=""/>
-            </button>
-            </div>
-          : <div className={"create-container"}>
-              <div className={"label-input"}>
-                <label htmlFor={"cat-name"}>Category name</label>
-                <input onChange={changeHandler} value={create} type={"text"} id={"cat-name"} name={"category"}/>
-              </div>
-              <div className={"button-container"}>
-                <button className={"cancel-cat"} type={"button"} onClick={() => setOpen(false)}> Cancel </button>
-                 <button className={"create-cat"} type={"button"} onClick={() => clickHandler()}> Create </button>
-              </div>
-            </div>}
-      </div>
+
     </div>
   </div>);
 }

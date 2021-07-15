@@ -24,6 +24,10 @@ router.get("/:id", async (req, res) => {
 router.post("/create", async (req, res) => {
   try {
     const { name, image = defaultImage } = req.body
+    const check = await Category.findOne({ name })
+    if (check) {
+      return res.status(500).json({ message: "Такое имя уже есть" })
+    }
     const category = new Category({
       name, image,
     })
@@ -49,8 +53,9 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    await Category.findByIdAndDelete(req.params.id)
-    await Word.deleteMany({ category: req.params.id })
+    const category = await Category.findById(req.params.id)
+    await Word.deleteMany({ category: category.name })
+    await category.delete()
     return res.status(200).json({ message: "Все ок" })
   } catch (e) {
     return res.status(500).json({ message: "Ошибка" })

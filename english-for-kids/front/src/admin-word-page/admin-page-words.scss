@@ -1,0 +1,38 @@
+.category-card-create-word{
+  width: 361px;
+  height: 458px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 10px;
+  .create-cat-button{
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    &:hover {
+      opacity: .70;
+    }
+  }
+  .file-div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    input{
+      font-size: 18px;
+      line-height: 26px;
+      width: 153px;
+    }
+  }
+}
+.category-name{
+  margin:35px auto 0 auto;
+  font-weight: 400;
+  max-width: 1440px;
+  display: flex;
+  align-items: flex-start;
+  span {
+    white-space: pre-wrap;
+    font-weight: bold;
+  }
+}
